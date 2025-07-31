@@ -3,7 +3,7 @@
 import { Header } from "@/components/header";
 import { ModernFooter } from "@/components/modern-footer";
 import { motion } from "framer-motion";
-import { Award, Users, Calendar, Target } from "lucide-react";
+import { Award } from "lucide-react";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -115,7 +115,9 @@ export default function AboutPage() {
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
               Biało białko białko
             </p>
-            <p className="text-base md:text-lg text-gray-400">"Granulocyty"</p>
+            <p className="text-base md:text-lg text-gray-400">
+              &quote;Granulocyty&quote;
+            </p>
           </motion.div>
         </div>
       </section>

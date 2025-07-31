@@ -63,7 +63,7 @@ export function TestimonialsSection() {
                 <CardContent className="p-6">
                   <Quote className="w-8 h-8 text-red-500 mb-4" />
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    "{testimonial.content}"
+                    &quote;{testimonial.content}&quote;
                   </p>
 
                   <div className="flex items-center gap-4">

@@ -175,7 +175,7 @@ export default function ReviewsPage() {
 
                     <Quote className="w-6 h-6 text-red-500 mb-3" />
                     <p className="text-gray-300 mb-4 leading-relaxed">
-                      "{review.review}"
+                      &quote;{review.review}&quote;
                     </p>
 
                     <div className="border-t border-gray-800 pt-4">
