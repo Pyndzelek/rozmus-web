@@ -23,8 +23,7 @@ export function MotivationSection() {
               <h2 className="text-3xl font-bold">Motywacja</h2>
             </div>
             <p className="text-xl text-gray-300 mb-8">
-              Znajac wyraźne kroki i cele treningowe, łatwiej utrzymać motywację
-              na dłuższą metę.
+              Będę Ci wypomiał twoje wszystkie kompleksy i słabości
             </p>
             <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg">
               Zaczynam przemianę <ChevronRight className="ml-2 w-5 h-5" />

@@ -10,23 +10,9 @@ export default function AboutPage() {
   const achievements = [
     {
       icon: <Award className="w-8 h-8 text-red-500" />,
-      title: "Certyfikowany Trener",
-      description: "Licencja trenera personalnego z wieloletnim doświadczeniem",
-    },
-    {
-      icon: <Users className="w-8 h-8 text-red-500" />,
-      title: "461+ Klientów",
-      description: "Pomogłem setkom osób osiągnąć ich cele fitness",
-    },
-    {
-      icon: <Calendar className="w-8 h-8 text-red-500" />,
-      title: "5+ Lat Doświadczenia",
-      description: "Profesjonalne podejście wypracowane przez lata praktyki",
-    },
-    {
-      icon: <Target className="w-8 h-8 text-red-500" />,
-      title: "99% Skuteczności",
-      description: "Moi klienci osiągają zamierzone rezultaty",
+      title: "Certyfikowany Kutas",
+      description:
+        "Kiedys pozyczyłem telefon od kolegi, rozjebałem go i mu go nie oddałem",
     },
   ];
 
@@ -44,27 +30,14 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-3xl md:text-5xl font-bold mb-6">
-                Poznaj <span className="text-red-500">Filipa Rozmusa</span>
+                Poznaj <span className="text-red-500">mnie</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-                Jestem certyfikowanym trenerem personalnym z pasją do pomagania
-                ludziom w osiąganiu ich celów fitness. Moje podejście łączy
-                naukowe podstawy treningu z indywidualnym podejściem do każdego
-                klienta.
+                Jestem certyfikowanym zjebem
               </p>
               <div className="space-y-4 text-gray-300">
-                <p>✓ Wykształcenie w dziedzinie kultury fizycznej</p>
-                <p>
-                  ✓ Specjalizacja w treningu siłowym i budowie masy mięśniowej
-                </p>
-                <p>
-                  ✓ Doświadczenie w pracy z osobami na każdym poziomie
-                  zaawansowania
-                </p>
-                <p>
-                  ✓ Stałe podnoszenie kwalifikacji i śledzenie najnowszych
-                  trendów
-                </p>
+                <p>✓ Brak wykształcenia</p>
+                <p>✓ ujebałem anatomie na podhalance choć mieliśmy baze</p>
               </div>
             </motion.div>
 
@@ -104,7 +77,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-8">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
@@ -140,16 +113,9 @@ export default function AboutPage() {
               Moja filozofia treningu
             </h2>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
-              Wierzę, że każdy człowiek ma w sobie potencjał do osiągnięcia
-              niesamowitych rezultatów. Moją rolą jest pomóc Ci go odkryć i
-              rozwinąć. Nie ma uniwersalnych rozwiązań - każdy plan treningowy i
-              żywieniowy tworzę indywidualnie, biorąc pod uwagę Twoje cele,
-              możliwości czasowe, preferencje i ograniczenia.
+              Biało białko białko
             </p>
-            <p className="text-base md:text-lg text-gray-400">
-              "Sukces to nie przypadek. To ciężka praca, wytrwałość, nauka,
-              poświęcenie i przede wszystkim miłość do tego, co robisz."
-            </p>
+            <p className="text-base md:text-lg text-gray-400">"Granulocyty"</p>
           </motion.div>
         </div>
       </section>

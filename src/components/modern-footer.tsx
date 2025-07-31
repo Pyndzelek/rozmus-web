@@ -1,8 +1,16 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Dumbbell, Mail, Phone, MapPin, Instagram, Facebook, Youtube } from "lucide-react"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import {
+  Dumbbell,
+  Mail,
+  Phone,
+  MapPin,
+  Instagram,
+  Facebook,
+  Youtube,
+} from "lucide-react";
+import Link from "next/link";
 
 export function ModernFooter() {
   return (
@@ -29,8 +37,7 @@ export function ModernFooter() {
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Profesjonalny trener personalny pomagający osiągnąć wymarzoną sylwetkę poprzez spersonalizowane plany
-              treningowe i dietetyczne.
+              Człowiek, który nie szanuje innych, ale sam oczekuje szacunku.
             </p>
             <div className="flex gap-4">
               <motion.a
@@ -64,15 +71,22 @@ export function ModernFooter() {
           <div>
             <h3 className="text-xl font-bold mb-6">Szybkie linki</h3>
             <ul className="space-y-3">
-              {["O mnie", "Prowadzenie indywidualne", "Plany treningowe", "Plany dietetyczne", "Kontakt"].map(
-                (item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-gray-300 hover:text-red-500 transition-colors">
-                      {item}
-                    </Link>
-                  </li>
-                ),
-              )}
+              {[
+                "O mnie",
+                "Prowadzenie indywidualne",
+                "Plany treningowe",
+                "Plany dietetyczne",
+                "Kontakt",
+              ].map((item) => (
+                <li key={item}>
+                  <Link
+                    href="#"
+                    className="text-gray-300 hover:text-red-500 transition-colors"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -82,24 +96,26 @@ export function ModernFooter() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-red-500" />
-                <span className="text-gray-300">kontakt@filiprozmus.pl</span>
+                <span className="text-gray-300">filipzabijaka@gmail.pl</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-red-500" />
-                <span className="text-gray-300">+48 123 456 789</span>
+                <span className="text-gray-300">+48 696969696</span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-red-500" />
-                <span className="text-gray-300">Warszawa, Polska</span>
+                <span className="text-gray-300">Zacisze, Polska</span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-400">© 2024 Filip Rozmus. Wszystkie prawa zastrzeżone.</p>
+          <p className="text-gray-400">
+            © 2024 Filip Rozmus. Wszystkie prawa zastrzeżone.
+          </p>
         </div>
       </div>
     </motion.footer>
-  )
+  );
 }

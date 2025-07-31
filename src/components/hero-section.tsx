@@ -56,13 +56,11 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center justify-items-center min-h-[80vh]">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Zbuduj <span className="text-red-500">wymarzoną sylwetkę</span>{" "}
-              szybciej niż myślisz
+              Czekaj, już <span className="text-red-500">zakładam buty</span>{" "}
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-              Przemyślany plan treningowy, wzbogacony o moje profesjonalne
-              wsparcie online, zapewni Ci skuteczność i motywację na każdym
-              etapie budowy sylwetki.
+              Jestem jebaną kurwą nieszanującą nikogo, ale jeśli mi zapłacisz to
+              bede udawał najmądrzejszego trenera na świecie.
             </p>
             <div className="flex justify-center lg:justify-start">
               <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg">

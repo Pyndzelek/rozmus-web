@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { Header } from "@/components/header"
-import { ModernFooter } from "@/components/modern-footer"
-import { Card, CardContent } from "@/components/ui/card"
-import { motion } from "framer-motion"
-import { Star, Quote } from "lucide-react"
+import { Header } from "@/components/header";
+import { ModernFooter } from "@/components/modern-footer";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { Star, Quote } from "lucide-react";
 
 export default function ReviewsPage() {
   const reviews = [
@@ -13,8 +13,7 @@ export default function ReviewsPage() {
       age: 28,
       program: "Plan Premium - 8 tygodni",
       rating: 5,
-      review:
-        "Filip to prawdziwy profesjonalista! Dzięki jego planowi schudłam 12kg i po raz pierwszy w życiu czuję się pewnie w swoim ciele. Plan był idealnie dopasowany do moich możliwości czasowych i preferencji żywieniowych. Polecam każdemu!",
+      review: "Filip to chuj",
       results: "Schudła 12kg, zbudowała pewność siebie",
       image: "/placeholder.svg?height=80&width=80",
     },
@@ -23,8 +22,7 @@ export default function ReviewsPage() {
       age: 35,
       program: "Plan VIP - 12 tygodni",
       rating: 5,
-      review:
-        "Współpraca z Filipem to była najlepsza inwestycja w siebie, jaką kiedykolwiek zrobiłem. Nie tylko osiągnąłem swoje cele, ale też nauczyłem się, jak utrzymać rezultaty na stałe. Profesjonalne podejście i motywacja na najwyższym poziomie!",
+      review: "chuj",
       results: "Zbudował 8kg masy mięśniowej, zmienił nawyki żywieniowe",
       image: "/placeholder.svg?height=80&width=80",
     },
@@ -33,8 +31,7 @@ export default function ReviewsPage() {
       age: 42,
       program: "Plan Premium - 8 tygodni",
       rating: 5,
-      review:
-        "Po czterdziestce myślałam, że już za późno na zmiany. Filip udowodnił mi, że się myliłam! Jego indywidualne podejście i cierpliwość sprawiły, że treningi stały się moją pasją. Czuję się lepiej niż 10 lat temu!",
+      review: "chuj",
       results: "Poprawiła kondycję, zbudowała siłę, zwiększyła energię",
       image: "/placeholder.svg?height=80&width=80",
     },
@@ -43,8 +40,7 @@ export default function ReviewsPage() {
       age: 24,
       program: "Plan Podstawowy - 4 tygodnie",
       rating: 5,
-      review:
-        "Jako początkujący bałem się, że nie dam rady. Filip prowadził mnie krok po kroku, wyjaśniając każde ćwiczenie. Po miesiącu widziałem pierwsze efekty i kontynuowałem z planem Premium. Świetny start!",
+      review: "chuj",
       results: "Nauczył się podstaw, zbudował motywację do dalszego treningu",
       image: "/placeholder.svg?height=80&width=80",
     },
@@ -53,8 +49,7 @@ export default function ReviewsPage() {
       age: 31,
       program: "Plan VIP - 12 tygodni",
       rating: 5,
-      review:
-        "Filip to nie tylko trener, ale też mentor i motywator. Jego holistyczne podejście do zdrowia i fitness zmieniło moje życie. Nauczyłam się nie tylko trenować, ale też dbać o siebie kompleksowo.",
+      review: "chuj",
       results: "Całkowita transformacja stylu życia, -15kg, +100% energii",
       image: "/placeholder.svg?height=80&width=80",
     },
@@ -63,19 +58,19 @@ export default function ReviewsPage() {
       age: 29,
       program: "Plan Premium - 8 tygodni",
       rating: 5,
-      review:
-        "Pracuję w korporacji i miałem bardzo mało czasu. Filip stworzył plan, który idealnie wpisał się w mój grafik. Efekty przeszły moje najśmielsze oczekiwania - w 8 tygodni zmieniłem się nie do poznania!",
-      results: "Zoptymalizował czas, zbudował masę mięśniową, poprawił samopoczucie",
+      review: "chuj",
+      results:
+        "Zoptymalizował czas, zbudował masę mięśniową, poprawił samopoczucie",
       image: "/placeholder.svg?height=80&width=80",
     },
-  ]
+  ];
 
   const stats = [
     { number: "461+", label: "Zadowolonych klientów" },
     { number: "99%", label: "Skuteczność planów" },
     { number: "4.9/5", label: "Średnia ocena" },
     { number: "95%", label: "Poleca znajomym" },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -84,13 +79,17 @@ export default function ReviewsPage() {
       {/* Hero Section */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
             <h1 className="text-3xl md:text-5xl font-bold mb-6">
               <span className="text-red-500">Opinie</span> moich podopiecznych
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              Prawdziwe historie, prawdziwe rezultaty. Zobacz, co mówią osoby, które zaufały mojemu doświadczeniu i
-              osiągnęły swoje cele.
+              Prawdziwe historie, prawdziwe rezultaty. Zobacz, co mówią osoby,
+              które zaufały mojemu doświadczeniu i osiągnęły swoje cele.
             </p>
           </motion.div>
         </div>
@@ -109,7 +108,9 @@ export default function ReviewsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="text-2xl md:text-4xl font-bold text-red-500 mb-2">{stat.number}</div>
+                <div className="text-2xl md:text-4xl font-bold text-red-500 mb-2">
+                  {stat.number}
+                </div>
                 <div className="text-gray-400">{stat.label}</div>
               </motion.div>
             ))}
@@ -127,8 +128,12 @@ export default function ReviewsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">Co mówią moi klienci</h2>
-            <p className="text-lg md:text-xl text-gray-300">Każda opinia to historia prawdziwej transformacji</p>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">
+              Co mówią moi klienci
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300">
+              Każda opinia to historia prawdziwej transformacji
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -149,24 +154,34 @@ export default function ReviewsPage() {
                         className="w-16 h-16 rounded-full"
                       />
                       <div>
-                        <h4 className="font-bold text-base md:text-lg">{review.name}</h4>
-                        <p className="text-gray-400 text-sm">{review.age} lat</p>
+                        <h4 className="font-bold text-base md:text-lg">
+                          {review.name}
+                        </h4>
+                        <p className="text-gray-400 text-sm">
+                          {review.age} lat
+                        </p>
                         <p className="text-red-500 text-sm">{review.program}</p>
                       </div>
                     </div>
 
                     <div className="flex gap-1 mb-4">
                       {[...Array(review.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-yellow-400 text-yellow-400"
+                        />
                       ))}
                     </div>
 
                     <Quote className="w-6 h-6 text-red-500 mb-3" />
-                    <p className="text-gray-300 mb-4 leading-relaxed">"{review.review}"</p>
+                    <p className="text-gray-300 mb-4 leading-relaxed">
+                      "{review.review}"
+                    </p>
 
                     <div className="border-t border-gray-800 pt-4">
                       <p className="text-sm text-gray-400">
-                        <strong className="text-red-500">Rezultaty:</strong> {review.results}
+                        <strong className="text-red-500">Rezultaty:</strong>{" "}
+                        {review.results}
                       </p>
                     </div>
                   </CardContent>
@@ -179,5 +194,5 @@ export default function ReviewsPage() {
 
       <ModernFooter />
     </div>
-  )
+  );
 }

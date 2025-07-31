@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { Header } from "@/components/header"
-import { ModernFooter } from "@/components/modern-footer"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { motion } from "framer-motion"
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react"
-import { useState } from "react"
+import { Header } from "@/components/header";
+import { ModernFooter } from "@/components/modern-footer";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -20,25 +20,25 @@ export default function ContactPage() {
     phone: "",
     subject: "",
     message: "",
-  })
+  });
 
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6 text-red-500" />,
       title: "Email",
-      content: "kontakt@filiprozmus.pl",
+      content: "filipzabijaka.pl",
       description: "Odpowiadam w ciągu 24 godzin",
     },
     {
       icon: <Phone className="w-6 h-6 text-red-500" />,
       title: "Telefon",
-      content: "+48 123 456 789",
+      content: "+48 6969696969",
       description: "Pon-Pt: 9:00-18:00",
     },
     {
       icon: <MapPin className="w-6 h-6 text-red-500" />,
       title: "Lokalizacja",
-      content: "Warszawa, Polska",
+      content: "Zacisze, Polska",
       description: "Treningi online i stacjonarne",
     },
     {
@@ -47,20 +47,22 @@ export default function ContactPage() {
       content: "Pon-Pt: 9:00-18:00",
       description: "Sob: 10:00-14:00",
     },
-  ]
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission
-    console.log("Form submitted:", formData)
-  }
+    console.log("Form submitted:", formData);
+  };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -69,13 +71,17 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
             <h1 className="text-3xl md:text-5xl font-bold mb-6">
               <span className="text-red-500">Skontaktuj się</span> ze mną
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              Masz pytania? Chcesz rozpocząć swoją transformację? Napisz do mnie - odpowiem na wszystkie Twoje
-              wątpliwości.
+              Masz pytania? Chcesz rozpocząć swoją transformację? Napisz do mnie
+              - odpowiem na wszystkie Twoje wątpliwości.
             </p>
           </motion.div>
         </div>
@@ -95,8 +101,12 @@ export default function ContactPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <div className="flex justify-center mb-4">{info.icon}</div>
-                <h3 className="text-lg md:text-xl font-bold mb-2">{info.title}</h3>
-                <p className="text-base md:text-lg text-white mb-1">{info.content}</p>
+                <h3 className="text-lg md:text-xl font-bold mb-2">
+                  {info.title}
+                </h3>
+                <p className="text-base md:text-lg text-white mb-1">
+                  {info.content}
+                </p>
                 <p className="text-gray-400 text-sm">{info.description}</p>
               </motion.div>
             ))}
@@ -220,14 +230,19 @@ export default function ContactPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <div>
-                <h2 className="text-xl md:text-3xl font-bold mb-6">Dlaczego warto się skontaktować?</h2>
+                <h2 className="text-xl md:text-3xl font-bold mb-6">
+                  Dlaczego warto się skontaktować?
+                </h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <MessageCircle className="w-6 h-6 text-red-500 mt-1" />
                     <div>
-                      <h3 className="font-semibold mb-1">Bezpłatna konsultacja</h3>
+                      <h3 className="font-semibold mb-1">
+                        Bezpłatna konsultacja
+                      </h3>
                       <p className="text-gray-400">
-                        Pierwsza rozmowa jest zawsze darmowa - omówimy Twoje cele i możliwości
+                        Pierwsza rozmowa jest zawsze darmowa - omówimy Twoje
+                        cele i możliwości
                       </p>
                     </div>
                   </div>
@@ -235,41 +250,55 @@ export default function ContactPage() {
                     <Clock className="w-6 h-6 text-red-500 mt-1" />
                     <div>
                       <h3 className="font-semibold mb-1">Szybka odpowiedź</h3>
-                      <p className="text-gray-400">Odpowiadam na wszystkie wiadomości w ciągu 24 godzin</p>
+                      <p className="text-gray-400">
+                        Odpowiadam na wszystkie wiadomości w ciągu 24 godzin
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Mail className="w-6 h-6 text-red-500 mt-1" />
                     <div>
-                      <h3 className="font-semibold mb-1">Indywidualne podejście</h3>
-                      <p className="text-gray-400">Każda rozmowa jest dostosowana do Twoich potrzeb i celów</p>
+                      <h3 className="font-semibold mb-1">
+                        Indywidualne podejście
+                      </h3>
+                      <p className="text-gray-400">
+                        Każda rozmowa jest dostosowana do Twoich potrzeb i celów
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                <h3 className="text-lg md:text-xl font-bold mb-4">Często zadawane pytania</h3>
+                <h3 className="text-lg md:text-xl font-bold mb-4">
+                  Często zadawane pytania
+                </h3>
                 <div className="space-y-3 text-sm">
                   <p>
-                    <strong className="text-red-500">Q:</strong> Czy oferujesz treningi stacjonarne?
+                    <strong className="text-red-500">Q:</strong> Czy oferujesz
+                    treningi stacjonarne?
                   </p>
                   <p className="text-gray-400 mb-4">
-                    <strong>A:</strong> Tak, prowadzę treningi zarówno online jak i stacjonarne w Warszawie.
+                    <strong>A:</strong> Tak, prowadzę treningi zarówno online
+                    jak i stacjonarne w Warszawie.
                   </p>
 
                   <p>
-                    <strong className="text-red-500">Q:</strong> Ile kosztuje konsultacja?
+                    <strong className="text-red-500">Q:</strong> Ile kosztuje
+                    konsultacja?
                   </p>
                   <p className="text-gray-400 mb-4">
-                    <strong>A:</strong> Pierwsza konsultacja jest bezpłatna, kolejne ustalamy indywidualnie.
+                    <strong>A:</strong> Pierwsza konsultacja jest bezpłatna,
+                    kolejne ustalamy indywidualnie.
                   </p>
 
                   <p>
-                    <strong className="text-red-500">Q:</strong> Jak długo trwa plan treningowy?
+                    <strong className="text-red-500">Q:</strong> Jak długo trwa
+                    plan treningowy?
                   </p>
                   <p className="text-gray-400">
-                    <strong>A:</strong> Oferuję plany od 4 do 12 tygodni, w zależności od Twoich celów.
+                    <strong>A:</strong> Oferuję plany od 4 do 12 tygodni, w
+                    zależności od Twoich celów.
                   </p>
                 </div>
               </div>
@@ -280,5 +309,5 @@ export default function ContactPage() {
 
       <ModernFooter />
     </div>
-  )
+  );
 }

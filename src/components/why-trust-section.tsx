@@ -13,11 +13,7 @@ export function WhyTrustSection() {
               Dlaczego warto mi zaufać?
             </h2>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              Jestem doświadczonym trenerem personalnym z solidnym
-              wykształceniem w dziedzinie programowania treningowego. Moje
-              wieloletnie doświadczenie pozwoliło mi na zdobycie szerokiej
-              wiedzy i umiejętności, które mogę wykorzystać, aby pomóc Ci w
-              osiągnięciu Twoich celów treningowych.
+              nie warto
             </p>
           </div>
 

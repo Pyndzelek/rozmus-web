@@ -28,8 +28,8 @@ export function TrainingPlanSection() {
                   Organizacja
                 </h3>
                 <p className="text-gray-300">
-                  Posiadanie planu treningowego ułatwia skoncentrowanie się na
-                  celach i efektywne wykorzystanie czasu treningowego.
+                  Jestem niezorgannizowanym debilem, ale plan treningowy pomoże
+                  Ci zorganizować siebie
                 </p>
               </div>
             </div>
@@ -41,9 +41,9 @@ export function TrainingPlanSection() {
                   Wydajność
                 </h3>
                 <p className="text-gray-300">
-                  Posiadanie dobrze rozpisanego planu treningowego jest
-                  niezbędne, jeżeli zależy Ci na wykorzystaniu Twojego
-                  potencjału w 100%.
+                  nie przebiegne 400 metrów bo sie za bardzo spompuje, ale mój
+                  plan treningowy pomoże Ci zwiększyć wydajność i osiągnąć
+                  lepsze wyniki.
                 </p>
               </div>
             </div>
@@ -55,39 +55,11 @@ export function TrainingPlanSection() {
                   Bezpieczeństwo
                 </h3>
                 <p className="text-gray-300">
-                  Posiadanie mądre rozpisanego planu treningowego pozwoli Ci
-                  uniknąć przetrenowania i kontuzji.
+                  Nie jestem w stanie zapewnić Ci bezpieczeństwa, ale plan
+                  treningowy pomoże Ci unikać kontuzji i trenować bezpiecznie.
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-6">
-              Plan treningowy to Twoja droga do sukcesu!
-            </h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-6">
-              W treningu siłowym chodzi o maksymalizację zysków i indukowanie
-              zmęczenia, plan treningowy z odpowiednio dobranymi ćwiczeniami,
-              objętością i intensywnością pozwoli Ci osiągnąć progresywne
-              przeciążenie, dzięki któremu osiągniesz rezultaty treningowe. Nie
-              czekaj długo — zainwestuj w swój rozwój i osiągnij wspaniałe
-              rezultaty dzięki dostosowanemu do Twoich potrzeb planowi
-              treningowemu.
-            </p>
-            <div className="text-red-500 font-semibold mb-4">MOJA OFERTA</div>
-          </div>
-
-          <div className="relative">
-            <Image
-              src="/rozmus_las.JPG"
-              alt="Trainer in gym"
-              width={500}
-              height={600}
-              className="rounded-lg"
-            />
           </div>
         </div>
       </div>
