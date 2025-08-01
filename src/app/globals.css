@@ -134,7 +134,7 @@
 }
 
 [data-radix-slider-track] {
-  background-color: rgb(55 65 81); /* gray-700 */
+  background-color: rgb(55 65 81);
   position: relative;
   flex-grow: 1;
   border-radius: 9999px;
@@ -143,7 +143,7 @@
 
 [data-radix-slider-range] {
   position: absolute;
-  background: linear-gradient(90deg, #dc2626, #ef4444); /* red gradient */
+  background: linear-gradient(90deg, #dc2626, #ef4444);
   border-radius: 9999px;
   height: 100%;
 }
@@ -152,7 +152,7 @@
   display: block;
   width: 20px;
   height: 20px;
-  background-color: #dc2626; /* red-600 */
+  background-color: #dc2626;
   border: 2px solid white;
   border-radius: 50%;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -160,7 +160,7 @@
 }
 
 [data-radix-slider-thumb]:hover {
-  background-color: #b91c1c; /* red-700 */
+  background-color: #b91c1c;
   transform: scale(1.1);
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
@@ -170,27 +170,127 @@
   box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.3);
 }
 
-/* COMPLETE SCROLL RESET - Remove ALL potential scroll interference */
+/* COMPLETE SCROLL RESET */
 * {
-  /* Reset all scroll-related properties */
   scroll-behavior: auto !important;
   scroll-snap-type: none !important;
   scroll-snap-align: none !important;
   scroll-snap-stop: normal !important;
   scroll-margin: 0 !important;
   scroll-padding: 0 !important;
-
-  /* Remove GPU acceleration and transforms that interfere */
   transform: none !important;
   will-change: auto !important;
   contain: none !important;
-
-  /* Remove any momentum interference */
   overscroll-behavior: auto !important;
   -webkit-overflow-scrolling: auto !important;
-
-  /* Ensure proper box model */
   box-sizing: border-box;
+}
+
+/* HEADER EXCEPTIONS - Ensure header is fully interactive */
+header,
+header *,
+header a,
+header button,
+header nav,
+header nav *,
+.header-logo,
+.header-nav,
+.header-button {
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  user-select: auto !important;
+  cursor: pointer !important;
+}
+
+/* Specific header positioning and interaction fixes */
+header {
+  position: relative !important;
+  z-index: 100 !important;
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+}
+
+/* Ensure header links and buttons are interactive */
+header a,
+header button {
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+/* Fix any potential overlay issues */
+header::before,
+header::after {
+  pointer-events: none !important;
+}
+
+/* MOBILE MENU AND SHEET EXCEPTIONS */
+.mobile-menu-button,
+.mobile-menu-button *,
+.mobile-menu-icon,
+.mobile-menu-backdrop,
+.mobile-menu-panel,
+.mobile-menu-panel *,
+.mobile-menu-item,
+.mobile-menu-item *,
+.mobile-menu-footer,
+.mobile-menu-footer *,
+.mobile-menu-close,
+header,
+header *,
+header a,
+header button,
+header nav,
+[data-radix-dialog-overlay],
+[data-radix-dialog-content],
+[data-radix-dialog-close],
+[data-state="open"],
+[data-state="closed"],
+.sheet-overlay,
+.sheet-content,
+.sheet-header,
+.sheet-footer,
+.sheet-title,
+.sheet-description,
+.sheet-close,
+[role="dialog"],
+[role="alertdialog"],
+[data-radix-popper-content-wrapper],
+[data-radix-focus-scope],
+[data-radix-dismissable-layer] {
+  transform: initial !important;
+  will-change: initial !important;
+  contain: initial !important;
+  scroll-behavior: initial !important;
+  overscroll-behavior: initial !important;
+  -webkit-overflow-scrolling: initial !important;
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+}
+
+/* Specific mobile menu animations */
+.mobile-menu-icon {
+  transform-origin: center;
+}
+
+/* Shadcn Sheet specific styles */
+[data-radix-dialog-overlay] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 110 !important;
+}
+
+[data-radix-dialog-content] {
+  position: fixed !important;
+  z-index: 120 !important;
+  transform-origin: right center;
 }
 
 /* Root elements - ensure clean scrolling foundation */
@@ -214,25 +314,23 @@ body {
   position: static;
   margin: 0;
   padding: 0;
-
-  /* Completely disable momentum scrolling that causes issues */
   -webkit-overflow-scrolling: auto !important;
   overscroll-behavior: none !important;
   scroll-behavior: auto !important;
-
-  /* Remove touch interference */
   touch-action: auto !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Ensure all elements don't interfere with scroll */
-header,
 main,
 section,
 footer,
-div,
+div:not([class*="mobile-menu"]),
 article,
 aside,
-nav {
+nav:not([class*="mobile-menu"]) {
   transform: none !important;
   will-change: auto !important;
   contain: none !important;
@@ -244,7 +342,7 @@ nav {
 /* Fix any potential overflow issues */
 .container,
 section,
-div {
+div:not([class*="mobile-menu"]) {
   max-width: 100%;
 }
 
@@ -254,13 +352,8 @@ video,
 iframe {
   max-width: 100%;
   height: auto;
-}
-
-/* EXCEPTION: Allow only essential hover effects - but no transforms during scroll */
-button:hover,
-a:hover {
-  transform: none !important;
-  will-change: auto !important;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* EXCEPTION: Only allow slider thumb scaling */
@@ -268,60 +361,36 @@ a:hover {
   transform: scale(1.1) !important;
 }
 
-/* Mobile-specific complete reset */
+/* Mobile-specific header fixes */
 @media (max-width: 768px) {
-  * {
-    -webkit-overflow-scrolling: auto !important;
-    overscroll-behavior: none !important;
-    scroll-behavior: auto !important;
-    touch-action: auto !important;
+  header,
+  header *,
+  header a,
+  header button {
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
   }
 
-  html {
-    height: 100%;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: auto !important;
-    overscroll-behavior: none !important;
+  header {
+    position: relative !important;
+    z-index: 100 !important;
   }
 
-  body {
-    height: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
-    -webkit-overflow-scrolling: auto !important;
-    overscroll-behavior: none !important;
-    touch-action: auto !important;
-  }
-}
-
-/* Disable all motion that could interfere with scroll */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-    transform: none !important;
-    will-change: auto !important;
+  [data-radix-dialog-content] {
+    height: 100vh !important;
+    height: 100dvh !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
-/* Text rendering optimization without scroll interference */
-body {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Image rendering optimization */
-img {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-}
-
-/* Layout spacing - no transforms or special positioning */
+/* Layout spacing */
 section {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -391,7 +460,7 @@ footer {
   }
 }
 
-/* Container centering without transforms */
+/* Container centering */
 .max-w-7xl,
 .max-w-6xl,
 .max-w-5xl,
@@ -431,4 +500,12 @@ main {
   min-height: 100vh;
   min-height: 100dvh;
   position: static;
+}
+
+/* Prevent body scroll when mobile menu is open */
+body:has([data-state="open"]),
+body.mobile-menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
