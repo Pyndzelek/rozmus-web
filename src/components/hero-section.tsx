@@ -94,7 +94,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative flex justify-center">
+          <div className="relative flex justify-center overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform rotate-12"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -rotate-12"></div>
             <Image
