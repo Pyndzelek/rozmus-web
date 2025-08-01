@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export function ServicesSection() {
   return (
-    <section className="bg-black text-white py-20">
+    <section className="bg-black text-white py-10 md:py-20">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16">
           Odkryj swoją drogę do piekła
@@ -17,16 +17,16 @@ export function ServicesSection() {
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             whileHover={{ y: -10 }}
           >
             <motion.div
-              className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-red-500 transition-colors"
+              className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-red-500 transition-colors"
               whileHover={{ scale: 1.1 }}
             >
               <Target className="w-8 h-8 text-white" />
             </motion.div>
-            <h3 className="text-lg md:text-2xl font-bold mb-4 group-hover:text-red-500 transition-colors">
+            <h3 className="text-lg md:text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">
               Prowadzenie online
             </h3>
           </motion.div>
@@ -40,12 +40,12 @@ export function ServicesSection() {
             whileHover={{ y: -10 }}
           >
             <motion.div
-              className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-red-500 transition-colors"
+              className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-red-500 transition-colors"
               whileHover={{ scale: 1.1 }}
             >
               <Calendar className="w-8 h-8 text-white" />
             </motion.div>
-            <h3 className="text-lg md:text-2xl font-bold mb-4 group-hover:text-red-500 transition-colors">
+            <h3 className="text-lg md:text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">
               Plany treningowe
             </h3>
           </motion.div>
@@ -59,7 +59,7 @@ export function ServicesSection() {
             whileHover={{ y: -10 }}
           >
             <motion.div
-              className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-red-500 transition-colors"
+              className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-red-500 transition-colors"
               whileHover={{ scale: 1.1 }}
             >
               <Utensils className="w-8 h-8 text-white" />

@@ -7,28 +7,27 @@ import { Card, CardContent } from "@/components/ui/card";
 export function TestimonialsSection() {
   const testimonials = [
     {
-      name: "Anna Kowalska",
-      role: "Klientka od 8 miesięcy",
+      name: "Karolina Żółta",
+      role: "Podopieczna od roku",
       content:
-        "Dzięki Miłoszowi schudłam 15kg i czuję się fantastycznie! Plan treningowy był idealnie dopasowany do moich możliwości.",
-      rating: 5,
+        "Po treningu mieliśmy PIĘCIOSEKUNDOWE cardio. Troche lipa więc rezygnuje z dalszej współpracy.",
+      rating: 1,
       image: "/przemiany/przemiana1.jpeg",
     },
     {
-      name: "Piotr Nowak",
-      role: "Klient od roku",
+      name: "Anna Sranna",
+      role: "Podopieczna od 8 miesięcy",
       content:
-        "Profesjonalne podejście i motywacja na najwyższym poziomie. Osiągnąłem cele, o których marzyłem od lat!",
-      rating: 5,
-      image: "/przemiany/przemiana4.jpeg",
-    },
-    {
-      name: "Magdalena Wiśniewska",
-      role: "Klientka od 6 miesięcy",
-      content:
-        "Indywidualne podejście i stały kontakt sprawiły, że treningi stały się moją pasją, a nie obowiązkiem.",
+        "Zesrałam się ze śmiechu, ale też zbudowałam formę! Filip to prawdziwy pajac.",
       rating: 5,
       image: "/przemiany/przemiana3.jpeg",
+    },
+    {
+      name: "Polaczek Księżycowy",
+      role: "Podopieczna od 6 miesięcy",
+      content: "W sieni siedzą i kupe sobie jedzą",
+      rating: 5,
+      image: "/przemiany/przemiana4.jpeg",
     },
   ];
 
@@ -63,7 +62,7 @@ export function TestimonialsSection() {
                 <CardContent className="p-6">
                   <Quote className="w-8 h-8 text-red-500 mb-4" />
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    &quote;{testimonial.content}&quote;
+                    &quot;{testimonial.content}&quot;
                   </p>
 
                   <div className="flex items-center gap-4">
@@ -73,7 +72,9 @@ export function TestimonialsSection() {
                       className="w-12 h-12 rounded-full"
                     />
                     <div>
-                      <h4 className="font-semibold">{testimonial.name}</h4>
+                      <h4 className="font-semibold text-white/70">
+                        {testimonial.name}
+                      </h4>
                       <p className="text-sm text-gray-400">
                         {testimonial.role}
                       </p>

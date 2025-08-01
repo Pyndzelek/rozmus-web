@@ -15,7 +15,7 @@ export default function ReviewsPage() {
       rating: 5,
       review: "Filip to chuj",
       results: "Schudła 12kg, zbudowała pewność siebie",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/przemiany/przemiana4.jpeg",
     },
     {
       name: "Piotr Nowak",
@@ -24,7 +24,7 @@ export default function ReviewsPage() {
       rating: 5,
       review: "chuj",
       results: "Zbudował 8kg masy mięśniowej, zmienił nawyki żywieniowe",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/przemiany/przemiana4.jpeg",
     },
     {
       name: "Magdalena Wiśniewska",
@@ -33,7 +33,7 @@ export default function ReviewsPage() {
       rating: 5,
       review: "chuj",
       results: "Poprawiła kondycję, zbudowała siłę, zwiększyła energię",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/przemiany/przemiana4.jpeg",
     },
     {
       name: "Jakub Kowalczyk",
@@ -42,7 +42,7 @@ export default function ReviewsPage() {
       rating: 5,
       review: "chuj",
       results: "Nauczył się podstaw, zbudował motywację do dalszego treningu",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/przemiany/przemiana4.jpeg",
     },
     {
       name: "Karolina Nowacka",
@@ -51,7 +51,7 @@ export default function ReviewsPage() {
       rating: 5,
       review: "chuj",
       results: "Całkowita transformacja stylu życia, -15kg, +100% energii",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/przemiany/przemiana4.jpeg",
     },
     {
       name: "Tomasz Wiśniewski",
@@ -61,7 +61,7 @@ export default function ReviewsPage() {
       review: "chuj",
       results:
         "Zoptymalizował czas, zbudował masę mięśniową, poprawił samopoczucie",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/przemiany/przemiana4.jpeg",
     },
   ];
 
@@ -175,7 +175,7 @@ export default function ReviewsPage() {
 
                     <Quote className="w-6 h-6 text-red-500 mb-3" />
                     <p className="text-gray-300 mb-4 leading-relaxed">
-                      &quote;{review.review}&quote;
+                      &quot;{review.review}&quot;
                     </p>
 
                     <div className="border-t border-gray-800 pt-4">

@@ -21,7 +21,7 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-20">
+      <section className="md:py-20 pt-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -60,7 +60,7 @@ export default function AboutPage() {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="md:py-20 py-10 bg-gray-900">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             className="text-center mb-16"
@@ -101,7 +101,7 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-20">
+      <section className="md:py-20 py-10">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -116,7 +116,7 @@ export default function AboutPage() {
               Biało białko białko
             </p>
             <p className="text-base md:text-lg text-gray-400">
-              &quote;Granulocyty&quote;
+              &quot;Granulocyty&quot;
             </p>
           </motion.div>
         </div>
