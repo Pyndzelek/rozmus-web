@@ -170,28 +170,75 @@
   box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.3);
 }
 
-/* Fix mobile viewport and scrolling issues */
+/* COMPLETE SCROLL RESET - Remove ALL potential scroll interference */
+* {
+  /* Reset all scroll-related properties */
+  scroll-behavior: auto !important;
+  scroll-snap-type: none !important;
+  scroll-snap-align: none !important;
+  scroll-snap-stop: normal !important;
+  scroll-margin: 0 !important;
+  scroll-padding: 0 !important;
+
+  /* Remove GPU acceleration and transforms that interfere */
+  transform: none !important;
+  will-change: auto !important;
+  contain: none !important;
+
+  /* Remove any momentum interference */
+  overscroll-behavior: auto !important;
+  -webkit-overflow-scrolling: auto !important;
+
+  /* Ensure proper box model */
+  box-sizing: border-box;
+}
+
+/* Root elements - ensure clean scrolling foundation */
 html {
-  height: auto;
-  min-height: 100%;
+  height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
+  scroll-behavior: auto !important;
+  overscroll-behavior: none !important;
+  -webkit-overflow-scrolling: auto !important;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
 body {
-  height: auto;
+  height: 100%;
   min-height: 100vh;
-  min-height: 100dvh; /* Dynamic viewport height for mobile */
+  min-height: 100dvh;
   overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
+  overflow-y: visible;
+  position: static;
+  margin: 0;
+  padding: 0;
+
+  /* Completely disable momentum scrolling that causes issues */
+  -webkit-overflow-scrolling: auto !important;
+  overscroll-behavior: none !important;
+  scroll-behavior: auto !important;
+
+  /* Remove touch interference */
+  touch-action: auto !important;
 }
 
-/* Ensure all containers respect viewport width */
-* {
-  box-sizing: border-box;
+/* Ensure all elements don't interfere with scroll */
+header,
+main,
+section,
+footer,
+div,
+article,
+aside,
+nav {
+  transform: none !important;
+  will-change: auto !important;
+  contain: none !important;
+  scroll-snap-align: none !important;
+  scroll-snap-stop: normal !important;
+  overscroll-behavior: auto !important;
 }
 
 /* Fix any potential overflow issues */
@@ -209,61 +256,45 @@ iframe {
   height: auto;
 }
 
-/* Reset all scroll-related properties that might cause issues */
-html,
-body {
-  scroll-behavior: auto;
-  overscroll-behavior: auto;
-  -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
-}
-
-/* Remove any transforms or GPU acceleration that might interfere */
-* {
-  transform: none;
-  will-change: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Exception for intentional animations */
-[data-motion],
-.motion-div,
+/* EXCEPTION: Allow only essential hover effects - but no transforms during scroll */
 button:hover,
 a:hover {
-  transform: initial;
-  will-change: initial;
+  transform: none !important;
+  will-change: auto !important;
 }
 
-/* Mobile-specific fixes */
+/* EXCEPTION: Only allow slider thumb scaling */
+[data-radix-slider-thumb]:hover {
+  transform: scale(1.1) !important;
+}
+
+/* Mobile-specific complete reset */
 @media (max-width: 768px) {
+  * {
+    -webkit-overflow-scrolling: auto !important;
+    overscroll-behavior: none !important;
+    scroll-behavior: auto !important;
+    touch-action: auto !important;
+  }
+
   html {
-    height: auto;
-    min-height: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: auto !important;
+    overscroll-behavior: none !important;
   }
 
   body {
-    height: auto;
+    height: 100%;
     min-height: 100vh;
     min-height: 100dvh;
-    position: relative;
-  }
-
-  /* Ensure sections have proper height on mobile */
-  section {
-    min-height: auto;
-    height: auto;
-  }
-
-  /* Fix hero section height on mobile */
-  section:first-of-type {
-    min-height: auto;
-    height: auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    -webkit-overflow-scrolling: auto !important;
+    overscroll-behavior: none !important;
+    touch-action: auto !important;
   }
 }
 
-/* Reduce motion for users who prefer it */
+/* Disable all motion that could interfere with scroll */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -272,69 +303,73 @@ a:hover {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+    transform: none !important;
+    will-change: auto !important;
   }
 }
 
-/* Optimize image rendering */
-img {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-}
-
-/* Optimize text rendering */
+/* Text rendering optimization without scroll interference */
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Consistent horizontal padding for all sections */
-section {
-  padding-left: 1.5rem; /* 24px on mobile */
-  padding-right: 1.5rem; /* 24px on mobile */
-  padding-top: 3rem; /* 48px */
-  padding-bottom: 3rem; /* 48px */
+/* Image rendering optimization */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
-/* Responsive padding adjustments */
+/* Layout spacing - no transforms or special positioning */
+section {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  position: static;
+  display: block;
+}
+
 @media (min-width: 640px) {
   section {
-    padding-left: 2rem; /* 32px */
-    padding-right: 2rem; /* 32px */
-    padding-top: 4rem; /* 64px */
-    padding-bottom: 4rem; /* 64px */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 
 @media (min-width: 1024px) {
   section {
-    padding-left: 3rem; /* 48px */
-    padding-right: 3rem; /* 48px */
-    padding-top: 5rem; /* 80px */
-    padding-bottom: 5rem; /* 80px */
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 }
 
 @media (min-width: 1280px) {
   section {
-    padding-left: 6rem; /* 96px */
-    padding-right: 6rem; /* 96px */
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 }
 
-/* Consistent horizontal padding for footer */
+/* Footer spacing */
 footer {
-  padding-left: 1.5rem; /* 24px on mobile */
-  padding-right: 1.5rem; /* 24px on mobile */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  position: static;
+  display: block;
 }
 
-/* Responsive padding adjustments for footer */
 @media (min-width: 640px) {
   footer {
-    padding-left: 2rem; /* 32px */
-    padding-right: 2rem; /* 32px */
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
@@ -342,8 +377,8 @@ footer {
 
 @media (min-width: 1024px) {
   footer {
-    padding-left: 3rem; /* 48px */
-    padding-right: 3rem; /* 48px */
+    padding-left: 3rem;
+    padding-right: 3rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
@@ -351,12 +386,12 @@ footer {
 
 @media (min-width: 1280px) {
   footer {
-    padding-left: 6rem; /* 96px */
-    padding-right: 6rem; /* 96px */
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 }
 
-/* Ensure max-width containers are centered and have consistent spacing */
+/* Container centering without transforms */
 .max-w-7xl,
 .max-w-6xl,
 .max-w-5xl,
@@ -367,39 +402,20 @@ footer {
   padding-right: 0;
 }
 
-/* Remove body padding since header is no longer fixed */
-body {
-  padding-top: 0;
-}
-
-/* Ensure natural scrolling behavior */
-html {
-  scroll-behavior: auto;
-}
-
-/* Fix main content area */
+/* Page structure */
 main {
   display: block;
   width: 100%;
-  height: auto;
-  min-height: 100vh;
-  min-height: 100dvh;
+  position: static;
 }
 
-/* Ensure page wrapper has proper height */
 .min-h-screen {
   min-height: 100vh;
   min-height: 100dvh;
   height: auto;
 }
 
-/* Fix touch scrolling on mobile */
-body {
-  touch-action: manipulation;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Prevent zoom on input focus on mobile */
+/* Input optimization for mobile */
 @media (max-width: 768px) {
   input,
   select,
@@ -408,10 +424,11 @@ body {
   }
 }
 
-/* Ensure content flows properly */
+/* Next.js specific */
 #__next,
 [data-nextjs-scroll-focus-boundary] {
   height: auto;
   min-height: 100vh;
   min-height: 100dvh;
+  position: static;
 }

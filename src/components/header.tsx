@@ -1,31 +1,31 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Dumbbell, Menu, X } from "lucide-react"
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import Link from "next/link";
+import { Dumbbell, Menu, X } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false)
-  }
+    setIsMobileMenuOpen(false);
+  };
 
   const navLinks = [
     { href: "/o-mnie", label: "O mnie" },
     { href: "/plany-treningowe", label: "Plany treningowe" },
     { href: "/opinie", label: "Opinie" },
     { href: "/kontakt", label: "Kontakt" },
-  ]
+  ];
 
   return (
     <>
-      <header className="bg-black text-white py-4 px-6 relative z-50">
+      <header className="relative bg-black text-white py-4 px-6 border-b border-gray-800 w-full">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
@@ -40,7 +40,11 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-red-500 transition-colors">
+              <Link
+                key={link.href}
+                href={link.href}
+                className="hover:text-red-500 transition-colors"
+              >
                 {link.label}
               </Link>
             ))}
@@ -52,8 +56,15 @@ export function Header() {
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
-            <motion.div animate={{ rotate: isMobileMenuOpen ? 90 : 0 }} transition={{ duration: 0.2 }}>
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <motion.div
+              animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </motion.div>
           </button>
         </div>
@@ -65,7 +76,7 @@ export function Header() {
           <>
             {/* Backdrop */}
             <motion.div
-              className="fixed inset-0 bg-black/50 z-40 md:hidden"
+              className="fixed inset-0 bg-black/50 z-[110] md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -74,7 +85,7 @@ export function Header() {
 
             {/* Mobile Menu */}
             <motion.div
-              className="fixed top-0 right-0 h-full w-80 bg-gray-900 z-50 md:hidden border-l border-gray-800"
+              className="fixed top-0 right-0 h-full w-80 bg-gray-900 z-[120] md:hidden border-l border-gray-800"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -89,7 +100,9 @@ export function Header() {
                     </div>
                     <div>
                       <div className="text-lg font-bold text-white">Filip</div>
-                      <div className="text-red-500 font-semibold text-sm">Rozmus</div>
+                      <div className="text-red-500 font-semibold text-sm">
+                        Rozmus
+                      </div>
                     </div>
                   </div>
                   <button
@@ -128,7 +141,9 @@ export function Header() {
                   transition={{ delay: 0.4, duration: 0.3 }}
                 >
                   <div className="text-center">
-                    <p className="text-gray-400 text-sm mb-4">Gotowy na przemianę?</p>
+                    <p className="text-gray-400 text-sm mb-4">
+                      Gotowy na przemianę?
+                    </p>
                     <Link
                       href="/kontakt"
                       onClick={closeMobileMenu}
@@ -148,5 +163,5 @@ export function Header() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }
