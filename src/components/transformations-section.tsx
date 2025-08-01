@@ -26,9 +26,9 @@ export function TransformationsSection() {
   const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
 
   return (
-    <section className="bg-black text-white py-20">
+    <section className="bg-black text-white py-10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
-        <h2 className="text-2xl md:text-4xl font-bold text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
           Przemiany moich podopiecznych
         </h2>
 
@@ -60,8 +60,8 @@ export function TransformationsSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="bg-red-600 hover:bg-red-700 text-white hover:text-white border-0 sm:flex" />
-          <CarouselNext className="bg-red-600 hover:bg-red-700 text-white hover:text-white border-0 sm:flex" />
+          <CarouselPrevious className="hidden bg-red-600 hover:bg-red-700 text-white hover:text-white border-0 sm:flex" />
+          <CarouselNext className="hidden bg-red-600 hover:bg-red-700 text-white hover:text-white border-0 sm:flex" />
         </Carousel>
       </div>
     </section>

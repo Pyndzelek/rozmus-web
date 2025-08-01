@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown } from "lucide-react"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
     {
@@ -33,7 +33,7 @@ export function FAQSection() {
       answer:
         "Pierwsze efekty widoczne są już po 2-3 tygodniach regularnego treningu. Znaczące zmiany sylwetki następują po 6-8 tygodniach, a spektakularne rezultaty po 3-6 miesiącach.",
     },
-  ]
+  ];
 
   return (
     <section className="bg-black text-white py-20">
@@ -45,8 +45,12 @@ export function FAQSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl md:text-4xl font-bold mb-4">Często zadawane pytania</h2>
-          <p className="text-lg md:text-xl text-gray-300">Znajdź odpowiedzi na najczęstsze pytania</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Często zadawane pytania
+          </h2>
+          <p className="text-lg md:text-xl text-gray-300">
+            Znajdź odpowiedzi na najczęstsze pytania
+          </p>
         </motion.div>
 
         <div className="space-y-4">
@@ -63,8 +67,13 @@ export function FAQSection() {
                 className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-900 transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="font-semibold text-base md:text-lg">{faq.question}</span>
-                <motion.div animate={{ rotate: openIndex === index ? 180 : 0 }} transition={{ duration: 0.2 }}>
+                <span className="font-semibold text-base md:text-lg">
+                  {faq.question}
+                </span>
+                <motion.div
+                  animate={{ rotate: openIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
                   <ChevronDown className="w-5 h-5 text-red-500" />
                 </motion.div>
               </button>
@@ -78,7 +87,9 @@ export function FAQSection() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-4 text-gray-300 leading-relaxed">{faq.answer}</div>
+                    <div className="px-6 pb-4 text-gray-300 leading-relaxed">
+                      {faq.answer}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -87,5 +98,5 @@ export function FAQSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
