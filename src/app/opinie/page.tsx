@@ -66,10 +66,10 @@ export default function ReviewsPage() {
   ];
 
   const stats = [
-    { number: "461+", label: "Zadowolonych klientów" },
-    { number: "99%", label: "Skuteczność planów" },
-    { number: "4.9/5", label: "Średnia ocena" },
-    { number: "95%", label: "Poleca znajomym" },
+    { number: "420+", label: "Zadowolonych klientów" },
+    { number: "69%", label: "Skuteczność planów" },
+    { number: "1/5", label: "Średnia ocena" },
+    { number: "95%", label: "Nie poleca znajomym" },
   ];
 
   return (
