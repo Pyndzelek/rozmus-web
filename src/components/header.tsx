@@ -21,6 +21,7 @@ export function Header() {
     { href: "/plany-treningowe", label: "Plany treningowe" },
     { href: "/opinie", label: "Opinie" },
     { href: "/kontakt", label: "Kontakt" },
+    { href: "/formularz", label: "Formularz" },
   ];
 
   return (

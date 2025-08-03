@@ -27,7 +27,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} h-auto min-h-screen`}>
-        <div className="h-auto min-h-screen">{children}</div>
+        <div className="h-auto min-h-screen overflow-hidden">{children}</div>
       </body>
     </html>
   );

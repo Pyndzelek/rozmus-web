@@ -56,14 +56,6 @@ export function ModernFooter() {
               >
                 <Facebook className="w-5 h-5" />
               </motion.a>
-              <motion.a
-                href="#"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Youtube className="w-5 h-5" />
-              </motion.a>
             </div>
           </div>
 
@@ -72,18 +64,18 @@ export function ModernFooter() {
             <h3 className="text-xl font-bold mb-6">Szybkie linki</h3>
             <ul className="space-y-3">
               {[
-                "O mnie",
-                "Prowadzenie indywidualne",
-                "Plany treningowe",
-                "Plany dietetyczne",
-                "Kontakt",
+                { href: "/o-mnie", label: "O mnie" },
+                { href: "/plany-treningowe", label: "Plany treningowe" },
+                { href: "/opinie", label: "Opinie" },
+                { href: "/kontakt", label: "Kontakt" },
+                { href: "/formularz", label: "Formularz" },
               ].map((item) => (
-                <li key={item}>
+                <li key={item.href}>
                   <Link
-                    href="#"
+                    href={item.href}
                     className="text-gray-300 hover:text-red-500 transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
