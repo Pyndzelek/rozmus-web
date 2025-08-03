@@ -33,7 +33,13 @@ export default function AboutPage() {
                 Poznaj <span className="text-red-500">mnie</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-                Jestem certyfikowanym zjebem
+                Nazywam się Filip Rozmus, mam 21 lat i na co dzień pracuję jako
+                trener personalny. Specjalizuję się w metamorfozach sylwetki
+                oraz poprawie wyników siłowych. Zanim zacząłem pomagać innym,
+                przeszedłem długą drogę, żeby poprawić swoją sylwetkę i wyniki.
+                Popełniłem masę błędów, ale to właśnie one dały mi najwięcej
+                doświadczenia. Teraz dzielę się wiedzą, którą zdobywałem przez
+                lata.
               </p>
               <div className="space-y-4 text-gray-300">
                 <p>✓ Brak wykształcenia</p>

@@ -25,7 +25,7 @@ interface FormData {
   height: string;
   weight: string;
   goals: string[];
-  trainingDays: string;
+  trainingDays: string[]; // FIX: Changed from string to string[]
   preferredDays: string[];
   activityLevel: string;
   sittingTime: string;
@@ -49,7 +49,7 @@ export function SurveyForm() {
     height: "",
     weight: "",
     goals: [],
-    trainingDays: "",
+    trainingDays: [], // FIX: Changed from "" to []
     preferredDays: [],
     activityLevel: "",
     sittingTime: "",
@@ -102,16 +102,21 @@ export function SurveyForm() {
         if (!height) newErrors.height = "Wzrost jest wymagany";
         else if (!/^\d+$/.test(height))
           newErrors.height = "Wprowadź prawidłowy wzrost w cm.";
+        else if (Number.parseInt(height) < 140 || Number.parseInt(height) > 220)
+          newErrors.height = "Wzrost musi być między 140 a 220 cm";
 
         if (!weight) newErrors.weight = "Waga jest wymagana";
         else if (!/^\d+$/.test(weight))
           newErrors.weight = "Wprowadź prawidłową wagę w kg.";
+        else if (Number.parseInt(weight) < 40 || Number.parseInt(weight) > 150)
+          newErrors.weight = "Waga musi być między 40 a 150 kg";
         break;
       case 2:
         if (goals.length === 0)
           newErrors.goals = ["Wybierz przynajmniej jeden cel treningowy"];
-        if (!trainingDays)
-          newErrors.trainingDays = "Wybierz liczbę dni treningowych";
+        // FIX: Changed validation from !trainingDays to length check
+        if (trainingDays.length === 0)
+          newErrors.trainingDays = ["Wybierz przynajmniej jedną opcję"];
         break;
       case 3:
         if (!activityLevel)
@@ -150,7 +155,8 @@ export function SurveyForm() {
     }
   };
 
-  const updateFormData = (field: keyof FormData, value: any) => {
+  // FIX: Replaced `any` with a specific type to fix the TypeScript error
+  const updateFormData = (field: keyof FormData, value: string | string[]) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: undefined }));
@@ -371,7 +377,6 @@ export function SurveyForm() {
                   <Label className="text-white mb-4 block">
                     Ile dni w tygodniu jesteś w stanie poświęcić na trening? *
                   </Label>
-                  {/* This grid provides responsive columns and consistent spacing */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                     {["2 dni", "3 dni", "4 dni", "5 dni", "6 dni", "7 dni"].map(
                       (days) => (
@@ -529,7 +534,6 @@ export function SurveyForm() {
                         <RadioGroupItem
                           value={time}
                           id={time}
-                          // This class forces the border to become red when checked
                           className="border-gray-600 data-[state=checked]:border-red-600 data-[state=checked]:bg-red-600"
                         />
                         <Label
@@ -631,8 +635,8 @@ export function SurveyForm() {
                   </Label>
                   <RadioGroup
                     value={formData.stressLevel}
-                    onValueChange={(value) =>
-                      updateFormData("stressLevel", value)
+                    onValueChange={
+                      (value) => updateFormData("stressLevel", value as string) // Casting here for type safety
                     }
                     className="space-y-2"
                   >
@@ -647,7 +651,7 @@ export function SurveyForm() {
                         <RadioGroupItem
                           value={level}
                           id={level}
-                          className="border-gray-600"
+                          className="border-gray-600 data-[state=checked]:border-red-600 data-[state=checked]:bg-red-600"
                         />
                         <Label
                           htmlFor={level}
@@ -741,7 +745,7 @@ export function SurveyForm() {
             onClick={prevStep}
             disabled={currentStep === 1}
             variant="outline"
-            className="border-gray-600 text-white hover:bg-gray-800 bg-transparent"
+            className="border-gray-600 text-white hover:bg-gray-800 bg-transparent disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <ChevronLeft className="w-4 h-4 md:mr-2" />
             <span className="hidden md:inline">Poprzedni</span>
