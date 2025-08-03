@@ -9,6 +9,7 @@ import {
   Instagram,
   Facebook,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export function ModernFooter() {
@@ -27,17 +28,18 @@ export function ModernFooter() {
           {/* Brand Section */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center">
-                <Dumbbell className="w-7 h-7 text-white" />
-              </div>
+              <Image
+                src="/logo_nlt.png"
+                alt="Filip Rozmus - Trener Personalny"
+                width={40}
+                height={40}
+              />
               <div>
                 <div className="text-2xl font-bold">Filip</div>
                 <div className="text-red-500 font-semibold">Rozmus</div>
               </div>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">
-              Człowiek, który nie szanuje innych, ale sam oczekuje szacunku.
-            </p>
+
             <div className="flex gap-4">
               <motion.a
                 href="#"
@@ -87,15 +89,17 @@ export function ModernFooter() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-red-500" />
-                <span className="text-gray-300">filipzabijaka@gmail.pl</span>
+                <span className="text-gray-300">rozmus.nlt@gmail.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-red-500" />
-                <span className="text-gray-300">+48 696969696</span>
+                <span className="text-gray-300">+48 513978894</span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-red-500" />
-                <span className="text-gray-300">Zacisze, Polska</span>
+                <span className="text-gray-300">
+                  Studio Gorce, Aleje tysiąclecia 74, 34-400 Nowy Targ
+                </span>
               </div>
             </div>
           </div>

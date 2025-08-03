@@ -106,28 +106,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section className="md:py-20 py-10">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl md:text-4xl font-bold mb-8">
-              Moja filozofia treningu
-            </h2>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
-              Biało białko białko
-            </p>
-            <p className="text-base md:text-lg text-gray-400">
-              &quot;Granulocyty&quot;
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       <ModernFooter />
     </div>
   );

@@ -14,6 +14,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 
 export function Header() {
   const navLinks = [
@@ -29,9 +30,12 @@ export function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo and Brand Name */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
-            <Dumbbell className="w-6 h-6 text-white" />
-          </div>
+          <Image
+            src="/logo_nlt.png"
+            alt="Filip Rozmus - Trener Personalny"
+            width={40}
+            height={40}
+          />
           <div>
             <div className="text-xl font-bold">Filip</div>
             <div className="text-red-500 font-semibold">Rozmus</div>
