@@ -22,7 +22,7 @@ export function MotivationSection() {
           <div className="relative">
             <Image
               src="/rozmus_motywacja.jpeg"
-              alt="Training app mockup"
+              alt="Motywacja"
               width={400}
               height={500}
               className="mx-auto rounded-2xl"

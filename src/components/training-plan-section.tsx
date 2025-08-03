@@ -12,7 +12,7 @@ export function TrainingPlanSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div className="relative">
             <Image
-              src="/rozmus_zjeb.jpeg"
+              src="/rozmus_plan.png"
               alt="Training app on phone"
               width={500}
               height={600}

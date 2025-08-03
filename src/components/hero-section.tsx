@@ -12,29 +12,29 @@ export function HeroSection() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      // Animate 420+ counter
+      // Animate 107+ counter
       const duration = 2000;
-      const increment = 420 / (duration / 16);
+      const increment = 107 / (duration / 16);
       let current = 0;
 
       const counter = setInterval(() => {
         current += increment;
-        if (current >= 420) {
-          setCount(420);
+        if (current >= 107) {
+          setCount(107);
           clearInterval(counter);
         } else {
           setCount(Math.floor(current));
         }
       }, 16);
 
-      // Animate 69% counter
-      const percentIncrement = 69 / (duration / 16);
+      // Animate 100% counter
+      const percentIncrement = 100 / (duration / 16);
       let percentCurrent = 0;
 
       const percentCounter = setInterval(() => {
         percentCurrent += percentIncrement;
-        if (percentCurrent >= 69) {
-          setPercentCount(69);
+        if (percentCurrent >= 100) {
+          setPercentCount(100);
           clearInterval(percentCounter);
         } else {
           setPercentCount(Math.floor(percentCurrent));

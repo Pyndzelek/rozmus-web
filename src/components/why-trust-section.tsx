@@ -13,7 +13,15 @@ export function WhyTrustSection() {
               Dlaczego warto mi zaufać?
             </h2>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              nie warto
+              Moja przygoda z siłownią zaczęła się dawno temu, chciałem zbudować
+              masę mięśniową i nabrać siły, której ewidentnie brakowało mi
+              grając wtedy w piłkę nożną. Szybko pokochałem trening siłowy co
+              sprawiło że zacząłem się tym interesować, a zdobywana wiedza
+              szybko przełożyła się na wyniki siłowe oraz zmianę sylwetki.
+              Obecnie pracuję jako trener personalny. Zebrane doświadczenie
+              sprawiło że pomogę Ci bez względu na wiek, płeć oraz przebyte
+              kontuzje. Pomagam ludziom osiągać swoje cele. Będę Cię motywować
+              na każdym etapie twojej drogi do sukcesu.
             </p>
           </div>
 
@@ -25,7 +33,7 @@ export function WhyTrustSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <Image
-              src="/rozmus_jezioro.jpeg"
+              src="/rozmus_zaufanie.jpg"
               alt="Personal trainer"
               width={500}
               height={600}
