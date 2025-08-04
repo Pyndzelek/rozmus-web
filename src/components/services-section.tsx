@@ -1,6 +1,6 @@
 "use client";
 
-import { Target, Calendar, Utensils } from "lucide-react";
+import { Target, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function ServicesSection() {
@@ -13,39 +13,31 @@ export function ServicesSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           <motion.div
-            className="text-center group cursor-pointer"
+            className="text-center group "
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            whileHover={{ y: -10 }}
           >
-            <motion.div
-              className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-red-500 transition-colors"
-              whileHover={{ scale: 1.1 }}
-            >
+            <motion.div className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-3  transition-colors">
               <Target className="w-8 h-8 text-white" />
             </motion.div>
-            <h3 className="text-lg md:text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">
+            <h3 className="text-lg md:text-2xl font-bold mb-2 transition-colors">
               Prowadzenie online
             </h3>
           </motion.div>
 
           <motion.div
-            className="text-center group cursor-pointer"
+            className="text-center group"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            whileHover={{ y: -10 }}
           >
-            <motion.div
-              className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-red-500 transition-colors"
-              whileHover={{ scale: 1.1 }}
-            >
+            <motion.div className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-3  transition-colors">
               <Calendar className="w-8 h-8 text-white" />
             </motion.div>
-            <h3 className="text-lg md:text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">
+            <h3 className="text-lg md:text-2xl font-bold mb-2 transition-colors">
               Plany treningowe
             </h3>
           </motion.div>

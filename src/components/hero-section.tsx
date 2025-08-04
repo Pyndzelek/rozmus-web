@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export function HeroSection() {
   const [count, setCount] = useState(0);
@@ -63,9 +64,11 @@ export function HeroSection() {
               bede udawał najmądrzejszego trenera na świecie.
             </p>
             <div className="flex justify-center lg:justify-start">
-              <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg">
-                Zaczynam przemianę <ChevronRight className="ml-2 w-5 h-5" />
-              </Button>
+              <Link href="/plany-treningowe">
+                <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg hover:scale-105 transition-transform cursor-pointer">
+                  Zaczynam przemianę <ChevronRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
             </div>
 
             <div className="flex gap-12 mt-16 justify-center lg:justify-start">
