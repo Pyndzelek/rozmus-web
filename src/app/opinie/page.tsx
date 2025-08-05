@@ -20,6 +20,11 @@ export default function ReviewsPage() {
     "/opinie/opinia9.jpg",
     "/opinie/opinia10.jpg",
     "/opinie/opinia11.jpg",
+    "/opinie/opinia12.jpg",
+    "/opinie/opinia13.jpg",
+    "/opinie/opinia14.jpg",
+    "/opinie/opinia15.jpg",
+    "/opinie/opinia16.jpg",
   ];
 
   const stats = [
@@ -34,7 +39,7 @@ export default function ReviewsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-20">
+      <section className="md:py-20 py-10">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -54,7 +59,7 @@ export default function ReviewsPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="md:py-20 py-10 bg-gray-900">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -88,7 +93,7 @@ export default function ReviewsPage() {
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
                 whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               >
                 <div className="bg-white rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group">

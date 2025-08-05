@@ -34,6 +34,7 @@ export default function TrainingPlansPage() {
     {
       name: "12 treningów + plan",
       price: "1100 zł",
+      higher_price: "1200 zł",
       duration: "1 miesiąc",
       description: "12 treningów personalnych + plan treningowy",
       features: [
@@ -54,6 +55,7 @@ export default function TrainingPlansPage() {
     },
     {
       name: "5 treningów personalnych",
+      higher_price: "600 zł",
       price: "500 zł",
       duration: "5 sesji",
       description: "5 indywidualnych treningów personalnych",
@@ -181,8 +183,15 @@ export default function TrainingPlansPage() {
                     <CardTitle className="text-xl md:text-2xl font-bold text-white">
                       {plan.name}
                     </CardTitle>
-                    <div className="text-2xl md:text-4xl font-bold text-[var(--brand-accent)] my-4">
-                      {plan.price}
+                    <div className="my-4 flex items-baseline justify-center gap-2">
+                      {plan.higher_price && (
+                        <span className="text-xl md:text-2xl font-bold text-gray-500 line-through">
+                          {plan.higher_price}
+                        </span>
+                      )}
+                      <span className="text-2xl md:text-4xl font-bold text-[var(--brand-accent)]">
+                        {plan.price}
+                      </span>
                     </div>
                     <div className="text-gray-400">{plan.duration}</div>
                     <p className="text-gray-300 mt-4">{plan.description}</p>

@@ -44,7 +44,7 @@ export function ModernFooter() {
 
             <div className="flex gap-4">
               <motion.a
-                href="#"
+                href="https://www.instagram.com/rozmusik_"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[var(--brand-accent-strong)] transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -52,7 +52,7 @@ export function ModernFooter() {
                 <Instagram className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://www.facebook.com/filip.rozmus.5030?locale=pl_PL"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[var(--brand-accent-strong)] transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
