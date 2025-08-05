@@ -67,9 +67,9 @@
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   /* === MAIN COLORS PALETTE === */
-  --brand-accent: oklch(62.8% 0.24 25.6); /* red-500  */
-  --brand-accent-strong: oklch(57% 0.26 26.6); /* red-600 */
-  --brand-accent-darker: oklch(50.5% 0.23 27.7); /* red-700 */
+  --brand-accent: oklch(68.1% 0.162 75.834); /* red-500  */
+  --brand-accent-strong: oklch(55.4% 0.135 66.442); /* red-600 */
+  --brand-accent-darker: oklch(55.4% 0.135 66.442); /* red-700 */
 }
 .dark {
   --background: oklch(0.145 0 0);

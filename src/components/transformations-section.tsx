@@ -14,14 +14,10 @@ import {
 
 export function TransformationsSection() {
   const transformations = [
-    "przemiana1.jpeg",
-    "przemiana2.jpeg",
-    "przemiana3.jpeg",
-    "przemiana4.jpeg",
-    "przemiana5.jpeg",
-    "przemiana6.jpeg",
-    "przemiana7.JPG",
-    "przemiana8.jpeg",
+    "przemiana1.png",
+    "przemiana2.png",
+    "przemiana3.png",
+    "przemiana4.png",
   ];
 
   const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));

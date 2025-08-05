@@ -39,7 +39,7 @@ export default function ReviewsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="md:py-20 py-10">
+      <section className="md:pt-20 md:pb-10 py-10">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -55,29 +55,6 @@ export default function ReviewsPage() {
               które zaufały mojemu doświadczeniu i osiągnęły swoje cele.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="md:py-20 py-10 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-center"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div className="text-2xl md:text-4xl font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-400">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 

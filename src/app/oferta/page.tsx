@@ -6,17 +6,18 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Check, Star, Users, Clock, Target } from "lucide-react";
+import Link from "next/link";
 
 export default function TrainingPlansPage() {
   const plans = [
     {
       name: "Indywidualny plan treningowy",
       price: "150 zł",
-      duration: "8 tygodni",
-      description: "Plan treningowy dla każdego, małego i dużego",
+      duration: "4-12 tygodni",
+      description: "Plan treningowy dopasowany do Twoich potrzeb",
       features: [
-        "Dostęp do mojej własnej aplikacji mobilnej",
-        "Indywidualny interaktywny plan treningowy",
+        "Indywidualny plan treningowy",
+        "Instrukcje wideo do każdego ćwiczenia",
       ],
       popular: false,
     },
@@ -24,24 +25,28 @@ export default function TrainingPlansPage() {
       name: "Prowadzenie online",
       price: "300 zł",
       duration: "1 miesiąc",
-      description: "Plan treningowy dla każdego, małego i dużego",
+      description: "Współpraca online",
       features: [
-        "Dostęp do mojej własnej aplikacji mobilnej",
-        "Indywidualny interaktywny plan treningowy",
+        "Indywidualny plan treningowy",
+        "Instrukcje wideo do każdego ćwiczenia",
+        "Stały kontakt i wsparcie",
+        "Cotygodniowe raporty",
+        "Analiza techniki",
+        "Wskazówki dietetyczne",
       ],
       popular: false,
     },
     {
       name: "12 treningów + plan",
       price: "1100 zł",
-      higher_price: "1200 zł",
-      duration: "1 miesiąc",
+      higher_price: "1440 zł",
+      duration: "12 sesji",
       description: "12 treningów personalnych + plan treningowy",
       features: [
-        "Dostęp do mojej własnej aplikacji mobilnej",
-        "Indywidualny interaktywny plan treningowy",
-        "12 treningów personalnych",
-        "Stałe wsparcie i motywacja",
+        "Indywidualny plan treningowy",
+        "Instrukcje wideo do każdego ćwiczenia",
+        "Stały kontakt i wsparcie",
+        "Analiza techniki",
       ],
       popular: true,
     },
@@ -54,16 +59,12 @@ export default function TrainingPlansPage() {
       popular: false,
     },
     {
-      name: "5 treningów personalnych",
-      higher_price: "600 zł",
-      price: "500 zł",
-      duration: "5 sesji",
-      description: "5 indywidualnych treningów personalnych",
-      features: [
-        "Trening dostosowany do Twoich potrzeb",
-        "Stałe wsparcie",
-        "Gwarancja efektów",
-      ],
+      name: "6 treningów personalnych",
+      higher_price: "720 zł",
+      price: "600 zł",
+      duration: "6 sesji",
+      description: "6 indywidualnych treningów personalnych",
+      features: ["Stały kontakt i wsparcie", "Analiza techniki"],
       popular: false,
     },
   ];
@@ -99,15 +100,13 @@ export default function TrainingPlansPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-[var(--brand-accent)]">
-                Plany treningowe
-              </span>{" "}
-              dopasowane do Ciebie
+              <span className="text-[var(--brand-accent)]">Oferta</span>{" "}
+              dopasowana do Ciebie
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              Wybierz plan, który najlepiej odpowiada Twoim celom i
-              możliwościom. Każdy z nich został stworzony z myślą o maksymalnych
-              rezultatach.
+              Wybierz ofertę, która najlepiej odpowiada Twoim celom i
+              możliwościom. Każda z nich została stworzona z myślą o
+              maksymalnych rezultatach.
             </p>
           </motion.div>
         </div>
@@ -210,15 +209,17 @@ export default function TrainingPlansPage() {
                       ))}
                     </ul>
                     <div className="mt-auto">
-                      <Button
-                        className={`w-full py-3 ${
-                          plan.popular
-                            ? "bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)]"
-                            : "bg-gray-700 hover:bg-gray-600"
-                        } transition-all duration-300 hover:scale-105`}
-                      >
-                        Wybierz plan
-                      </Button>
+                      <Link href="/formularz">
+                        <Button
+                          className={`w-full py-3 cursor-pointer ${
+                            plan.popular
+                              ? "bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)]"
+                              : "bg-gray-700 hover:bg-gray-600"
+                          } transition-all duration-300 hover:scale-105`}
+                        >
+                          Wybierz plan
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>

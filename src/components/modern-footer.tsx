@@ -97,7 +97,7 @@ export function ModernFooter() {
                 href="tel:+48696969696"
                 className="flex items-center gap-3 text-gray-300 transition-colors hover:text-white"
               >
-                <Phone className="h-5 w-5 text-red-500" />
+                <Phone className="h-5 w-5 text-[var(--brand-accent)]" />
                 <span>+48 696 969 696</span>
               </a>
               <div className="flex items-center gap-3">
