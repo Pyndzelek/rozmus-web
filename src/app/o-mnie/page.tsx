@@ -10,9 +10,8 @@ export default function AboutPage() {
   const achievements = [
     {
       icon: <Award className="w-8 h-8 text-[var(--brand-accent)]" />,
-      title: "Certyfikowany Kutas",
-      description:
-        "Kiedys pozyczyłem telefon od kolegi, rozjebałem go i mu go nie oddałem",
+      title: "Mistrz Polski",
+      description: "WRPF Powerlifting RAW j23 u75",
     },
   ];
 
@@ -21,7 +20,7 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="md:py-20 pt-10">
+      <section className="md:pt-20 pt-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -42,8 +41,10 @@ export default function AboutPage() {
                 lata.
               </p>
               <div className="space-y-4 text-gray-300">
-                <p>✓ Brak wykształcenia</p>
-                <p>✓ ujebałem anatomie na podhalance choć mieliśmy baze</p>
+                <p>✓ Certyfikowany instruktor</p>
+                <p>✓ Certyfikowany trener personalny</p>
+                <p>✓ Certyfikowany trener trójboju siłowego</p>
+                <p>✓ Zawodnik trójboju siłowego</p>
               </div>
             </motion.div>
 
@@ -68,21 +69,6 @@ export default function AboutPage() {
       {/* Achievements Section */}
       <section className="md:py-20 py-10 bg-gray-900">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">
-              Moje osiągnięcia
-            </h2>
-            <p className="text-xl text-gray-300">
-              Liczby, które mówią same za siebie
-            </p>
-          </motion.div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-8">
             {achievements.map((achievement, index) => (
               <motion.div

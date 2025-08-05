@@ -68,7 +68,7 @@ export function ModernFooter() {
             <ul className="space-y-3">
               {[
                 { href: "/o-mnie", label: "O mnie" },
-                { href: "/plany-treningowe", label: "Plany treningowe" },
+                { href: "/oferta", label: "Oferta" },
                 { href: "/opinie", label: "Opinie" },
                 { href: "/kontakt", label: "Kontakt" },
                 { href: "/formularz", label: "Formularz" },

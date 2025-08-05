@@ -19,7 +19,7 @@ import Image from "next/image";
 export function Header() {
   const navLinks = [
     { href: "/o-mnie", label: "O mnie" },
-    { href: "/plany-treningowe", label: "Plany treningowe" },
+    { href: "/oferta", label: "Oferta" },
     { href: "/opinie", label: "Opinie" },
     { href: "/kontakt", label: "Kontakt" },
     { href: "/formularz", label: "Formularz" },

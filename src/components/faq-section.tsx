@@ -11,7 +11,7 @@ export function FAQSection() {
     {
       question: "Jak długo trwa plan treningowy?",
       answer:
-        "Standardowy plan treningowy trwa 12 tygodni, ale można go dostosować do indywidualnych potrzeb. Oferuję również plany 6-tygodniowe dla początkujących oraz długoterminowe programy rozwoju.",
+        "Standardowe plany trwają od 6 do 12 tygodni, ale można go dostosować do indywidualnych potrzeb.",
     },
     {
       question: "Czy potrzebuję doświadczenia w treningu siłowym?",
@@ -21,7 +21,7 @@ export function FAQSection() {
     {
       question: "Jak wygląda prowadzenie online?",
       answer:
-        "Prowadzenie online obejmuje spersonalizowany plan treningowy, plan żywieniowy, cotygodniowe konsultacje video, stały kontakt przez komunikator oraz regularne modyfikacje planów.",
+        "Prowadzenie obejmuje spersonalizowany plan treningowy, cotygodniowe raporty gdzie poprawiam ewentualne błędy techniczne, stały kontakt przez komunikator oraz regularne modyfikacje planów.",
     },
     {
       question: "Czy mogę trenować w domu?",
@@ -29,9 +29,9 @@ export function FAQSection() {
         "Oczywiście! Tworzę plany treningowe zarówno na siłownię, jak i na trening domowy z minimalnym sprzętem. Wszystko zależy od Twoich preferencji i możliwości.",
     },
     {
-      question: "Jak szybko zobaczę pierwsze efekty?",
+      question: "Czy rozpisujesz jadłospisy żywieniowe?",
       answer:
-        "Pierwsze efekty widoczne są już po 2-3 tygodniach regularnego treningu. Znaczące zmiany sylwetki następują po 6-8 tygodniach, a spektakularne rezultaty po 3-6 miesiącach.",
+        "Pod moim okiem wyznaczymy Twoje zapotrzebowanie energetyczne wraz z makroskładnikami ale na ten moment nie rozpisuję konkretnych jadłospisów żywieniowych.",
     },
   ];
 
@@ -39,7 +39,7 @@ export function FAQSection() {
     <section className="bg-black text-white py-20">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10"
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}

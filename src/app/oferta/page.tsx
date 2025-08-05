@@ -10,15 +10,59 @@ import { Check, Star, Users, Clock, Target } from "lucide-react";
 export default function TrainingPlansPage() {
   const plans = [
     {
-      name: "Plan Premium",
-      price: "10000000 zł",
+      name: "Indywidualny plan treningowy",
+      price: "150 zł",
       duration: "8 tygodni",
       description: "Plan treningowy dla każdego, małego i dużego",
       features: [
         "Dostęp do mojej własnej aplikacji mobilnej",
         "Indywidualny interaktywny plan treningowy",
       ],
+      popular: false,
+    },
+    {
+      name: "Prowadzenie online",
+      price: "300 zł",
+      duration: "1 miesiąc",
+      description: "Plan treningowy dla każdego, małego i dużego",
+      features: [
+        "Dostęp do mojej własnej aplikacji mobilnej",
+        "Indywidualny interaktywny plan treningowy",
+      ],
+      popular: false,
+    },
+    {
+      name: "12 treningów + plan",
+      price: "1100 zł",
+      duration: "1 miesiąc",
+      description: "12 treningów personalnych + plan treningowy",
+      features: [
+        "Dostęp do mojej własnej aplikacji mobilnej",
+        "Indywidualny interaktywny plan treningowy",
+        "12 treningów personalnych",
+        "Stałe wsparcie i motywacja",
+      ],
       popular: true,
+    },
+    {
+      name: "1 trening personalny",
+      price: "120 zł",
+      duration: "1 sesja",
+      description: "Indywidualny trening personalny",
+      features: ["Trening dostosowany do Twoich potrzeb"],
+      popular: false,
+    },
+    {
+      name: "5 treningów personalnych",
+      price: "500 zł",
+      duration: "5 sesji",
+      description: "5 indywidualnych treningów personalnych",
+      features: [
+        "Trening dostosowany do Twoich potrzeb",
+        "Stałe wsparcie",
+        "Gwarancja efektów",
+      ],
+      popular: false,
     },
   ];
 
@@ -119,11 +163,10 @@ export default function TrainingPlansPage() {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="flex flex-col h-full"
               >
                 <Card
-                  className={`bg-gray-900 border-gray-800 h-full relative ${
-                    plan.popular ? "border-[var(--brand-accent)]" : ""
-                  }`}
+                  className={`bg-gray-900 border-gray-800 h-full relative flex flex-col`}
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -145,7 +188,7 @@ export default function TrainingPlansPage() {
                     <p className="text-gray-300 mt-4">{plan.description}</p>
                   </CardHeader>
 
-                  <CardContent>
+                  <CardContent className="flex flex-col flex-1">
                     <ul className="space-y-3 mb-8">
                       {plan.features.map((feature, featureIndex) => (
                         <li
@@ -157,16 +200,17 @@ export default function TrainingPlansPage() {
                         </li>
                       ))}
                     </ul>
-
-                    <Button
-                      className={`w-full py-3 ${
-                        plan.popular
-                          ? "bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)]"
-                          : "bg-gray-700 hover:bg-gray-600"
-                      } transition-all duration-300 hover:scale-105`}
-                    >
-                      Wybierz plan
-                    </Button>
+                    <div className="mt-auto">
+                      <Button
+                        className={`w-full py-3 ${
+                          plan.popular
+                            ? "bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)]"
+                            : "bg-gray-700 hover:bg-gray-600"
+                        } transition-all duration-300 hover:scale-105`}
+                      >
+                        Wybierz plan
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>

@@ -27,12 +27,13 @@ export default function ContactPage() {
       icon: <Mail className="w-6 h-6 text-[var(--brand-accent)]" />,
       title: "Email",
       content: "rozmus.nlt@gmail.com",
+      description: "Najlepiej pisać na ten adres",
     },
     {
       icon: <Phone className="w-6 h-6 text-[var(--brand-accent)]" />,
       title: "Telefon",
       content: "+48 513978894",
-      description: "Pon-Pt: 9:00-18:00",
+      description: "Możesz dzwonić lub pisać SMS",
     },
     {
       icon: <MapPin className="w-6 h-6 text-[var(--brand-accent)]" />,
@@ -43,8 +44,8 @@ export default function ContactPage() {
     {
       icon: <Clock className="w-6 h-6 text-[var(--brand-accent)]" />,
       title: "Godziny pracy",
-      content: "Pon-Pt: 9:00-18:00",
-      description: "Sob: 10:00-14:00",
+      content: "Pon-Pt: 9:00-22:00",
+      description: "Sob: 9:00-15:00",
     },
   ];
 
@@ -104,10 +105,21 @@ export default function ContactPage() {
                 <h3 className="text-lg md:text-xl font-bold mb-2">
                   {info.title}
                 </h3>
-                <p className="text-base md:text-lg text-white mb-1">
-                  {info.content}
-                </p>
-                <p className="text-gray-400 text-sm">{info.description}</p>
+                {info.title === "Telefon" ? (
+                  <a
+                    href={`tel:${info.content}`}
+                    className="text-base md:text-lg text-white mb-1"
+                  >
+                    {info.content}
+                  </a>
+                ) : (
+                  <p className="text-base md:text-lg text-white mb-1">
+                    {info.content}
+                  </p>
+                )}
+                {info.description && (
+                  <p className="text-gray-400 text-sm">{info.description}</p>
+                )}
               </motion.div>
             ))}
           </div>
@@ -251,7 +263,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Szybka odpowiedź</h3>
                       <p className="text-gray-400">
-                        Odpowiadam na wszystkie wiadomości w ciągu 24 godzin
+                        Odpowiadam na wszystkie wiadomości jak najszybciej to
+                        możliwe
                       </p>
                     </div>
                   </div>
@@ -266,40 +279,6 @@ export default function ContactPage() {
                       </p>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                <h3 className="text-lg md:text-xl font-bold mb-4">
-                  Często zadawane pytania
-                </h3>
-                <div className="space-y-3 text-sm">
-                  <p>
-                    <strong className="text-[var(--brand-accent)]">Q:</strong>{" "}
-                    Czy oferujesz treningi stacjonarne?
-                  </p>
-                  <p className="text-gray-400 mb-4">
-                    <strong>A:</strong> Tak, prowadzę treningi zarówno online
-                    jak i stacjonarne w Warszawie.
-                  </p>
-
-                  <p>
-                    <strong className="text-[var(--brand-accent)]">Q:</strong>{" "}
-                    Ile kosztuje konsultacja?
-                  </p>
-                  <p className="text-gray-400 mb-4">
-                    <strong>A:</strong> Pierwsza konsultacja jest bezpłatna,
-                    kolejne ustalamy indywidualnie.
-                  </p>
-
-                  <p>
-                    <strong className="text-[var(--brand-accent)]">Q:</strong>{" "}
-                    Jak długo trwa plan treningowy?
-                  </p>
-                  <p className="text-gray-400">
-                    <strong>A:</strong> Oferuję plany od 4 do 12 tygodni, w
-                    zależności od Twoich celów.
-                  </p>
                 </div>
               </div>
             </motion.div>

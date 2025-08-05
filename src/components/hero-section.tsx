@@ -65,14 +65,14 @@ export function HeroSection() {
               wszytsko, czego potrzebujesz, by w końcu osiągnąć formę.
             </p>
             <div className="flex justify-center lg:justify-start">
-              <Link href="/plany-treningowe">
+              <Link href="/oferta">
                 <Button className="bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white px-8 py-3 text-lg hover:scale-105 transition-transform cursor-pointer">
                   Zaczynam przemianę <ChevronRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
             </div>
 
-            <div className="flex gap-12 mt-16 justify-center lg:justify-start">
+            <div className="flex gap-12 md:mt-16 mt-10 justify-center lg:justify-start">
               <div>
                 <motion.div
                   className="text-2xl md:text-4xl font-bold"

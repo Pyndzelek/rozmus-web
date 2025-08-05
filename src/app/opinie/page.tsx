@@ -66,7 +66,7 @@ export default function ReviewsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="text-2xl md:text-4xl font-bold text-[var(--brand-accent)] mb-2">
+                <div className="text-2xl md:text-4xl font-bold text-white mb-2">
                   {stat.number}
                 </div>
                 <div className="text-gray-400">{stat.label}</div>

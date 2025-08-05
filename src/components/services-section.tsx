@@ -2,6 +2,7 @@
 
 import { Target, Calendar, Home } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function ServicesSection() {
   return (
@@ -13,18 +14,24 @@ export function ServicesSection() {
 
         <div className="grid md:grid-cols-3 gap-8">
           <motion.div
-            className="text-center group "
+            className="text-center group"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.4, delay: 0.1 }}
+            whileHover={{ y: -10 }}
           >
-            <motion.div className="w-16 h-16 bg-[var(--brand-accent-strong)] rounded-lg flex items-center justify-center mx-auto mb-3  transition-colors">
-              <Target className="w-8 h-8 text-white" />
-            </motion.div>
-            <h3 className="text-lg md:text-2xl font-bold mb-2 transition-colors">
-              Prowadzenie online
-            </h3>
+            <Link href="/plany-treningowe">
+              <motion.div
+                className="w-16 h-16 bg-[var(--brand-accent-strong)] rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-[var(--brand-accent)] transition-colors"
+                whileHover={{ scale: 1.1 }}
+              >
+                <Target className="w-8 h-8 text-white" />
+              </motion.div>
+              <h3 className="text-lg md:text-2xl font-bold mb-2 group-hover:text-[var(--brand-accent)] transition-colors">
+                Prowadzenie online
+              </h3>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -32,28 +39,40 @@ export function ServicesSection() {
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            whileHover={{ y: -10 }}
           >
-            <motion.div className="w-16 h-16 bg-[var(--brand-accent-strong)] rounded-lg flex items-center justify-center mx-auto mb-3  transition-colors">
-              <Calendar className="w-8 h-8 text-white" />
-            </motion.div>
-            <h3 className="text-lg md:text-2xl font-bold mb-2 transition-colors">
-              Plany treningowe
-            </h3>
+            <Link href="/plany-treningowe">
+              <motion.div
+                className="w-16 h-16 bg-[var(--brand-accent-strong)] rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-[var(--brand-accent)] transition-colors "
+                whileHover={{ scale: 1.1 }}
+              >
+                <Calendar className="w-8 h-8 text-white" />
+              </motion.div>
+              <h3 className="text-lg md:text-2xl font-bold mb-2 group-hover:text-[var(--brand-accent)] transition-colors ">
+                Plany treningowe
+              </h3>
+            </Link>
           </motion.div>
           <motion.div
             className="text-center group"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            whileHover={{ y: -10 }}
           >
-            <motion.div className="w-16 h-16 bg-[var(--brand-accent-strong)] rounded-lg flex items-center justify-center mx-auto mb-3  transition-colors">
-              <Home className="w-8 h-8 text-white" />
-            </motion.div>
-            <h3 className="text-lg md:text-2xl font-bold mb-2 transition-colors">
-              Prowadzenie stacjonarne
-            </h3>
+            <Link href="/plany-treningowe">
+              <motion.div
+                className="w-16 h-16 bg-[var(--brand-accent-strong)] rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-[var(--brand-accent)] transition-colors"
+                whileHover={{ scale: 1.1 }}
+              >
+                <Home className="w-8 h-8 text-white" />
+              </motion.div>
+              <h3 className="text-lg md:text-2xl font-bold mb-2 group-hover:text-[var(--brand-accent)] transition-colors">
+                Prowadzenie stacjonarne
+              </h3>
+            </Link>
           </motion.div>
         </div>
       </div>
