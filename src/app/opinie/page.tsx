@@ -5,71 +5,28 @@ import { ModernFooter } from "@/components/modern-footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
+import Image from "next/image";
 
 export default function ReviewsPage() {
-  const reviews = [
-    {
-      name: "Anna Kowalska",
-      age: 28,
-      program: "Plan Premium - 8 tygodni",
-      rating: 5,
-      review: "Filip to chuj",
-      results: "Schudła 12kg, zbudowała pewność siebie",
-      image: "/przemiany/przemiana4.jpeg",
-    },
-    {
-      name: "Piotr Nowak",
-      age: 35,
-      program: "Plan VIP - 12 tygodni",
-      rating: 5,
-      review: "chuj",
-      results: "Zbudował 8kg masy mięśniowej, zmienił nawyki żywieniowe",
-      image: "/przemiany/przemiana4.jpeg",
-    },
-    {
-      name: "Magdalena Wiśniewska",
-      age: 42,
-      program: "Plan Premium - 8 tygodni",
-      rating: 5,
-      review: "chuj",
-      results: "Poprawiła kondycję, zbudowała siłę, zwiększyła energię",
-      image: "/przemiany/przemiana4.jpeg",
-    },
-    {
-      name: "Jakub Kowalczyk",
-      age: 24,
-      program: "Plan Podstawowy - 4 tygodnie",
-      rating: 5,
-      review: "chuj",
-      results: "Nauczył się podstaw, zbudował motywację do dalszego treningu",
-      image: "/przemiany/przemiana4.jpeg",
-    },
-    {
-      name: "Karolina Nowacka",
-      age: 31,
-      program: "Plan VIP - 12 tygodni",
-      rating: 5,
-      review: "chuj",
-      results: "Całkowita transformacja stylu życia, -15kg, +100% energii",
-      image: "/przemiany/przemiana4.jpeg",
-    },
-    {
-      name: "Tomasz Wiśniewski",
-      age: 29,
-      program: "Plan Premium - 8 tygodni",
-      rating: 5,
-      review: "chuj",
-      results:
-        "Zoptymalizował czas, zbudował masę mięśniową, poprawił samopoczucie",
-      image: "/przemiany/przemiana4.jpeg",
-    },
+  const reviewImages = [
+    "/opinie/opinia1.jpg",
+    "/opinie/opinia2.jpg",
+    "/opinie/opinia3.jpg",
+    "/opinie/opinia4.jpg",
+    "/opinie/opinia5.jpg",
+    "/opinie/opinia6.jpg",
+    "/opinie/opinia7.jpg",
+    "/opinie/opinia8.jpg",
+    "/opinie/opinia9.jpg",
+    "/opinie/opinia10.jpg",
+    "/opinie/opinia11.jpg",
   ];
 
   const stats = [
-    { number: "420+", label: "Zadowolonych klientów" },
-    { number: "69%", label: "Skuteczność planów" },
-    { number: "1/5", label: "Średnia ocena" },
-    { number: "95%", label: "Nie poleca znajomym" },
+    { number: "107+", label: "Zadowolonych klientów" },
+    { number: "100%", label: "Skuteczność planów" },
+    { number: "5/5", label: "Średnia ocena" },
+    { number: "100%", label: "Poleca znajomym" },
   ];
 
   return (
@@ -120,77 +77,30 @@ export default function ReviewsPage() {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">
-              Co mówią moi klienci
-            </h2>
-            <p className="text-lg md:text-xl text-gray-300">
-              Każda opinia to historia prawdziwej transformacji
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {reviews.map((review, index) => (
+          {/* Masonry Grid Layout */}
+          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+            {reviewImages.map((image, index) => (
               <motion.div
                 key={index}
+                className="break-inside-avoid mb-6"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               >
-                <Card className="bg-gray-900 border-gray-800 h-full hover:border-[var(--brand-accent)]/50 transition-colors duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <img
-                        src={review.image || "/placeholder.svg"}
-                        alt={review.name}
-                        className="w-16 h-16 rounded-full"
-                      />
-                      <div>
-                        <h4 className="font-bold text-base md:text-lg">
-                          {review.name}
-                        </h4>
-                        <p className="text-gray-400 text-sm">
-                          {review.age} lat
-                        </p>
-                        <p className="text-[var(--brand-accent)] text-sm">
-                          {review.program}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-1 mb-4">
-                      {[...Array(review.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                        />
-                      ))}
-                    </div>
-
-                    <Quote className="w-6 h-6 text-[var(--brand-accent)] mb-3" />
-                    <p className="text-gray-300 mb-4 leading-relaxed">
-                      &quot;{review.review}&quot;
-                    </p>
-
-                    <div className="border-t border-gray-800 pt-4">
-                      <p className="text-sm text-gray-400">
-                        <strong className="text-[var(--brand-accent)]">
-                          Rezultaty:
-                        </strong>{" "}
-                        {review.results}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className="bg-white rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                  <Image
+                    src={image || "/placeholder.svg"}
+                    alt={`Opinia klienta ${index + 1}`}
+                    width={300}
+                    height={400}
+                    className="w-full h-auto rounded-lg object-cover group-hover:scale-[1.01] transition-transform duration-300"
+                    style={{ aspectRatio: "auto" }}
+                  />
+                </div>
               </motion.div>
             ))}
           </div>

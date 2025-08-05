@@ -93,14 +93,17 @@ export function ModernFooter() {
                 <Mail className="w-5 h-5 text-[var(--brand-accent)]" />
                 <span className="text-gray-300">rozmus.nlt@gmail.com</span>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[var(--brand-accent)]" />
-                <span className="text-gray-300">+48 513978894</span>
-              </div>
+              <a
+                href="tel:+48696969696"
+                className="flex items-center gap-3 text-gray-300 transition-colors hover:text-white"
+              >
+                <Phone className="h-5 w-5 text-red-500" />
+                <span>+48 696 969 696</span>
+              </a>
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-[var(--brand-accent)]" />
                 <span className="text-gray-300">
-                  Studio Gorce, Aleje tysiąclecia 74, 34-400 Nowy Targ
+                  Studio Gorce, Aleje Tysiąclecia 74, 34-400 Nowy Targ
                 </span>
               </div>
             </div>

@@ -26,19 +26,18 @@ export default function ContactPage() {
     {
       icon: <Mail className="w-6 h-6 text-[var(--brand-accent)]" />,
       title: "Email",
-      content: "filipzabijaka.pl",
-      description: "Odpowiadam w ciągu 24 godzin",
+      content: "rozmus.nlt@gmail.com",
     },
     {
       icon: <Phone className="w-6 h-6 text-[var(--brand-accent)]" />,
       title: "Telefon",
-      content: "+48 6969696969",
+      content: "+48 513978894",
       description: "Pon-Pt: 9:00-18:00",
     },
     {
       icon: <MapPin className="w-6 h-6 text-[var(--brand-accent)]" />,
       title: "Lokalizacja",
-      content: "Zacisze, Polska",
+      content: "Studio Gorce, Aleje Tysiąclecia 74, 34-400 Nowy Targ",
       description: "Treningi online i stacjonarne",
     },
     {
