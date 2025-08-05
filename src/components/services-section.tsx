@@ -21,7 +21,7 @@ export function ServicesSection() {
             transition={{ duration: 0.4, delay: 0.1 }}
             whileHover={{ y: -10 }}
           >
-            <Link href="/plany-treningowe">
+            <Link href="/oferta">
               <motion.div
                 className="w-16 h-16 bg-[var(--brand-accent-strong)] rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-[var(--brand-accent)] transition-colors"
                 whileHover={{ scale: 1.1 }}
@@ -42,7 +42,7 @@ export function ServicesSection() {
             transition={{ duration: 0.4, delay: 0.1 }}
             whileHover={{ y: -10 }}
           >
-            <Link href="/plany-treningowe">
+            <Link href="/oferta">
               <motion.div
                 className="w-16 h-16 bg-[var(--brand-accent-strong)] rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-[var(--brand-accent)] transition-colors "
                 whileHover={{ scale: 1.1 }}
@@ -62,7 +62,7 @@ export function ServicesSection() {
             transition={{ duration: 0.4, delay: 0.1 }}
             whileHover={{ y: -10 }}
           >
-            <Link href="/plany-treningowe">
+            <Link href="/oferta">
               <motion.div
                 className="w-16 h-16 bg-[var(--brand-accent-strong)] rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-[var(--brand-accent)] transition-colors"
                 whileHover={{ scale: 1.1 }}

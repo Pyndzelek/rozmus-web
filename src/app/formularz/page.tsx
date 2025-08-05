@@ -2,7 +2,8 @@
 
 import { Header } from "@/components/header";
 import { ModernFooter } from "@/components/modern-footer";
-import { SurveyForm } from "@/components/survey-form";
+import SurveyForm from "@/components/survey-form";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 export default function SurveyPage() {
   return (
@@ -20,6 +21,7 @@ export default function SurveyPage() {
               dopasowany do Twoich potrzeb i celów.
             </p>
           </div>
+
           <SurveyForm />
         </div>
       </main>
