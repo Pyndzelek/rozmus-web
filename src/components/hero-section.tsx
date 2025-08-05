@@ -62,7 +62,7 @@ export function HeroSection() {
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
               Indywidualny plan treningowy, stały kontakt i realne efekty -
-              wszytsko, czego potrzebujesz, by w końcu osiągnąć formę.
+              wszystko, czego potrzebujesz, by w końcu osiągnąć formę.
             </p>
             <div className="flex justify-center lg:justify-start">
               <Link href="/oferta">
