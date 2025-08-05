@@ -20,7 +20,8 @@ export function TransformationsSection() {
     "przemiana4.jpeg",
     "przemiana5.jpeg",
     "przemiana6.jpeg",
-    "przemiana7.jpeg",
+    "przemiana7.JPG",
+    "przemiana8.jpeg",
   ];
 
   const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
