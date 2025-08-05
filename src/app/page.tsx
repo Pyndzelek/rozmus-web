@@ -15,7 +15,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <ServicesSection />
-      <TrainingPlanSection />
+
       <WhyTrustSection />
       <MotivationSection />
       <TransformationsSection />

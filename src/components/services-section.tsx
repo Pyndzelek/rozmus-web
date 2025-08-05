@@ -1,6 +1,6 @@
 "use client";
 
-import { Target, Calendar } from "lucide-react";
+import { Target, Calendar, Home } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function ServicesSection() {
@@ -11,7 +11,7 @@ export function ServicesSection() {
           Twoja droga, twój sukces
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           <motion.div
             className="text-center group "
             initial={{ y: 50, opacity: 0 }}
@@ -39,6 +39,20 @@ export function ServicesSection() {
             </motion.div>
             <h3 className="text-lg md:text-2xl font-bold mb-2 transition-colors">
               Plany treningowe
+            </h3>
+          </motion.div>
+          <motion.div
+            className="text-center group"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <motion.div className="w-16 h-16 bg-[var(--brand-accent-strong)] rounded-lg flex items-center justify-center mx-auto mb-3  transition-colors">
+              <Home className="w-8 h-8 text-white" />
+            </motion.div>
+            <h3 className="text-lg md:text-2xl font-bold mb-2 transition-colors">
+              Prowadzenie stacjonarne
             </h3>
           </motion.div>
         </div>
