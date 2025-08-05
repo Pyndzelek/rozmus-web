@@ -85,7 +85,8 @@ export default function ReviewsPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-red-500">Opinie</span> moich podopiecznych
+              <span className="text-[var(--brand-accent)]">Opinie</span> moich
+              podopiecznych
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               Prawdziwe historie, prawdziwe rezultaty. Zobacz, co mówią osoby,
@@ -108,7 +109,7 @@ export default function ReviewsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="text-2xl md:text-4xl font-bold text-red-500 mb-2">
+                <div className="text-2xl md:text-4xl font-bold text-[var(--brand-accent)] mb-2">
                   {stat.number}
                 </div>
                 <div className="text-gray-400">{stat.label}</div>
@@ -145,7 +146,7 @@ export default function ReviewsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="bg-gray-900 border-gray-800 h-full hover:border-red-500/50 transition-colors duration-300">
+                <Card className="bg-gray-900 border-gray-800 h-full hover:border-[var(--brand-accent)]/50 transition-colors duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-4 mb-4">
                       <img
@@ -160,7 +161,9 @@ export default function ReviewsPage() {
                         <p className="text-gray-400 text-sm">
                           {review.age} lat
                         </p>
-                        <p className="text-red-500 text-sm">{review.program}</p>
+                        <p className="text-[var(--brand-accent)] text-sm">
+                          {review.program}
+                        </p>
                       </div>
                     </div>
 
@@ -173,14 +176,16 @@ export default function ReviewsPage() {
                       ))}
                     </div>
 
-                    <Quote className="w-6 h-6 text-red-500 mb-3" />
+                    <Quote className="w-6 h-6 text-[var(--brand-accent)] mb-3" />
                     <p className="text-gray-300 mb-4 leading-relaxed">
                       &quot;{review.review}&quot;
                     </p>
 
                     <div className="border-t border-gray-800 pt-4">
                       <p className="text-sm text-gray-400">
-                        <strong className="text-red-500">Rezultaty:</strong>{" "}
+                        <strong className="text-[var(--brand-accent)]">
+                          Rezultaty:
+                        </strong>{" "}
                         {review.results}
                       </p>
                     </div>

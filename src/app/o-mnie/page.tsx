@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function AboutPage() {
   const achievements = [
     {
-      icon: <Award className="w-8 h-8 text-red-500" />,
+      icon: <Award className="w-8 h-8 text-[var(--brand-accent)]" />,
       title: "Certyfikowany Kutas",
       description:
         "Kiedys pozyczyłem telefon od kolegi, rozjebałem go i mu go nie oddałem",
@@ -30,7 +30,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-3xl md:text-5xl font-bold mb-6">
-                Poznaj <span className="text-red-500">mnie</span>
+                Poznaj <span className="text-[var(--brand-accent)]">mnie</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
                 Nazywam się Filip Rozmus, mam 21 lat i na co dzień pracuję jako

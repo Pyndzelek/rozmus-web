@@ -57,7 +57,8 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center justify-items-center min-h-[80vh]">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Czekaj! Już <span className="text-red-500">zakładam buty</span>{" "}
+              Czekaj! Już{" "}
+              <span className="text-[var(--brand-accent)]">zakładam buty</span>{" "}
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
               Jestem jebaną kurwą nieszanującą nikogo, ale jeśli mi zapłacisz to
@@ -65,7 +66,7 @@ export function HeroSection() {
             </p>
             <div className="flex justify-center lg:justify-start">
               <Link href="/plany-treningowe">
-                <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg hover:scale-105 transition-transform cursor-pointer">
+                <Button className="bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white px-8 py-3 text-lg hover:scale-105 transition-transform cursor-pointer">
                   Zaczynam przemianę <ChevronRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>

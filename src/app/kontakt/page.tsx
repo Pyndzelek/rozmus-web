@@ -24,25 +24,25 @@ export default function ContactPage() {
 
   const contactInfo = [
     {
-      icon: <Mail className="w-6 h-6 text-red-500" />,
+      icon: <Mail className="w-6 h-6 text-[var(--brand-accent)]" />,
       title: "Email",
       content: "filipzabijaka.pl",
       description: "Odpowiadam w ciągu 24 godzin",
     },
     {
-      icon: <Phone className="w-6 h-6 text-red-500" />,
+      icon: <Phone className="w-6 h-6 text-[var(--brand-accent)]" />,
       title: "Telefon",
       content: "+48 6969696969",
       description: "Pon-Pt: 9:00-18:00",
     },
     {
-      icon: <MapPin className="w-6 h-6 text-red-500" />,
+      icon: <MapPin className="w-6 h-6 text-[var(--brand-accent)]" />,
       title: "Lokalizacja",
       content: "Zacisze, Polska",
       description: "Treningi online i stacjonarne",
     },
     {
-      icon: <Clock className="w-6 h-6 text-red-500" />,
+      icon: <Clock className="w-6 h-6 text-[var(--brand-accent)]" />,
       title: "Godziny pracy",
       content: "Pon-Pt: 9:00-18:00",
       description: "Sob: 10:00-14:00",
@@ -77,7 +77,8 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-red-500">Skontaktuj się</span> ze mną
+              <span className="text-[var(--brand-accent)]">Skontaktuj się</span>{" "}
+              ze mną
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               Masz pytania? Chcesz rozpocząć swoją transformację? Napisz do mnie
@@ -128,7 +129,7 @@ export default function ContactPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardHeader>
                   <CardTitle className="text-xl md:text-2xl font-bold text-white flex items-center gap-2">
-                    <Send className="w-6 h-6 text-red-500" />
+                    <Send className="w-6 h-6 text-[var(--brand-accent)]" />
                     Wyślij wiadomość
                   </CardTitle>
                 </CardHeader>
@@ -211,7 +212,7 @@ export default function ContactPage() {
 
                     <Button
                       type="submit"
-                      className="w-full bg-red-600 hover:bg-red-700 text-white py-3 transition-all duration-300 hover:scale-105"
+                      className="w-full bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white py-3 transition-all duration-300 hover:scale-105"
                     >
                       <Send className="w-4 h-4 mr-2" />
                       Wyślij wiadomość
@@ -235,7 +236,7 @@ export default function ContactPage() {
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <MessageCircle className="w-6 h-6 text-red-500 mt-1" />
+                    <MessageCircle className="w-6 h-6 text-[var(--brand-accent)] mt-1" />
                     <div>
                       <h3 className="font-semibold mb-1">
                         Bezpłatna konsultacja
@@ -247,7 +248,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Clock className="w-6 h-6 text-red-500 mt-1" />
+                    <Clock className="w-6 h-6 text-[var(--brand-accent)] mt-1" />
                     <div>
                       <h3 className="font-semibold mb-1">Szybka odpowiedź</h3>
                       <p className="text-gray-400">
@@ -256,7 +257,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Mail className="w-6 h-6 text-red-500 mt-1" />
+                    <Mail className="w-6 h-6 text-[var(--brand-accent)] mt-1" />
                     <div>
                       <h3 className="font-semibold mb-1">
                         Indywidualne podejście
@@ -275,8 +276,8 @@ export default function ContactPage() {
                 </h3>
                 <div className="space-y-3 text-sm">
                   <p>
-                    <strong className="text-red-500">Q:</strong> Czy oferujesz
-                    treningi stacjonarne?
+                    <strong className="text-[var(--brand-accent)]">Q:</strong>{" "}
+                    Czy oferujesz treningi stacjonarne?
                   </p>
                   <p className="text-gray-400 mb-4">
                     <strong>A:</strong> Tak, prowadzę treningi zarówno online
@@ -284,8 +285,8 @@ export default function ContactPage() {
                   </p>
 
                   <p>
-                    <strong className="text-red-500">Q:</strong> Ile kosztuje
-                    konsultacja?
+                    <strong className="text-[var(--brand-accent)]">Q:</strong>{" "}
+                    Ile kosztuje konsultacja?
                   </p>
                   <p className="text-gray-400 mb-4">
                     <strong>A:</strong> Pierwsza konsultacja jest bezpłatna,
@@ -293,8 +294,8 @@ export default function ContactPage() {
                   </p>
 
                   <p>
-                    <strong className="text-red-500">Q:</strong> Jak długo trwa
-                    plan treningowy?
+                    <strong className="text-[var(--brand-accent)]">Q:</strong>{" "}
+                    Jak długo trwa plan treningowy?
                   </p>
                   <p className="text-gray-400">
                     <strong>A:</strong> Oferuję plany od 4 do 12 tygodni, w

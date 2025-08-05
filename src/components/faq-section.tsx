@@ -74,7 +74,7 @@ export function FAQSection() {
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <ChevronDown className="w-5 h-5 text-red-500" />
+                  <ChevronDown className="w-5 h-5 text-[var(--brand-accent)]" />
                 </motion.div>
               </button>
 

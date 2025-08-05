@@ -192,7 +192,7 @@ export function SurveyForm() {
         </p>
         <Button
           onClick={() => (window.location.href = "/")}
-          className="bg-red-600 hover:bg-red-700 text-white px-8 py-3"
+          className="bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white px-8 py-3"
         >
           Powrót do strony głównej
         </Button>
@@ -213,7 +213,7 @@ export function SurveyForm() {
         </div>
         <div className="w-full bg-gray-700 rounded-full h-2">
           <div
-            className="bg-red-600 h-2 rounded-full transition-all duration-300"
+            className="bg-[var(--brand-accent-strong)] h-2 rounded-full transition-all duration-300"
             style={{ width: `${(currentStep / totalSteps) * 100}%` }}
           />
         </div>
@@ -230,7 +230,7 @@ export function SurveyForm() {
           >
             {currentStep === 1 && (
               <div className="space-y-6">
-                <h3 className="text-lg font-semibold text-red-500 mb-6">
+                <h3 className="text-lg font-semibold text-[var(--brand-accent)] mb-6">
                   Dane podstawowe
                 </h3>
                 <div>
@@ -246,7 +246,9 @@ export function SurveyForm() {
                     placeholder="twoj@email.com"
                   />
                   {errors.email && (
-                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                    <p className="text-[var(--brand-accent)] text-sm mt-1">
+                      {errors.email}
+                    </p>
                   )}
                 </div>
                 <div>
@@ -261,7 +263,9 @@ export function SurveyForm() {
                     placeholder="Jan Kowalski"
                   />
                   {errors.name && (
-                    <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                    <p className="text-[var(--brand-accent)] text-sm mt-1">
+                      {errors.name}
+                    </p>
                   )}
                 </div>
                 <div className="grid md:grid-cols-3 gap-4">
@@ -280,7 +284,9 @@ export function SurveyForm() {
                       max="80"
                     />
                     {errors.age && (
-                      <p className="text-red-500 text-sm mt-1">{errors.age}</p>
+                      <p className="text-[var(--brand-accent)] text-sm mt-1">
+                        {errors.age}
+                      </p>
                     )}
                   </div>
                   <div>
@@ -298,7 +304,7 @@ export function SurveyForm() {
                       max="220"
                     />
                     {errors.height && (
-                      <p className="text-red-500 text-sm mt-1">
+                      <p className="text-[var(--brand-accent)] text-sm mt-1">
                         {errors.height}
                       </p>
                     )}
@@ -318,7 +324,7 @@ export function SurveyForm() {
                       max="150"
                     />
                     {errors.weight && (
-                      <p className="text-red-500 text-sm mt-1">
+                      <p className="text-[var(--brand-accent)] text-sm mt-1">
                         {errors.weight}
                       </p>
                     )}
@@ -329,7 +335,7 @@ export function SurveyForm() {
 
             {currentStep === 2 && (
               <div className="space-y-8">
-                <h3 className="text-lg font-semibold text-red-500 mb-2">
+                <h3 className="text-lg font-semibold text-[var(--brand-accent)] mb-2">
                   Cele treningowe
                 </h3>
                 <div>
@@ -368,7 +374,7 @@ export function SurveyForm() {
                     ))}
                   </div>
                   {errors.goals && (
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-[var(--brand-accent)] text-sm mt-1">
                       {errors.goals[0]}
                     </p>
                   )}
@@ -404,7 +410,7 @@ export function SurveyForm() {
                     )}
                   </div>
                   {errors.trainingDays && (
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-[var(--brand-accent)] text-sm mt-1">
                       {errors.trainingDays}
                     </p>
                   )}
@@ -489,7 +495,7 @@ export function SurveyForm() {
 
             {currentStep === 3 && (
               <div className="space-y-8">
-                <h3 className="text-lg font-semibold text-red-500 mb-2">
+                <h3 className="text-lg font-semibold text-[var(--brand-accent)] mb-2">
                   Poziom aktywności
                 </h3>
                 <div>
@@ -507,7 +513,7 @@ export function SurveyForm() {
                     placeholder="Opisz swój obecny poziom aktywności, rodzaj pracy, styl życia..."
                   />
                   {errors.activityLevel && (
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-[var(--brand-accent)] text-sm mt-1">
                       {errors.activityLevel}
                     </p>
                   )}
@@ -534,7 +540,7 @@ export function SurveyForm() {
                         <RadioGroupItem
                           value={time}
                           id={time}
-                          className="border-gray-600 data-[state=checked]:border-red-600 data-[state=checked]:bg-red-600"
+                          className="border-gray-600 data-[state=checked]:border-[var(--brand-accent-strong)] data-[state=checked]:bg-[var(--brand-accent-strong)]"
                         />
                         <Label
                           htmlFor={time}
@@ -546,7 +552,7 @@ export function SurveyForm() {
                     ))}
                   </RadioGroup>
                   {errors.sittingTime && (
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-[var(--brand-accent)] text-sm mt-1">
                       {errors.sittingTime}
                     </p>
                   )}
@@ -556,7 +562,7 @@ export function SurveyForm() {
 
             {currentStep === 4 && (
               <div className="space-y-8">
-                <h3 className="text-lg font-semibold text-red-500 mb-2">
+                <h3 className="text-lg font-semibold text-[var(--brand-accent)] mb-2">
                   Sen i stres
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -589,7 +595,7 @@ export function SurveyForm() {
                       </SelectContent>
                     </Select>
                     {errors.sleepHours && (
-                      <p className="text-red-500 text-sm mt-1">
+                      <p className="text-[var(--brand-accent)] text-sm mt-1">
                         {errors.sleepHours}
                       </p>
                     )}
@@ -622,7 +628,7 @@ export function SurveyForm() {
                       </SelectContent>
                     </Select>
                     {errors.sleepQuality && (
-                      <p className="text-red-500 text-sm mt-1">
+                      <p className="text-[var(--brand-accent)] text-sm mt-1">
                         {errors.sleepQuality}
                       </p>
                     )}
@@ -651,7 +657,7 @@ export function SurveyForm() {
                         <RadioGroupItem
                           value={level}
                           id={level}
-                          className="border-gray-600 data-[state=checked]:border-red-600 data-[state=checked]:bg-red-600"
+                          className="border-gray-600 data-[state=checked]:border-[var(--brand-accent-strong)] data-[state=checked]:bg-[var(--brand-accent-strong)]"
                         />
                         <Label
                           htmlFor={level}
@@ -663,7 +669,7 @@ export function SurveyForm() {
                     ))}
                   </RadioGroup>
                   {errors.stressLevel && (
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-[var(--brand-accent)] text-sm mt-1">
                       {errors.stressLevel}
                     </p>
                   )}
@@ -673,7 +679,7 @@ export function SurveyForm() {
 
             {currentStep === 5 && (
               <div className="space-y-6">
-                <h3 className="text-lg font-semibold text-red-500 mb-6">
+                <h3 className="text-lg font-semibold text-[var(--brand-accent)] mb-6">
                   Zdrowie i żywienie
                 </h3>
                 <div>
@@ -690,7 +696,7 @@ export function SurveyForm() {
                     placeholder="Opisz swoje nawyki żywieniowe, używki, suplementy..."
                   />
                   {errors.nutrition && (
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-[var(--brand-accent)] text-sm mt-1">
                       {errors.nutrition}
                     </p>
                   )}
@@ -754,7 +760,7 @@ export function SurveyForm() {
           {currentStep < totalSteps ? (
             <Button
               onClick={nextStep}
-              className="bg-red-600 hover:bg-red-700 text-white"
+              className="bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white"
             >
               Następny
               <ChevronRight className="w-4 h-4 ml-2" />

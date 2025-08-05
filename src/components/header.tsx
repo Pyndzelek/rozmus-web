@@ -38,7 +38,9 @@ export function Header() {
           />
           <div>
             <div className="text-xl font-bold">Filip</div>
-            <div className="text-red-500 font-semibold">Rozmus</div>
+            <div className="text-[var(--brand-accent)] font-semibold">
+              Rozmus
+            </div>
           </div>
         </Link>
 
@@ -48,7 +50,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-red-500 transition-colors"
+              className="hover:text-[var(--brand-accent)] transition-colors"
             >
               {link.label}
             </Link>
@@ -77,7 +79,7 @@ export function Header() {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className="block px-4 py-3 hover:text-red-500 hover:bg-gray-900 rounded-lg transition-all duration-200 font-medium"
+                      className="block px-4 py-3 hover:text-[var(--brand-accent)] hover:bg-gray-900 rounded-lg transition-all duration-200 font-medium"
                     >
                       {link.label}
                     </Link>
@@ -95,7 +97,7 @@ export function Header() {
                   <SheetClose asChild>
                     <Link
                       href="/kontakt"
-                      className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                      className="inline-block bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white px-6 py-3 rounded-lg font-semibold transition-colors"
                     >
                       Skontaktuj się
                     </Link>

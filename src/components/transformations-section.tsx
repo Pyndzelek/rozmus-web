@@ -60,8 +60,8 @@ export function TransformationsSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden bg-red-600 hover:bg-red-700 text-white hover:text-white border-0 sm:flex" />
-          <CarouselNext className="hidden bg-red-600 hover:bg-red-700 text-white hover:text-white border-0 sm:flex" />
+          <CarouselPrevious className="hidden bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white hover:text-white border-0 sm:flex" />
+          <CarouselNext className="hidden bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white hover:text-white border-0 sm:flex" />
         </Carousel>
       </div>
     </section>

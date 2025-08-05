@@ -58,9 +58,9 @@ export function TestimonialsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <Card className="bg-black border-gray-800 h-full hover:border-red-500/50 transition-colors duration-300">
+              <Card className="bg-black border-gray-800 h-full hover:border-[var(--brand-accent)]/50 transition-colors duration-300">
                 <CardContent className="p-6">
-                  <Quote className="w-8 h-8 text-red-500 mb-4" />
+                  <Quote className="w-8 h-8 text-[var(--brand-accent)] mb-4" />
                   <p className="text-gray-300 mb-6 leading-relaxed">
                     &quot;{testimonial.content}&quot;
                   </p>

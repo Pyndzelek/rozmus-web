@@ -39,7 +39,7 @@ export function CalorieCalculator() {
                   Kalkulator kalorii
                 </CardTitle>
                 <div className="flex gap-4 mt-4">
-                  <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-8 h-8 bg-[var(--brand-accent-strong)] rounded-full flex items-center justify-center text-white font-bold">
                     1
                   </div>
                   <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center text-white">
@@ -49,7 +49,7 @@ export function CalorieCalculator() {
                     3
                   </div>
                 </div>
-                <div className="text-red-500 text-sm font-semibold mt-4">
+                <div className="text-[var(--brand-accent)] text-sm font-semibold mt-4">
                   DANE PODSTAWOWE
                 </div>
               </CardHeader>
@@ -60,7 +60,7 @@ export function CalorieCalculator() {
                     <Label className="text-white text-base md:text-lg">
                       Waga:
                     </Label>
-                    <div className="text-xl md:text-2xl font-bold text-red-500">
+                    <div className="text-xl md:text-2xl font-bold text-[var(--brand-accent)]">
                       {formData.weight[0]} kg
                     </div>
                   </div>
@@ -72,7 +72,7 @@ export function CalorieCalculator() {
                     max={150}
                     min={40}
                     step={1}
-                    className="w-full [&_[data-radix-slider-range]]:bg-red-600 [&_[data-radix-slider-thumb]]:bg-red-600 [&_[data-radix-slider-thumb]]:border-white"
+                    className="w-full [&_[data-radix-slider-range]]:bg-[var(--brand-accent-strong)] [&_[data-radix-slider-thumb]]:bg-[var(--brand-accent-strong)] [&_[data-radix-slider-thumb]]:border-white"
                   />
                   <div className="flex justify-between text-sm text-gray-400">
                     <span>40 kg</span>
@@ -86,7 +86,7 @@ export function CalorieCalculator() {
                     <Label className="text-white text-base md:text-lg">
                       Wzrost:
                     </Label>
-                    <div className="text-xl md:text-2xl font-bold text-red-500">
+                    <div className="text-xl md:text-2xl font-bold text-[var(--brand-accent)]">
                       {formData.height[0]} cm
                     </div>
                   </div>
@@ -98,7 +98,7 @@ export function CalorieCalculator() {
                     max={220}
                     min={140}
                     step={1}
-                    className="w-full [&_[data-radix-slider-range]]:bg-red-600 [&_[data-radix-slider-thumb]]:bg-red-600 [&_[data-radix-slider-thumb]]:border-white"
+                    className="w-full [&_[data-radix-slider-range]]:bg-[var(--brand-accent-strong)] [&_[data-radix-slider-thumb]]:bg-[var(--brand-accent-strong)] [&_[data-radix-slider-thumb]]:border-white"
                   />
                   <div className="flex justify-between text-sm text-gray-400">
                     <span>140 cm</span>
@@ -112,7 +112,7 @@ export function CalorieCalculator() {
                     <Label className="text-white text-base md:text-lg">
                       Wiek:
                     </Label>
-                    <div className="text-xl md:text-2xl font-bold text-red-500">
+                    <div className="text-xl md:text-2xl font-bold text-[var(--brand-accent)]">
                       {formData.age[0]} lat
                     </div>
                   </div>
@@ -124,7 +124,7 @@ export function CalorieCalculator() {
                     max={80}
                     min={16}
                     step={1}
-                    className="w-full [&_[data-radix-slider-range]]:bg-red-600 [&_[data-radix-slider-thumb]]:bg-red-600 [&_[data-radix-slider-thumb]]:border-white"
+                    className="w-full [&_[data-radix-slider-range]]:bg-[var(--brand-accent-strong)] [&_[data-radix-slider-thumb]]:bg-[var(--brand-accent-strong)] [&_[data-radix-slider-thumb]]:border-white"
                   />
                   <div className="flex justify-between text-sm text-gray-400">
                     <span>16 lat</span>
@@ -153,7 +153,7 @@ export function CalorieCalculator() {
                   </Select>
                 </div>
 
-                <Button className="w-full bg-red-600 hover:bg-red-700 text-white py-3 transition-all duration-300 hover:scale-105">
+                <Button className="w-full bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white py-3 transition-all duration-300 hover:scale-105">
                   Dalej
                 </Button>
               </CardContent>
@@ -173,7 +173,7 @@ export function CalorieCalculator() {
               Sprawdzony plan treningowy to Twoja droga do widocznych
               rezultatów. Nie czekaj — zacznij już dziś!
             </p>
-            <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg transition-all duration-300 hover:scale-105">
+            <Button className="bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white px-8 py-3 text-lg transition-all duration-300 hover:scale-105">
               Zacznijmy przemianę <ChevronRight className="ml-2 w-5 h-5" />
             </Button>
           </motion.div>

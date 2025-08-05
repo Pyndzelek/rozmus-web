@@ -24,17 +24,17 @@ export default function TrainingPlansPage() {
 
   const features = [
     {
-      icon: <Target className="w-8 h-8 text-red-500" />,
+      icon: <Target className="w-8 h-8 text-[var(--brand-accent)]" />,
       title: "Indywidualne podejście",
       description: "Każdy plan jest tworzony specjalnie dla Ciebie",
     },
     {
-      icon: <Users className="w-8 h-8 text-red-500" />,
+      icon: <Users className="w-8 h-8 text-[var(--brand-accent)]" />,
       title: "Stałe wsparcie",
       description: "Jestem z Tobą przez cały proces transformacji",
     },
     {
-      icon: <Clock className="w-8 h-8 text-red-500" />,
+      icon: <Clock className="w-8 h-8 text-[var(--brand-accent)]" />,
       title: "Elastyczność",
       description: "Plany dostosowane do Twojego stylu życia",
     },
@@ -53,8 +53,10 @@ export default function TrainingPlansPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-red-500">Plany treningowe</span> dopasowane
-              do Ciebie
+              <span className="text-[var(--brand-accent)]">
+                Plany treningowe
+              </span>{" "}
+              dopasowane do Ciebie
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               Wybierz plan, który najlepiej odpowiada Twoim celom i
@@ -120,12 +122,12 @@ export default function TrainingPlansPage() {
               >
                 <Card
                   className={`bg-gray-900 border-gray-800 h-full relative ${
-                    plan.popular ? "border-red-500" : ""
+                    plan.popular ? "border-[var(--brand-accent)]" : ""
                   }`}
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+                      <div className="bg-[var(--brand-accent-strong)] text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
                         <Star className="w-4 h-4" />
                         Najpopularniejszy
                       </div>
@@ -136,7 +138,7 @@ export default function TrainingPlansPage() {
                     <CardTitle className="text-xl md:text-2xl font-bold text-white">
                       {plan.name}
                     </CardTitle>
-                    <div className="text-2xl md:text-4xl font-bold text-red-500 my-4">
+                    <div className="text-2xl md:text-4xl font-bold text-[var(--brand-accent)] my-4">
                       {plan.price}
                     </div>
                     <div className="text-gray-400">{plan.duration}</div>
@@ -150,7 +152,7 @@ export default function TrainingPlansPage() {
                           key={featureIndex}
                           className="flex items-start gap-3"
                         >
-                          <Check className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+                          <Check className="w-5 h-5 text-[var(--brand-accent)] mt-0.5 flex-shrink-0" />
                           <span className="text-gray-300">{feature}</span>
                         </li>
                       ))}
@@ -159,7 +161,7 @@ export default function TrainingPlansPage() {
                     <Button
                       className={`w-full py-3 ${
                         plan.popular
-                          ? "bg-red-600 hover:bg-red-700"
+                          ? "bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)]"
                           : "bg-gray-700 hover:bg-gray-600"
                       } transition-all duration-300 hover:scale-105`}
                     >

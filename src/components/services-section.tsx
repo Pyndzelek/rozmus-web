@@ -19,7 +19,7 @@ export function ServicesSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.4, delay: 0.1 }}
           >
-            <motion.div className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-3  transition-colors">
+            <motion.div className="w-16 h-16 bg-[var(--brand-accent-strong)] rounded-lg flex items-center justify-center mx-auto mb-3  transition-colors">
               <Target className="w-8 h-8 text-white" />
             </motion.div>
             <h3 className="text-lg md:text-2xl font-bold mb-2 transition-colors">
@@ -34,7 +34,7 @@ export function ServicesSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <motion.div className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-3  transition-colors">
+            <motion.div className="w-16 h-16 bg-[var(--brand-accent-strong)] rounded-lg flex items-center justify-center mx-auto mb-3  transition-colors">
               <Calendar className="w-8 h-8 text-white" />
             </motion.div>
             <h3 className="text-lg md:text-2xl font-bold mb-2 transition-colors">

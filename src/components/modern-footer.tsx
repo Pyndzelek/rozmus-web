@@ -21,7 +21,7 @@ export function ModernFooter() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-accent-strong)]/10 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-6 py-16 relative">
         <div className="grid md:grid-cols-4 gap-8">
@@ -36,14 +36,16 @@ export function ModernFooter() {
               />
               <div>
                 <div className="text-2xl font-bold">Filip</div>
-                <div className="text-red-500 font-semibold">Rozmus</div>
+                <div className="text-[var(--brand-accent)] font-semibold">
+                  Rozmus
+                </div>
               </div>
             </div>
 
             <div className="flex gap-4">
               <motion.a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[var(--brand-accent-strong)] transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -51,7 +53,7 @@ export function ModernFooter() {
               </motion.a>
               <motion.a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[var(--brand-accent-strong)] transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -74,7 +76,7 @@ export function ModernFooter() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-gray-300 hover:text-red-500 transition-colors"
+                    className="text-gray-300 hover:text-[var(--brand-accent)] transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -88,15 +90,15 @@ export function ModernFooter() {
             <h3 className="text-xl font-bold mb-6">Kontakt</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-red-500" />
+                <Mail className="w-5 h-5 text-[var(--brand-accent)]" />
                 <span className="text-gray-300">rozmus.nlt@gmail.com</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-red-500" />
+                <Phone className="w-5 h-5 text-[var(--brand-accent)]" />
                 <span className="text-gray-300">+48 513978894</span>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-red-500" />
+                <MapPin className="w-5 h-5 text-[var(--brand-accent)]" />
                 <span className="text-gray-300">
                   Studio Gorce, Aleje tysiąclecia 74, 34-400 Nowy Targ
                 </span>
