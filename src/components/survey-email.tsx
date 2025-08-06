@@ -63,7 +63,7 @@ export const SurveyEmail = ({ data }: SurveyEmailProps) => {
               <strong>Główne cele:</strong> {formatArray(data.goals)}
             </Text>
             <Text>
-              <strong>Dni treningowe w tyg.:</strong>{" "}
+              <strong>Dni treningowe w tyg:</strong>{" "}
               {formatArray(data.trainingDays)}
             </Text>
             <Text>

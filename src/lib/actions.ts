@@ -3,6 +3,7 @@
 import { Resend } from "resend";
 import { SurveyEmail } from "@/components/survey-email";
 import { surveyFormSchema, SurveyFormData } from "./schemas";
+import { ConfirmationEmail } from "@/components/confirmation-email";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -33,7 +34,6 @@ export async function submitSurvey(formData: SurveyFormData) {
   // 2. Walidacja danych formularza na serwerze
   const validatedFields = surveyFormSchema.safeParse(formData);
   if (!validatedFields.success) {
-    // Logowanie błędów walidacji może być pomocne w debugowaniu
     console.error(
       "Server-side validation failed:",
       validatedFields.error.flatten().fieldErrors
@@ -44,15 +44,26 @@ export async function submitSurvey(formData: SurveyFormData) {
     };
   }
 
-  // 3. Wysłanie maila za pomocą Resend
+  const { data } = validatedFields;
+
   try {
-    await resend.emails.send({
-      from: "Survey Form <onboarding@resend.dev>", // TODO: Zmień na zweryfikowaną domenę w Resend
-      to: "twoj-prywatny-email@example.com", // TODO: Wpisz swój adres email, na który mają przychodzić powiadomienia
-      subject: `Nowe zgłoszenie od: ${validatedFields.data.name}`,
-      react: SurveyEmail({ data: validatedFields.data }),
-      replyTo: validatedFields.data.email,
-    });
+    await Promise.all([
+      resend.emails.send({
+        from: "Nowe Zgłoszenie <formularz@filiprozmus.pl>",
+        to: "rozmus.nlt@gmail.com",
+        subject: `Nowe zgłoszenie od: ${data.name}`,
+        react: SurveyEmail({ data }),
+        replyTo: data.email,
+      }),
+
+      //potwierdzenie wysłania formularza do użytkownika
+      resend.emails.send({
+        from: "Filip Rozmus <formularz@filiprozmus.pl>",
+        to: data.email,
+        subject: "Potwierdzenie otrzymania formularza",
+        react: ConfirmationEmail({ name: data.name }),
+      }),
+    ]);
 
     return { success: true, message: "Formularz wysłany pomyślnie!" };
   } catch (error) {
