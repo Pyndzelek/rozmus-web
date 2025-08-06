@@ -5,15 +5,24 @@ import {
   Heading,
   Container,
   Text,
+  Section,
   Hr,
   Preview,
 } from "@react-email/components";
+import { SurveyFormData } from "@/lib/schemas";
 
 interface ConfirmationEmailProps {
-  name: string;
+  data: SurveyFormData;
 }
 
-export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
+export const ConfirmationEmail = ({ data }: ConfirmationEmailProps) => {
+  const formatArray = (arr?: string[]) => {
+    if (!arr || arr.length === 0) return "Nie podano";
+    return arr.join(", ");
+  };
+
+  const firstName = data.name.trim().split(" ")[0];
+
   return (
     <Html>
       <Head />
@@ -29,16 +38,80 @@ export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
           }}
         >
           <Heading style={{ color: "#111827", fontSize: "24px" }}>
-            Cześć, {name}!
+            Cześć, {firstName}!
           </Heading>
           <Text style={{ color: "#374151", fontSize: "16px" }}>
-            Dzięki za wypełnienie formularza konsultacyjnego. Otrzymałem Twoje
-            zgłoszenie i jest ono bezpieczne.
+            Dziękuję za wypełnienie formularza konsultacyjnego. Poniżej
+            znajdziesz kopię informacji, które nam przesłałeś.
           </Text>
           <Text style={{ color: "#374151", fontSize: "16px" }}>
             Wkrótce zapoznam się z Twoimi odpowiedziami oraz skontaktuję się z
-            Tobą!
+            Tobą, aby omówić dalsze kroki.
           </Text>
+          <Hr style={{ borderColor: "#e5e7eb", margin: "20px 0" }} />
+
+          <Section>
+            <Heading as="h2" style={{ fontSize: "20px", color: "#1f2937" }}>
+              Podsumowanie Twojego zgłoszenia:
+            </Heading>
+            <Text>
+              <strong>Email:</strong> {data.email}
+            </Text>
+            <Text>
+              <strong>Wiek:</strong> {data.age} lat
+            </Text>
+            <Text>
+              <strong>Wzrost:</strong> {data.height} cm
+            </Text>
+            <Text>
+              <strong>Waga:</strong> {data.weight} kg
+            </Text>
+            <Hr style={{ borderColor: "#e5e7eb" }} />
+            <Text>
+              <strong>Cele treningowe:</strong> {formatArray(data.goals)}
+            </Text>
+            <Text>
+              <strong>Dni treningowe w tygodniu:</strong>{" "}
+              {formatArray(data.trainingDays)}
+            </Text>
+            <Text>
+              <strong>Preferowane dni:</strong>{" "}
+              {formatArray(data.preferredDays)}
+            </Text>
+            <Hr style={{ borderColor: "#e5e7eb" }} />
+            <Text>
+              <strong>Opis aktywności:</strong> {data.activityLevel}
+            </Text>
+            <Text>
+              <strong>Czas w pozycji siedzącej:</strong> {data.sittingTime}
+            </Text>
+            <Hr style={{ borderColor: "#e5e7eb" }} />
+            <Text>
+              <strong>Ilość snu:</strong> {data.sleepHours}
+            </Text>
+            <Text>
+              <strong>Jakość snu:</strong> {data.sleepQuality}
+            </Text>
+            <Text>
+              <strong>Poziom stresu:</strong> {data.stressLevel}
+            </Text>
+            <Hr style={{ borderColor: "#e5e7eb" }} />
+            <Text>
+              <strong>Sposób żywienia:</strong> {data.nutrition}
+            </Text>
+            <Text>
+              <strong>Kontuzje:</strong> {data.injuries || "Nie podano"}
+            </Text>
+            <Text>
+              <strong>Problemy sercowo-naczyniowe:</strong>{" "}
+              {data.cardiovascular || "Nie podano"}
+            </Text>
+            <Text>
+              <strong>Lekarstwa i suplementy:</strong>{" "}
+              {data.medications || "Nie podano"}
+            </Text>
+          </Section>
+
           <Hr style={{ borderColor: "#e5e7eb", margin: "20px 0" }} />
           <Text style={{ color: "#52525b", fontSize: "14px" }}>
             Pozdrawiam

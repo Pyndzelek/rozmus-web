@@ -61,7 +61,7 @@ export async function submitSurvey(formData: SurveyFormData) {
         from: "Filip Rozmus <formularz@filiprozmus.pl>",
         to: data.email,
         subject: "Potwierdzenie otrzymania formularza",
-        react: ConfirmationEmail({ name: data.name }),
+        react: ConfirmationEmail({ data }),
       }),
     ]);
 
