@@ -92,7 +92,7 @@ export default function TrainingPlansPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="md:py-20 py-10">
+      <section className="md:py-15 py-10">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -113,7 +113,7 @@ export default function TrainingPlansPage() {
       </section>
 
       {/* Features Section */}
-      <section className="md:py-20 py-10 bg-gray-900">
+      <section className="py-10 bg-gray-900">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
