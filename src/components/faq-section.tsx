@@ -11,7 +11,7 @@ export function FAQSection() {
     {
       question: "Jak długo trwa plan treningowy?",
       answer:
-        "Standardowe plany trwają od 6 do 12 tygodni, ale można go dostosować do indywidualnych potrzeb.",
+        "Standardowy plan trwa od 6 do 12 tygodni, ale można go dostosować do indywidualnych potrzeb.",
     },
     {
       question: "Czy potrzebuję doświadczenia w treningu siłowym?",

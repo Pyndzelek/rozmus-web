@@ -67,6 +67,7 @@ export function ModernFooter() {
             <h3 className="text-xl font-bold mb-6">Szybkie linki</h3>
             <ul className="space-y-3">
               {[
+                { href: "/", label: "Strona główna" },
                 { href: "/o-mnie", label: "O mnie" },
                 { href: "/oferta", label: "Oferta" },
                 { href: "/opinie", label: "Opinie" },
@@ -94,11 +95,11 @@ export function ModernFooter() {
                 <span className="text-gray-300">rozmus.nlt@gmail.com</span>
               </div>
               <a
-                href="tel:+48696969696"
+                href="tel:+48513978894"
                 className="flex items-center gap-3 text-gray-300 transition-colors hover:text-white"
               >
                 <Phone className="h-5 w-5 text-[var(--brand-accent)]" />
-                <span>+48 696 969 696</span>
+                <span>+48 513 978 894</span>
               </a>
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-[var(--brand-accent)]" />
