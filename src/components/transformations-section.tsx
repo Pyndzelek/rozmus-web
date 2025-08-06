@@ -25,7 +25,7 @@ export function TransformationsSection() {
   return (
     <section className="bg-black text-white py-10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-center md:mb-16 mb-8">
           Przemiany moich podopiecznych
         </h2>
 
@@ -43,7 +43,7 @@ export function TransformationsSection() {
             {transformations.map((src, index) => (
               <CarouselItem
                 key={index}
-                className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4"
+                className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
               >
                 <div className="p-1">
                   <Image

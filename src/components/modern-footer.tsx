@@ -21,7 +21,7 @@ export function ModernFooter() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-accent-strong)]/10 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-accent)]/20 to-[var(--brand-accent-darker)]/10"></div>
 
       <div className="max-w-7xl mx-auto px-6 py-16 relative">
         <div className="grid md:grid-cols-4 gap-8">
@@ -113,7 +113,8 @@ export function ModernFooter() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 Filip Rozmus. Wszystkie prawa zastrzeżone.
+            © {new Date().getFullYear()} Filip Rozmus. Wszystkie prawa
+            zastrzeżone.
           </p>
         </div>
       </div>

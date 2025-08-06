@@ -41,10 +41,22 @@ export default function AboutPage() {
                 lata.
               </p>
               <div className="space-y-4 text-gray-300">
-                <p>✓ Certyfikowany instruktor</p>
-                <p>✓ Certyfikowany trener personalny</p>
-                <p>✓ Certyfikowany trener trójboju siłowego</p>
-                <p>✓ Zawodnik trójboju siłowego</p>
+                <p>
+                  <span className="text-[var(--brand-accent)]">✓</span>{" "}
+                  Certyfikowany instruktor
+                </p>
+                <p>
+                  <span className="text-[var(--brand-accent)]">✓</span>{" "}
+                  Certyfikowany trener personalny
+                </p>
+                <p>
+                  <span className="text-[var(--brand-accent)]">✓</span>{" "}
+                  Certyfikowany trener trójboju siłowego
+                </p>
+                <p>
+                  <span className="text-[var(--brand-accent)]">✓</span> Zawodnik
+                  trójboju siłowego
+                </p>
               </div>
             </motion.div>
 
@@ -73,7 +85,7 @@ export default function AboutPage() {
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
-                className="text-center p-6 bg-black rounded-lg border border-gray-800"
+                className="text-center p-6 bg-gray-800 rounded-lg border border-gray-800"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
