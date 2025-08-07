@@ -39,11 +39,38 @@ const stepFields: (keyof SurveyFormData)[][] = [
   ["nutrition"],
 ];
 
-export default function SurveyForm() {
+export default function SurveyForm({
+  selectedPlan,
+}: {
+  selectedPlan: string | null;
+}) {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
+
+  const planDetails: { [key: string]: { title: string; description: string } } =
+    {
+      "indywidualny-plan-treningowy": {
+        title: "Indywidualny plan treningowy",
+        description:
+          "Wypełnij formularz, aby otrzymać plan treningowy idealnie dopasowany do Twoich potrzeb i celów.",
+      },
+      "prowadzenie-online": {
+        title: "Prowadzenie online",
+        description:
+          "Zaczynamy naszą współpracę! Wypełnij formularz, abym mógł przygotować dla Ciebie najlepszy możliwy start.",
+      },
+      "12-treningw--plan": {
+        title: "12 treningów + plan",
+        description:
+          "Świetny wybór! Proszę, wypełnij ankietę, która pomoże nam maksymalnie wykorzystać nasze sesje. Na jej podstawie przygotuję dla Ciebie spersonalizowany plan treningowy.",
+      },
+    };
+  const currentPlan = selectedPlan ? planDetails[selectedPlan] : null;
+  const defaultTitle = "Formularz konsultacyjny";
+  const defaultDescription =
+    "Wypełnij formularz, aby otrzymać spersonalizowany plan treningowy dopasowany do Twoich potrzeb i celów.";
 
   const {
     control,
@@ -72,6 +99,7 @@ export default function SurveyForm() {
       injuries: "",
       cardiovascular: "",
       medications: "",
+      selectedPlan: currentPlan?.title || "",
     },
   });
 
@@ -131,12 +159,12 @@ export default function SurveyForm() {
     <>
       <div className="text-center mb-12">
         <h1 className="text-3xl md:text-5xl font-bold mb-6">
-          <span className="text-[var(--brand-accent)]">Formularz</span>{" "}
-          konsultacyjny
+          <span className="text-[var(--brand-accent)]">
+            {currentPlan?.title || defaultTitle}
+          </span>
         </h1>
         <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-          Wypełnij formularz, aby otrzymać spersonalizowany plan treningowy
-          dopasowany do Twoich potrzeb i celów.
+          {currentPlan?.description || defaultDescription}
         </p>
       </div>
       <Card className="w-full max-w-4xl mx-auto bg-gray-900 border-gray-800">

@@ -87,6 +87,19 @@ export default function TrainingPlansPage() {
     },
   ];
 
+  const createPlanSlug = (name: string) => {
+    return name
+      .toLowerCase()
+      .replace(/\s+/g, "-") // Replace spaces with -
+      .replace(/[^\w\-]+/g, ""); // Remove all non-word chars
+  };
+
+  const plansWithRedirect = [
+    "Indywidualny plan treningowy",
+    "Prowadzenie online",
+    "12 treningów + plan",
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white">
       <Header />
@@ -157,78 +170,85 @@ export default function TrainingPlansPage() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {plans.map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="flex flex-col h-full"
-              >
-                <Card
-                  className={`bg-gray-900 border-gray-800 h-full relative flex flex-col`}
+            {plans.map((plan, index) => {
+              const isRedirectPlan = plansWithRedirect.includes(plan.name);
+              const href = isRedirectPlan
+                ? `/formularz?plan=${createPlanSlug(plan.name)}`
+                : "#"; // Fallback href for other plans, you can change this
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="flex flex-col h-full"
                 >
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-[var(--brand-accent-strong)] text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
-                        <Star className="w-4 h-4" />
-                        Najpopularniejszy
+                  <Card
+                    className={`bg-gray-900 border-gray-800 h-full relative flex flex-col`}
+                  >
+                    {plan.popular && (
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div className="bg-[var(--brand-accent-strong)] text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+                          <Star className="w-4 h-4" />
+                          Najpopularniejszy
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
 
-                  <CardHeader className="text-center">
-                    <CardTitle className="text-xl md:text-2xl font-bold text-white">
-                      {plan.name}
-                    </CardTitle>
-                    <div className="my-4 flex items-baseline justify-center gap-2">
-                      {plan.higher_price && (
-                        <span className="text-xl md:text-2xl font-bold text-gray-500 line-through">
-                          {plan.higher_price}
+                    <CardHeader className="text-center">
+                      <CardTitle className="text-xl md:text-2xl font-bold text-white">
+                        {plan.name}
+                      </CardTitle>
+                      <div className="my-4 flex items-baseline justify-center gap-2">
+                        {plan.higher_price && (
+                          <span className="text-xl md:text-2xl font-bold text-gray-500 line-through">
+                            {plan.higher_price}
+                          </span>
+                        )}
+                        <span className="text-2xl md:text-4xl font-bold text-[var(--brand-accent)]">
+                          {plan.price}
                         </span>
-                      )}
-                      <span className="text-2xl md:text-4xl font-bold text-[var(--brand-accent)]">
-                        {plan.price}
-                      </span>
-                    </div>
-                    <div className="text-gray-400">{plan.duration}</div>
-                    <p className="text-gray-300 mt-4">{plan.description}</p>
-                  </CardHeader>
+                      </div>
+                      <div className="text-gray-400">{plan.duration}</div>
+                      <p className="text-gray-300 mt-4">{plan.description}</p>
+                    </CardHeader>
 
-                  <CardContent className="flex flex-col flex-1">
-                    <ul className="space-y-3 mb-8">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li
-                          key={featureIndex}
-                          className="flex items-start gap-3"
-                        >
-                          <Check className="w-5 h-5 text-[var(--brand-accent)] mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-300">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-auto">
-                      <Link href="/formularz">
-                        <Button
-                          className={`w-full py-3 cursor-pointer ${
-                            plan.popular
-                              ? "bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)]"
-                              : "bg-gray-700 hover:bg-gray-600"
-                          } transition-all duration-300 hover:scale-105`}
-                        >
-                          Wybierz plan
-                        </Button>
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                    <CardContent className="flex flex-col flex-1">
+                      <ul className="space-y-3 mb-8">
+                        {plan.features.map((feature, featureIndex) => (
+                          <li
+                            key={featureIndex}
+                            className="flex items-start gap-3"
+                          >
+                            <Check className="w-5 h-5 text-[var(--brand-accent)] mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-300">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-auto">
+                        <Link href={href} passHref>
+                          <Button
+                            asChild={!isRedirectPlan}
+                            className={`w-full py-3 cursor-pointer ${
+                              plan.popular
+                                ? "bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)]"
+                                : "bg-gray-700 hover:bg-gray-600"
+                            } transition-all duration-300 hover:scale-105`}
+                          >
+                            Wybierz plan
+                          </Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
-
       <ModernFooter />
     </div>
   );

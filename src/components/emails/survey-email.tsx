@@ -38,6 +38,19 @@ export const SurveyEmail = ({ data }: SurveyEmailProps) => {
             {data.email}).
           </Text>
           <Hr style={{ borderColor: "#e5e7eb" }} />
+          {data.selectedPlan && (
+            <Text
+              style={{
+                color: "#374151",
+                fontSize: "16px",
+                backgroundColor: "#eef2ff",
+                padding: "10px",
+                borderRadius: "8px",
+              }}
+            >
+              Wybrana oferta: <strong>{data.selectedPlan}</strong>
+            </Text>
+          )}
 
           <Section>
             <Heading as="h2" style={{ fontSize: "20px", color: "#1f2937" }}>

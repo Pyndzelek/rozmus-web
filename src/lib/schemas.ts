@@ -37,6 +37,7 @@ export const surveyFormSchema = z.object({
   injuries: z.string().optional(),
   cardiovascular: z.string().optional(),
   medications: z.string().optional(),
+  selectedPlan: z.string().optional(),
 });
 
 export type SurveyFormData = z.infer<typeof surveyFormSchema>;

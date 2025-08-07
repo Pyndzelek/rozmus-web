@@ -44,6 +44,12 @@ export const ConfirmationEmail = ({ data }: ConfirmationEmailProps) => {
             Dziękuję za wypełnienie formularza konsultacyjnego. Poniżej
             znajdziesz kopię informacji, które mi przesłałeś.
           </Text>
+          {data.selectedPlan && (
+            <Text style={{ color: "#374151", fontSize: "16px" }}>
+              Wybrana przez Ciebie oferta to:{" "}
+              <strong>{data.selectedPlan}</strong>.
+            </Text>
+          )}
           <Text style={{ color: "#374151", fontSize: "16px" }}>
             Wkrótce zapoznam się z Twoimi odpowiedziami oraz skontaktuję się z
             Tobą, aby omówić dalsze kroki.
