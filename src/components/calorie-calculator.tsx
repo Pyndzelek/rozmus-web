@@ -14,6 +14,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function CalorieCalculator() {
   const [formData, setFormData] = useState({
@@ -173,9 +174,11 @@ export function CalorieCalculator() {
               Sprawdzony plan treningowy to Twoja droga do widocznych
               rezultatów. Nie czekaj — zacznij już dziś!
             </p>
-            <Button className="bg-[var(--brand-accent)] hover:bg-[var(--brand-accent-strong)] text-white px-8 py-3 text-lg transition-all duration-300 hover:scale-105">
-              Zacznijmy przemianę <ChevronRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Link href="/oferta" className="inline-block">
+              <Button className="bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white px-8 py-3 text-lg hover:scale-105 transition-transform cursor-pointer">
+                Zaczynam przemianę <ChevronRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </div>

@@ -19,7 +19,7 @@ export default function Home() {
       <WhyTrustSection />
       <MotivationSection />
       <TransformationsSection />
-      <CalorieCalculator />
+      {/* <CalorieCalculator /> */}
       <FAQSection />
       <ModernFooter />
     </div>
