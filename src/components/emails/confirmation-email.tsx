@@ -42,7 +42,7 @@ export const ConfirmationEmail = ({ data }: ConfirmationEmailProps) => {
           </Heading>
           <Text style={{ color: "#374151", fontSize: "16px" }}>
             Dziękuję za wypełnienie formularza konsultacyjnego. Poniżej
-            znajdziesz kopię informacji, które nam przesłałeś.
+            znajdziesz kopię informacji, które mi przesłałeś.
           </Text>
           <Text style={{ color: "#374151", fontSize: "16px" }}>
             Wkrótce zapoznam się z Twoimi odpowiedziami oraz skontaktuję się z

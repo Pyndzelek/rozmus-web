@@ -4,24 +4,11 @@ import type React from "react";
 
 import { Header } from "@/components/header";
 import { ModernFooter } from "@/components/modern-footer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import NewContactForm from "@/components/forms/contact-form-v2";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
-
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6 text-[var(--brand-accent)]" />,
@@ -48,21 +35,6 @@ export default function ContactPage() {
       description: "Sob: 9:00-15:00",
     },
   ];
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-  };
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -127,164 +99,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <Card className="bg-gray-900 border-gray-800">
-                <CardHeader>
-                  <CardTitle className="text-xl md:text-2xl font-bold text-white flex items-center gap-2">
-                    <Send className="w-6 h-6 text-[var(--brand-accent)]" />
-                    Wyślij wiadomość
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="name" className="text-white">
-                          Imię i nazwisko
-                        </Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          className="bg-gray-800 border-gray-700 text-white mt-2"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="phone" className="text-white">
-                          Telefon
-                        </Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          className="bg-gray-800 border-gray-700 text-white mt-2"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="email" className="text-white">
-                        Email
-                      </Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        className="bg-gray-800 border-gray-700 text-white mt-2"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="subject" className="text-white">
-                        Temat
-                      </Label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        type="text"
-                        required
-                        className="bg-gray-800 border-gray-700 text-white mt-2"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="message" className="text-white">
-                        Wiadomość
-                      </Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        required
-                        rows={5}
-                        className="bg-gray-800 border-gray-700 text-white mt-2 resize-none"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-
-                    <Button
-                      type="submit"
-                      className="w-full bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white py-3 transition-all duration-300 hover:scale-105"
-                    >
-                      <Send className="w-4 h-4 mr-2" />
-                      Wyślij wiadomość
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Additional Info */}
-            <motion.div
-              className="space-y-8"
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div>
-                <h2 className="text-xl md:text-3xl font-bold mb-6">
-                  Dlaczego warto się skontaktować?
-                </h2>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <MessageCircle className="w-6 h-6 text-[var(--brand-accent)] mt-1" />
-                    <div>
-                      <h3 className="font-semibold mb-1">
-                        Bezpłatna konsultacja
-                      </h3>
-                      <p className="text-gray-400">
-                        Pierwsza rozmowa jest zawsze darmowa - omówimy Twoje
-                        cele i możliwości
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Clock className="w-6 h-6 text-[var(--brand-accent)] mt-1" />
-                    <div>
-                      <h3 className="font-semibold mb-1">Szybka odpowiedź</h3>
-                      <p className="text-gray-400">
-                        Odpowiadam na wszystkie wiadomości jak najszybciej to
-                        możliwe
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Mail className="w-6 h-6 text-[var(--brand-accent)] mt-1" />
-                    <div>
-                      <h3 className="font-semibold mb-1">
-                        Indywidualne podejście
-                      </h3>
-                      <p className="text-gray-400">
-                        Każda rozmowa jest dostosowana do Twoich potrzeb i celów
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <NewContactForm />
 
       <ModernFooter />
     </div>

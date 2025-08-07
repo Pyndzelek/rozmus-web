@@ -2,7 +2,7 @@
 
 import { Header } from "@/components/header";
 import { ModernFooter } from "@/components/modern-footer";
-import SurveyForm from "@/components/survey-form";
+import SurveyForm from "@/components/forms/survey-form";
 
 export default function SurveyPage() {
   return (

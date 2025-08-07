@@ -1,9 +1,9 @@
 "use server";
 
 import { Resend } from "resend";
-import { SurveyEmail } from "@/components/survey-email";
+import { SurveyEmail } from "@/components/emails/survey-email";
 import { surveyFormSchema, SurveyFormData } from "./schemas";
-import { ConfirmationEmail } from "@/components/confirmation-email";
+import { ConfirmationEmail } from "@/components/emails/confirmation-email";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -53,7 +53,7 @@ export async function submitSurvey(formData: SurveyFormData) {
         to: "rozmus.nlt@gmail.com",
         subject: `Nowe zgłoszenie od: ${data.name}`,
         react: SurveyEmail({ data }),
-        replyTo: data.email,
+        reply_to: data.email,
       }),
 
       //potwierdzenie wysłania formularza do użytkownika

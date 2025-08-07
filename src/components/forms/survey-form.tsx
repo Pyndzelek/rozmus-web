@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { surveyFormSchema, SurveyFormData } from "@/lib/schemas";
-import { submitSurvey } from "@/lib/actions";
+import { submitSurvey } from "@/lib/formularz-actions";
 
 // Import UI components
 import { Button } from "@/components/ui/button";

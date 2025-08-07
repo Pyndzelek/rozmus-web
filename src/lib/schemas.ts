@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+// SURVEY FORM SCHEMA
 export const surveyFormSchema = z.object({
   email: z.string().email({ message: "Nieprawidłowy format email." }),
   name: z.string().min(1, { message: "Imię i nazwisko jest wymagane." }),
@@ -40,7 +41,22 @@ export const surveyFormSchema = z.object({
 
 export type SurveyFormData = z.infer<typeof surveyFormSchema>;
 
-console.log(
-  "--- SCHEMAT ZDEFINIOWANY W validators.ts ---",
-  surveyFormSchema.shape
-);
+//  CONTACT FORM SCHEMA
+export const contactFormSchema = z.object({
+  name: z.string().min(2, { message: "Imię i nazwisko jest wymagane." }),
+
+  email: z
+    .string()
+    .min(1, { message: "Email jest wymagany." })
+    .email({ message: "Proszę podać prawidłowy adres email." }),
+
+  phone: z.string().optional(),
+
+  subject: z.string().min(2, { message: "Temat jest wymagany." }),
+
+  message: z
+    .string()
+    .min(10, { message: "Wiadomość musi mieć co najmniej 10 znaków." }),
+});
+
+export type TContactFormSchema = z.infer<typeof contactFormSchema>;
