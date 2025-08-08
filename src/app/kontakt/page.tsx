@@ -61,13 +61,13 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="md:py-20 py-10 bg-gray-900">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
-                className="text-center p-6 bg-black rounded-lg border border-gray-800"
+                className="text-center p-6 bg-gray-800 rounded-lg border border-gray-800"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
