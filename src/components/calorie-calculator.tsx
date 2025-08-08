@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useRef, useState, useTransition } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import {
   calculateCaloriesAction,
@@ -65,6 +65,7 @@ export function CalorieCalculator() {
   const [errors, setErrors] = useState<
     Partial<Record<keyof CalculatorData, string>>
   >({});
+  const formRef = useRef<HTMLFormElement>(null);
 
   // Hook for server action state
   const [state, formAction] = useFormState(
@@ -103,6 +104,20 @@ export function CalorieCalculator() {
     if (validateStep(currentStep)) {
       if (currentStep < totalSteps) {
         setCurrentStep((prev) => prev + 1);
+        if (window.innerWidth < 768) {
+          if (formRef.current) {
+            const offset = 20;
+            const topPosition =
+              formRef.current.getBoundingClientRect().top +
+              window.scrollY -
+              offset;
+
+            window.scrollTo({
+              top: topPosition,
+              behavior: "smooth",
+            });
+          }
+        }
       } else {
         // On the last step, we trigger the form submission
         const payload = new FormData();
@@ -192,7 +207,7 @@ export function CalorieCalculator() {
   return (
     <section className="bg-black text-white md:py-20 py-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 md:gap-12 gap-6 items-center">
           {/* Right-side text content is now first in the code for mobile */}
           <motion.div
             initial={{ x: 50, opacity: 0 }}
@@ -200,16 +215,16 @@ export function CalorieCalculator() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-2xl md:text-4xl font-bold mb-6">
+            <h2 className="text-2xl md:text-4xl font-bold md:mb-6 mb-2">
               Pragniesz zdrowej i silnej sylwetki?
             </h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-8">
+            <p className="text-lg md:text-xl text-gray-300 md:mb-8 mb-4">
               Sprawdzona rozpiska kaloryczna to Twoja droga do widocznych
               rezultatów. Oblicz swoje zapotrzebowanie kaloryczne i otrzymaj
               spersonalizowane rekomendacje!
             </p>
 
-            <div className="space-y-4">
+            <div className="md:space-y-4 space-y-3">
               <div
                 className={`flex items-center gap-3 transition-all duration-300 ${
                   currentStep >= 1 ? "text-white" : "text-gray-500"
@@ -268,7 +283,7 @@ export function CalorieCalculator() {
             transition={{ duration: 0.6 }}
             className="lg:order-first" // This class moves the form to the first column on large screens
           >
-            <form>
+            <form ref={formRef}>
               <Card className="bg-gray-900 border-gray-800">
                 <CardHeader>
                   <CardTitle className="text-white text-xl md:text-2xl">
