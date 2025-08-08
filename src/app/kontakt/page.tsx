@@ -41,7 +41,7 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-20">
+      <section className="md:py-20 py-10">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ y: 30, opacity: 0 }}

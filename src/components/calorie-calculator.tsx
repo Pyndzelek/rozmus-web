@@ -190,21 +190,86 @@ export function CalorieCalculator() {
 
   // Main Calculator View
   return (
-    <section className="bg-black text-white py-20">
+    <section className="bg-black text-white md:py-20 py-10">
       <div className="max-w-7xl mx-auto px-6">
-        {/* The component layout remains largely the same */}
-        {/* ... (grid, motion.div for text, etc.) */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Right-side text content is now first in the code for mobile */}
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h2 className="text-2xl md:text-4xl font-bold mb-6">
+              Pragniesz zdrowej i silnej sylwetki?
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 mb-8">
+              Sprawdzona rozpiska kaloryczna to Twoja droga do widocznych
+              rezultatów. Oblicz swoje zapotrzebowanie kaloryczne i otrzymaj
+              spersonalizowane rekomendacje!
+            </p>
+
+            <div className="space-y-4">
+              <div
+                className={`flex items-center gap-3 transition-all duration-300 ${
+                  currentStep >= 1 ? "text-white" : "text-gray-500"
+                }`}
+              >
+                <div
+                  className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${
+                    currentStep >= 1
+                      ? "bg-[var(--brand-accent-strong)] text-white"
+                      : "bg-gray-700 text-gray-400"
+                  }`}
+                >
+                  1
+                </div>
+                <span>Podaj podstawowe dane</span>
+              </div>
+              <div
+                className={`flex items-center gap-3 transition-all duration-300 ${
+                  currentStep >= 2 ? "text-white" : "text-gray-500"
+                }`}
+              >
+                <div
+                  className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${
+                    currentStep >= 2
+                      ? "bg-[var(--brand-accent-strong)] text-white"
+                      : "bg-gray-700 text-gray-400"
+                  }`}
+                >
+                  2
+                </div>
+                <span>Wybierz cel i poziom aktywności</span>
+              </div>
+              <div
+                className={`flex items-center gap-3 transition-all duration-300 ${
+                  currentStep >= 3 ? "text-white" : "text-gray-500"
+                }`}
+              >
+                <div
+                  className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${
+                    currentStep >= 3
+                      ? "bg-[var(--brand-accent-strong)] text-white"
+                      : "bg-gray-700 text-gray-400"
+                  }`}
+                >
+                  3
+                </div>
+                <span>Otrzymaj spersonalizowany plan</span>
+              </div>
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="lg:order-first" // This class moves the form to the first column on large screens
           >
-            {/* The form element now wraps the card */}
             <form>
               <Card className="bg-gray-900 border-gray-800">
-                {/* CardHeader with progress steps remains the same */}
                 <CardHeader>
                   <CardTitle className="text-white text-xl md:text-2xl">
                     Kalkulator kalorii
@@ -374,7 +439,7 @@ export function CalorieCalculator() {
                                 onValueChange={(value) =>
                                   updateFormData("goal", value)
                                 }
-                                className="space-y-3 "
+                                className="md:space-y-3"
                               >
                                 <div
                                   className={`flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800 transition-colors ${
@@ -478,7 +543,7 @@ export function CalorieCalculator() {
                                 onValueChange={(value) =>
                                   updateFormData("activityLevel", value)
                                 }
-                                className="space-y-3"
+                                className="md:space-y-3"
                               >
                                 <div
                                   className={`flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800 transition-colors ${
@@ -753,73 +818,6 @@ export function CalorieCalculator() {
                 </CardContent>
               </Card>
             </form>
-          </motion.div>
-          {/* Right-side text content remains the same */}
-          <motion.div
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h2 className="text-2xl md:text-4xl font-bold mb-6">
-              Pragniesz zdrowej i silnej sylwetki? Zacznij przemianę już dziś!
-            </h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-8">
-              Sprawdzona rozpiska kaloryczna to Twoja droga do widocznych
-              rezultatów. Oblicz swoje zapotrzebowanie kaloryczne i otrzymaj
-              spersonalizowane rekomendacje!
-            </p>
-
-            <div className="space-y-4">
-              <div
-                className={`flex items-center gap-3 transition-all duration-300 ${
-                  currentStep >= 1 ? "text-white" : "text-gray-500"
-                }`}
-              >
-                <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${
-                    currentStep >= 1
-                      ? "bg-[var(--brand-accent-strong)] text-white"
-                      : "bg-gray-700 text-gray-400"
-                  }`}
-                >
-                  1
-                </div>
-                <span>Podaj podstawowe dane</span>
-              </div>
-              <div
-                className={`flex items-center gap-3 transition-all duration-300 ${
-                  currentStep >= 2 ? "text-white" : "text-gray-500"
-                }`}
-              >
-                <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${
-                    currentStep >= 2
-                      ? "bg-[var(--brand-accent-strong)] text-white"
-                      : "bg-gray-700 text-gray-400"
-                  }`}
-                >
-                  2
-                </div>
-                <span>Wybierz cel i poziom aktywności</span>
-              </div>
-              <div
-                className={`flex items-center gap-3 transition-all duration-300 ${
-                  currentStep >= 3 ? "text-white" : "text-gray-500"
-                }`}
-              >
-                <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${
-                    currentStep >= 3
-                      ? "bg-[var(--brand-accent-strong)] text-white"
-                      : "bg-gray-700 text-gray-400"
-                  }`}
-                >
-                  3
-                </div>
-                <span>Otrzymaj spersonalizowany plan</span>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>

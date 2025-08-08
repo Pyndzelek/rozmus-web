@@ -26,9 +26,9 @@ export const UserWelcomeEmail = ({ name, calories }: UserWelcomeEmailProps) => (
         <Heading style={heading}>Cześć {name.split(" ")[0]},</Heading>
         <Section style={mainContent}>
           <Text style={paragraph}>
-            Dziękuję za skorzystanie z mojego kalkulatora kalorii! Na podstawie
-            podanych przez Ciebie informacji obliczyłem Twoje szacunkowe dzienne
-            zapotrzebowanie kaloryczne.
+            Dziękuję Ci za skorzystanie z mojego kalkulatora kalorii! Na
+            podstawie podanych przez Ciebie informacji obliczyłem Twoje
+            szacunkowe dzienne zapotrzebowanie kaloryczne.
           </Text>
           <Section style={calorieCard}>
             <Text style={calorieText}>Twój dzienny cel kaloryczny to:</Text>

@@ -228,18 +228,32 @@ export default function TrainingPlansPage() {
                         ))}
                       </ul>
                       <div className="mt-auto">
-                        <Link href={href} passHref>
-                          <Button
-                            asChild={!isRedirectPlan}
-                            className={`w-full py-3 cursor-pointer ${
-                              plan.popular
-                                ? "bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)]"
-                                : "bg-gray-700 hover:bg-gray-600"
-                            } transition-all duration-300 hover:scale-105`}
-                          >
-                            Wybierz plan
-                          </Button>
-                        </Link>
+                        {isRedirectPlan ? (
+                          <Link href={href} passHref>
+                            <Button
+                              asChild={!isRedirectPlan}
+                              className={`w-full py-3 cursor-pointer ${
+                                plan.popular
+                                  ? "bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)]"
+                                  : "bg-gray-700 hover:bg-gray-600"
+                              } transition-all duration-300 hover:scale-105`}
+                            >
+                              Wybierz plan
+                            </Button>
+                          </Link>
+                        ) : (
+                          <Link href="/kontakt">
+                            <Button
+                              className={`w-full py-3 cursor-pointer ${
+                                plan.popular
+                                  ? "bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)]"
+                                  : "bg-gray-700 hover:bg-gray-600"
+                              } transition-all duration-300 hover:scale-105`}
+                            >
+                              Umów się na trening
+                            </Button>
+                          </Link>
+                        )}
                       </div>
                     </CardContent>
                   </Card>
