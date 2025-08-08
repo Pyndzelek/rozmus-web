@@ -6,6 +6,7 @@ import { surveyFormSchema, SurveyFormData } from "./schemas";
 import { ConfirmationEmail } from "@/components/emails/confirmation-email";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const adminEmail = process.env.ADMIN_EMAIL;
 
 // Zmieniamy typ argumentu, aby nie oczekiwał już tokena
 export async function submitSurvey(formData: SurveyFormData) {
@@ -46,11 +47,20 @@ export async function submitSurvey(formData: SurveyFormData) {
 
   const { data } = validatedFields;
 
+  if (!process.env.RESEND_API_KEY) {
+    console.error("Missing RESEND_API_KEY environment variable");
+    return { success: false, error: "Konfiguracja serwera jest niepoprawna." };
+  }
+  if (!adminEmail) {
+    console.error("Missing ADMIN_EMAIL environment variable");
+    return { success: false, error: "Konfiguracja serwera jest niepoprawna." };
+  }
+
   try {
     await Promise.all([
       resend.emails.send({
         from: "Nowe Zgłoszenie <formularz@filiprozmus.pl>",
-        to: "rozmus.nlt@gmail.com",
+        to: adminEmail,
         subject: `Nowe zgłoszenie od: ${data.name}`,
         react: SurveyEmail({ data }),
         reply_to: data.email,

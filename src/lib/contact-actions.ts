@@ -6,6 +6,7 @@ import { ContactFormEmail } from "@/components/emails/contact-form-email";
 import { ratelimit } from "@/lib/ratelimit"; // You'll need to implement this
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const adminEmail = process.env.ADMIN_EMAIL;
 
 // Enhanced validation and security
 export async function submitContactForm(data: TContactFormSchema) {
@@ -76,13 +77,21 @@ export async function submitContactForm(data: TContactFormSchema) {
   let lastError: any;
   const maxRetries = 2;
 
+  if (!adminEmail) {
+    console.error("ADMIN_EMAIL environment variable is not set");
+    return {
+      success: false,
+      error: "Konfiguracja serwera jest niepoprawna.",
+    };
+  }
+
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       console.log(`Email sending attempt ${attempt}/${maxRetries}`);
 
       const emailConfig = {
         from: "Formularz Kontaktowy <kontakt@filiprozmus.pl>",
-        to: ["rozmus.nlt@gmail.com"],
+        to: adminEmail,
         subject: `📧 Wiadomość z formularza: ${validData.subject}`,
         reply_to: validData.email,
         react: ContactFormEmail({ data: validData }),
