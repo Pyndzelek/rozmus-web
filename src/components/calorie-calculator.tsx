@@ -163,17 +163,17 @@ export function CalorieCalculator() {
             transition={{ duration: 0.5 }}
           >
             <Card className="bg-gray-900 border-gray-800 p-8">
-              <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-white mb-3">Gotowe!</h2>
+              <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-2" />
+              <h2 className="text-3xl font-bold text-white mb-1">Gotowe!</h2>
               <p className="text-gray-300 mb-6 text-lg">
                 Twoje spersonalizowane zapotrzebowanie kaloryczne zostało
                 obliczone.
               </p>
-              <div className="bg-gray-800 rounded-lg p-6 my-8">
+              <div className="bg-gray-800 rounded-lg p-6 my-4">
                 <p className="text-gray-400 text-base">
                   Twoje dzienne zapotrzebowanie kaloryczne to:
                 </p>
-                <p className="text-4xl md:text-5xl font-bold text-[var(--brand-accent-strong)] my-2">
+                <p className="text-4xl md:text-5xl font-bold text-[var(--brand-accent-strong)] mt-2">
                   {Math.round(state.calories ?? 0)} kcal
                 </p>
               </div>
@@ -693,7 +693,7 @@ export function CalorieCalculator() {
                               )}
                             </div>
 
-                            <div className="bg-gray-800 p-4 rounded-lg">
+                            <div className="bg-gray-700 p-4 rounded-lg">
                               <p className="text-sm text-gray-300">
                                 📧 Twój spersonalizowany plan kalorii zostanie
                                 wysłany na podany adres email.
@@ -730,7 +730,7 @@ export function CalorieCalculator() {
                       type="button"
                       onClick={nextStep}
                       disabled={isPending}
-                      className="bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:scale-100"
+                      className="cursor-pointer bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:scale-100"
                     >
                       {isPending ? (
                         <>

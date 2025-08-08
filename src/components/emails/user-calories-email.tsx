@@ -23,12 +23,12 @@ export const UserWelcomeEmail = ({ name, calories }: UserWelcomeEmailProps) => (
     <Preview>Twój spersonalizowany plan kaloryczny</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Heading style={heading}>Cześć {name},</Heading>
+        <Heading style={heading}>Cześć {name.split(" ")[0]},</Heading>
         <Section style={mainContent}>
           <Text style={paragraph}>
-            Dziękujemy za skorzystanie z naszego kalkulatora kalorii! Na
-            podstawie podanych przez Ciebie informacji obliczyliśmy Twoje
-            szacunkowe dzienne zapotrzebowanie kaloryczne.
+            Dziękuję za skorzystanie z mojego kalkulatora kalorii! Na podstawie
+            podanych przez Ciebie informacji obliczyłem Twoje szacunkowe dzienne
+            zapotrzebowanie kaloryczne.
           </Text>
           <Section style={calorieCard}>
             <Text style={calorieText}>Twój dzienny cel kaloryczny to:</Text>
@@ -42,7 +42,8 @@ export const UserWelcomeEmail = ({ name, calories }: UserWelcomeEmailProps) => (
           <Hr style={hr} />
           <Text style={paragraph}>
             Powodzenia na Twojej drodze do wymarzonej sylwetki!
-            <br />- Zespół
+            <br />
+            Filip Rozmus
           </Text>
         </Section>
       </Container>
