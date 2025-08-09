@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +28,10 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} h-auto min-h-screen`}>
-        <div className="h-auto min-h-screen overflow-hidden">{children}</div>
+        <div className="h-auto min-h-screen overflow-hidden">
+          {children}
+          <Analytics />
+        </div>
       </body>
     </html>
   );
