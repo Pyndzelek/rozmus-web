@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "framer-motion";
@@ -79,7 +79,7 @@ export default function SurveyForm({
     formState: { errors },
   } = useForm<SurveyFormData>({
     resolver: zodResolver(surveyFormSchema),
-    mode: "onChange",
+    mode: "onBlur",
     defaultValues: {
       email: "",
       name: "",
@@ -102,6 +102,23 @@ export default function SurveyForm({
       selectedPlan: currentPlan?.title || "",
     },
   });
+  const formRef = useRef<HTMLDivElement>(null);
+  const confirmationRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isSubmitted && confirmationRef.current) {
+      const offset = 35;
+      const topPosition =
+        confirmationRef.current.getBoundingClientRect().top +
+        window.scrollY -
+        offset;
+
+      window.scrollTo({
+        top: topPosition,
+        behavior: "smooth",
+      });
+    }
+  }, [isSubmitted]);
 
   const totalSteps = 5;
 
@@ -110,6 +127,16 @@ export default function SurveyForm({
     const isValid = await trigger(fieldsToValidate);
     if (isValid) {
       setCurrentStep((prev) => Math.min(prev + 1, totalSteps));
+      if (formRef.current) {
+        const offset = 35;
+        const topPosition =
+          formRef.current.getBoundingClientRect().top + window.scrollY - offset;
+
+        window.scrollTo({
+          top: topPosition,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
@@ -137,6 +164,7 @@ export default function SurveyForm({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="flex flex-col items-center justify-center text-center p-4 py-20"
+        ref={confirmationRef}
       >
         <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
@@ -169,7 +197,10 @@ export default function SurveyForm({
       </div>
       <Card className="w-full max-w-4xl mx-auto bg-gray-900 border-gray-800">
         <CardHeader>
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+          <div
+            className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4"
+            ref={formRef}
+          >
             <CardTitle className="text-white text-xl md:text-2xl mb-2 sm:mb-0">
               Formularz konsultacyjny
             </CardTitle>
