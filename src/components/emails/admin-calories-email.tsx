@@ -25,6 +25,26 @@ interface AdminNotificationEmailProps {
   calories: number;
 }
 
+const translateGoal = (goal: string) => {
+  const map: Record<string, string> = {
+    lose: "Chudnięcie",
+    maintain: "Utrzymanie wagi",
+    gain: "Przybranie na wadze",
+  };
+  return map[goal] ?? goal;
+};
+
+const translateActivityLevel = (level: string) => {
+  const map: Record<string, string> = {
+    sedentary: "Siedzący tryb życia",
+    light: "Lekka aktywność",
+    moderate: "Umiarkowana aktywność",
+    active: "Wysoka aktywność",
+    very_active: "Bardzo wysoka aktywność",
+  };
+  return map[level] ?? level;
+};
+
 export const AdminNotificationEmail = ({
   formData,
   calories,
@@ -55,10 +75,11 @@ export const AdminNotificationEmail = ({
             {formData.gender === "male" ? "Mężczyzna" : "Kobieta"}
           </Text>
           <Text style={listItem}>
-            <strong>Cel:</strong> {formData.goal}
+            <strong>Cel:</strong> {translateGoal(formData.goal)}
           </Text>
           <Text style={listItem}>
-            <strong>Poziom aktywności:</strong> {formData.activityLevel}
+            <strong>Poziom aktywności:</strong>{" "}
+            {translateActivityLevel(formData.activityLevel)}
           </Text>
         </Section>
         <Hr style={hr} />
