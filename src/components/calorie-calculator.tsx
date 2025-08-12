@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import {
   calculateCaloriesAction,
@@ -66,6 +66,7 @@ export function CalorieCalculator() {
     Partial<Record<keyof CalculatorData, string>>
   >({});
   const formRef = useRef<HTMLFormElement>(null);
+  const confirmationRef = useRef<HTMLDivElement>(null);
 
   // Hook for server action state
   const [state, formAction] = useFormState(
@@ -73,6 +74,23 @@ export function CalorieCalculator() {
     initialState
   );
   const [isPending, startTransition] = useTransition();
+
+  useEffect(() => {
+    if (state.status === "success" && window.innerWidth < 768) {
+      if (confirmationRef.current) {
+        const offset = 20;
+        const topPosition =
+          confirmationRef.current.getBoundingClientRect().top +
+          window.scrollY -
+          offset;
+
+        window.scrollTo({
+          top: topPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [state.status]);
 
   const totalSteps = 3;
 
@@ -170,8 +188,11 @@ export function CalorieCalculator() {
 
   if (state.status === "success") {
     return (
-      <section className="bg-black text-white py-20">
-        <div className="max-w-xl mx-auto px-6 text-center">
+      <section className="bg-black text-white md:py-20 py-10">
+        <div
+          className="max-w-xl mx-auto px-6 text-center"
+          ref={confirmationRef}
+        >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
