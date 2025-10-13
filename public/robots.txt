@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.filiprozmus.pl
+
+# Sitemaps
+Sitemap: https://www.filiprozmus.pl/sitemap.xml
