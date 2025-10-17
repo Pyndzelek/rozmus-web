@@ -2,8 +2,7 @@
 
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { Header } from "@/components/header";
-import { ModernFooter } from "@/components/modern-footer";
+
 import SurveyForm from "@/components/forms/survey-form";
 
 // We create a new component to safely use the hook
@@ -23,12 +22,10 @@ function FormularzContent() {
 export default function SurveyPage() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       {/* Wrap the component in Suspense */}
       <Suspense fallback={<div>Ładowanie...</div>}>
         <FormularzContent />
       </Suspense>
-      <ModernFooter />
     </div>
   );
 }

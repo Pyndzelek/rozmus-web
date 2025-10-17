@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@/components/GoogleAnaltics";
+import { Header } from "@/components/header";
+import { ModernFooter } from "@/components/modern-footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -95,7 +97,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <div className="h-auto min-h-screen overflow-hidden">
+          <Header />
           {children}
+          <ModernFooter />
           <Analytics />
           <GoogleAnalytics />
         </div>
