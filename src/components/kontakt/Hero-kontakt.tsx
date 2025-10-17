@@ -17,8 +17,9 @@ export default function HeroKontakt() {
             ze mną
           </h1>
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-            Masz pytania? Chcesz rozpocząć swoją transformację? Napisz do mnie -
-            odpowiem na wszystkie Twoje wątpliwości.
+            Gotowy na pierwszy krok? Umów się na bezpłatną konsultację w Nowym
+            Targu. Wypełnij formularz poniżej lub zadzwoń – czekam na Twoją
+            wiadomość!
           </p>
         </motion.div>
       </div>

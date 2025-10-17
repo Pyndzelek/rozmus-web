@@ -61,8 +61,8 @@ export function HeroSection() {
               której nikt nie przegapi
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-              Indywidualny plan treningowy, stały kontakt i realne efekty -
-              wszystko, czego potrzebujesz, by w końcu osiągnąć formę.
+              Jako Twój trener personalny w Nowym Targu, oferuję indywidualny
+              plan treningowy, stały kontakt i realne efekty.
             </p>
             <div className="flex justify-center lg:justify-start">
               <Link href="/oferta">
@@ -103,10 +103,11 @@ export function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -rotate-12"></div>
             <Image
               src="/rozmus_nlt.png"
-              alt="To jestem ja"
+              alt="Filip Rozmus - Trener Personalny Nowy Targ"
               width={400}
               height={600}
               className="z-10"
+              priority
             />
           </div>
         </div>
