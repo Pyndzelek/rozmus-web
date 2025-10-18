@@ -26,7 +26,7 @@ export function WhyTrustSection() {
           </div>
 
           <motion.div
-            className="relative"
+            className="relative flex justify-center"
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -35,9 +35,11 @@ export function WhyTrustSection() {
             <Image
               src="/rozmus_zaufanie.jpg"
               alt="Personal trainer"
-              width={500}
-              height={600}
-              className="rounded-lg"
+              width={3024}
+              height={4032}
+              className="rounded-lg w-full max-w-[450px]"
+              quality={70}
+              sizes="(max-width: 768px) 100vw, 450px"
             />
           </motion.div>
         </div>

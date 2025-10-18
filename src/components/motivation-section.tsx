@@ -29,9 +29,11 @@ export function MotivationSection() {
             <Image
               src="/rozmus_motywacja.jpeg"
               alt="Motywacja"
-              width={600}
-              height={600}
+              width={1280}
+              height={905}
               className="mx-auto rounded-2xl"
+              quality={70}
+              sizes="(max-width: 640px) 100vw, 600px"
             />
           </div>
         </div>

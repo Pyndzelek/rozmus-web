@@ -104,10 +104,12 @@ export function HeroSection() {
             <Image
               src="/rozmus_nlt.png"
               alt="Filip Rozmus - Trener Personalny Nowy Targ"
-              width={400}
-              height={600}
-              className="z-10"
+              width={1080}
+              height={1350}
+              className="z-10 w-full max-w-[500px]"
               priority
+              quality={70}
+              sizes="(max-width: 768px) 100vw, 500px"
             />
           </div>
         </div>
