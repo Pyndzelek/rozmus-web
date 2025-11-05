@@ -97,7 +97,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="md:py-20 py-10">
+    <section className="md:py-20 py-10" id="kontakt-form">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <motion.div
@@ -265,9 +265,7 @@ export default function ContactForm() {
                 <div className="flex items-start gap-3">
                   <MessageCircle className="w-6 h-6 text-[var(--brand-accent)] mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-1">
-                      Bezpłatna konsultacja
-                    </h3>
+                    <h3 className="font-semibold mb-1">Darmowa konsultacja</h3>
                     <p className="text-gray-400">
                       Pierwsza rozmowa jest zawsze darmowa - omówimy Twoje cele
                       i możliwości

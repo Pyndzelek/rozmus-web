@@ -33,8 +33,10 @@ export function Header() {
           <Image
             src="/logo_nlt.png"
             alt="Filip Rozmus - Trener Personalny"
-            width={40}
-            height={40}
+            width={136}
+            height={148} //136x148
+            className="max-w-[40px]"
+            quality={80}
           />
           <div>
             <div className="text-xl font-bold">Filip</div>

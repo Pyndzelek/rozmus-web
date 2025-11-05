@@ -3,7 +3,6 @@ import { ServicesSection } from "@/components/services-section";
 import { CalorieCalculator } from "@/components/calorie-calculator";
 import { MotivationSection } from "@/components/motivation-section";
 import { WhyTrustSection } from "@/components/why-trust-section";
-import { TrainingPlanSection } from "@/components/training-plan-section";
 import { TransformationsSection } from "@/components/transformations-section";
 import { FAQSection } from "@/components/faq-section";
 

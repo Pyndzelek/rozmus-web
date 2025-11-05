@@ -65,9 +65,9 @@ export function HeroSection() {
               plan treningowy, stały kontakt i realne efekty.
             </p>
             <div className="flex justify-center lg:justify-start">
-              <Link href="/oferta">
+              <Link href="/oferta#oferta-cennik">
                 <Button className="bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white px-8 py-3 text-lg hover:scale-105 transition-transform cursor-pointer">
-                  Zaczynam przemianę <ChevronRight className="ml-2 w-5 h-5" />
+                  Darmowa konsultacja <ChevronRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
             </div>

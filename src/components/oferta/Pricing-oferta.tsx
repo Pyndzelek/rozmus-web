@@ -1,14 +1,36 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Star, Users, Clock, Target } from "lucide-react";
+import { Check, Star } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function PricingOferta() {
+  const pathname = usePathname();
+  const [konsultacja, setKonsultacja] = useState(false);
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === "#oferta-cennik") {
+      setKonsultacja(true);
+    }
+  }, [pathname]);
+
   const plans = [
+    {
+      name: "Darmowa konsultacja",
+      price: "0 zł",
+      description: "Poznajmy się i omówmy Twoje cele",
+      features: [
+        "Analiza celów treningowych i stylu życia",
+        "Omówienie dotychczasowych doświadczeń z treningiem",
+        "Wstępna ocena poziomu sprawności i zdrowia",
+        "Propozycja dalszego planu działania dopasowanego do Twoich potrzeb",
+      ],
+      popular: false,
+    },
     {
       name: "Indywidualny plan treningowy",
       price: "150 zł",
@@ -19,35 +41,6 @@ export default function PricingOferta() {
         "Instrukcje wideo do każdego ćwiczenia",
       ],
       popular: false,
-    },
-    {
-      name: "Prowadzenie online",
-      price: "300 zł",
-      duration: "1 miesiąc",
-      description: "Współpraca online",
-      features: [
-        "Indywidualny plan treningowy",
-        "Instrukcje wideo do każdego ćwiczenia",
-        "Stały kontakt i wsparcie",
-        "Cotygodniowe raporty",
-        "Analiza techniki",
-        "Wskazówki dietetyczne",
-      ],
-      popular: false,
-    },
-    {
-      name: "12 treningów + plan",
-      price: "1100 zł",
-      higher_price: "1440 zł",
-      duration: "12 sesji",
-      description: "12 treningów personalnych + plan treningowy",
-      features: [
-        "Indywidualny plan treningowy",
-        "Instrukcje wideo do każdego ćwiczenia",
-        "Stały kontakt i wsparcie",
-        "Analiza techniki",
-      ],
-      popular: true,
     },
     {
       name: "1 trening personalny",
@@ -66,6 +59,36 @@ export default function PricingOferta() {
       features: ["Stały kontakt i wsparcie", "Analiza techniki"],
       popular: false,
     },
+
+    {
+      name: "12 treningów + plan",
+      price: "1100 zł",
+      higher_price: "1440 zł",
+      duration: "12 sesji",
+      description: "12 treningów personalnych + plan treningowy",
+      features: [
+        "Indywidualny plan treningowy",
+        "Instrukcje wideo do każdego ćwiczenia",
+        "Stały kontakt i wsparcie",
+        "Analiza techniki",
+      ],
+      popular: true,
+    },
+    {
+      name: "Prowadzenie online",
+      price: "300 zł",
+      duration: "1 miesiąc",
+      description: "Współpraca online",
+      features: [
+        "Indywidualny plan treningowy",
+        "Instrukcje wideo do każdego ćwiczenia",
+        "Stały kontakt i wsparcie",
+        "Cotygodniowe raporty",
+        "Analiza techniki",
+        "Wskazówki dietetyczne",
+      ],
+      popular: false,
+    },
   ];
 
   const createPlanSlug = (name: string) => {
@@ -81,7 +104,7 @@ export default function PricingOferta() {
     "12 treningów + plan",
   ];
   return (
-    <section className="py-20">
+    <section className="py-20" id="oferta-cennik">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -104,6 +127,8 @@ export default function PricingOferta() {
             const href = isRedirectPlan
               ? `/formularz?plan=${createPlanSlug(plan.name)}`
               : "#"; // Fallback href for other plans, you can change this
+            const isKonsultacjaPopping =
+              plan.name === "Darmowa konsultacja" && konsultacja;
 
             return (
               <motion.div
@@ -115,7 +140,11 @@ export default function PricingOferta() {
                 className="flex flex-col h-full"
               >
                 <Card
-                  className={`bg-gray-900 border-gray-800 h-full relative flex flex-col`}
+                  className={`bg-gray-900 border-gray-800 h-full relative flex flex-col ${
+                    isKonsultacjaPopping
+                      ? "animate-in ring-2 ring-[var(--brand-accent)]"
+                      : ""
+                  }`}
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -136,7 +165,11 @@ export default function PricingOferta() {
                           {plan.higher_price}
                         </span>
                       )}
-                      <span className="text-2xl md:text-4xl font-bold text-[var(--brand-accent)]">
+                      <span
+                        className={`text-2xl md:text-4xl font-bold text-[var(--brand-accent)] ${
+                          isKonsultacjaPopping && "animate-bounce"
+                        }`}
+                      >
                         {plan.price}
                       </span>
                     </div>
@@ -171,7 +204,7 @@ export default function PricingOferta() {
                           </Button>
                         </Link>
                       ) : (
-                        <Link href="/kontakt">
+                        <Link href="/kontakt#kontakt-form" passHref>
                           <Button
                             className={`w-full py-3 cursor-pointer ${
                               plan.popular
@@ -179,7 +212,9 @@ export default function PricingOferta() {
                                 : "bg-gray-700 hover:bg-gray-600"
                             } transition-all duration-300 hover:scale-105`}
                           >
-                            Umów się na trening
+                            {plan.name === "Darmowa konsultacja"
+                              ? "Umów się na konsultację"
+                              : "Umów się na trening"}
                           </Button>
                         </Link>
                       )}
