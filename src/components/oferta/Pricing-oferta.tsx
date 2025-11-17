@@ -62,7 +62,7 @@ export default function PricingOferta() {
 
     {
       name: "12 treningów + plan",
-      price: "1100 zł",
+      price: "1200 zł",
       higher_price: "1440 zł",
       duration: "12 sesji",
       description: "12 treningów personalnych + plan treningowy",
