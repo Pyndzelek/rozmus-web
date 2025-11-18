@@ -76,7 +76,7 @@ export default function PricingOferta() {
     },
     {
       name: "Prowadzenie online",
-      price: "300 zł",
+      price: "200 zł",
       duration: "1 miesiąc",
       description: "Współpraca online",
       features: [
