@@ -44,7 +44,7 @@ export default function PricingOferta() {
     },
     {
       name: "1 trening personalny",
-      price: "120 zł",
+      price: "150 zł",
       duration: "1 sesja",
       description: "Indywidualny trening personalny",
       features: ["Trening dostosowany do Twoich potrzeb"],
@@ -52,7 +52,7 @@ export default function PricingOferta() {
     },
     {
       name: "6 treningów personalnych",
-      higher_price: "720 zł",
+      higher_price: "900 zł",
       price: "600 zł",
       duration: "6 sesji",
       description: "6 indywidualnych treningów personalnych",
@@ -63,7 +63,7 @@ export default function PricingOferta() {
     {
       name: "12 treningów + plan",
       price: "1200 zł",
-      higher_price: "1440 zł",
+      higher_price: "1620 zł",
       duration: "12 sesji",
       description: "12 treningów personalnych + plan treningowy",
       features: [
