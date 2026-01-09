@@ -6,31 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Star } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export default function PricingOferta() {
-  const pathname = usePathname();
-  const [konsultacja, setKonsultacja] = useState(false);
-  useEffect(() => {
-    const hash = window.location.hash;
-    if (hash === "#oferta-cennik") {
-      setKonsultacja(true);
-    }
-  }, [pathname]);
-
   const plans = [
-    {
-      name: "Darmowa konsultacja",
-      price: "0 zł",
-      description: "Poznajmy się i omówmy Twoje cele",
-      features: [
-        "Analiza celów treningowych i stylu życia",
-        "Omówienie dotychczasowych doświadczeń z treningiem",
-        "Wstępna ocena poziomu sprawności i zdrowia",
-        "Propozycja dalszego planu działania dopasowanego do Twoich potrzeb",
-      ],
-      popular: false,
-    },
     {
       name: "Indywidualny plan treningowy",
       price: "150 zł",
@@ -57,6 +35,20 @@ export default function PricingOferta() {
       duration: "6 sesji",
       description: "6 indywidualnych treningów personalnych",
       features: ["Stały kontakt i wsparcie", "Analiza techniki"],
+      popular: false,
+    },
+    {
+      name: "12 treningów duo",
+      price: "1800 zł",
+      duration: "12 sesji (dla 2 osób)",
+      description: "12 treningów personalnych w duecie",
+      features: [
+        "Treningi z partnerem lub znajomym",
+
+        "Stały kontakt i wsparcie",
+        "Analiza techniki każdego uczestnika",
+        "W grupie raźniej :)",
+      ],
       popular: false,
     },
 
@@ -127,8 +119,6 @@ export default function PricingOferta() {
             const href = isRedirectPlan
               ? `/formularz?plan=${createPlanSlug(plan.name)}`
               : "#"; // Fallback href for other plans, you can change this
-            const isKonsultacjaPopping =
-              plan.name === "Darmowa konsultacja" && konsultacja;
 
             return (
               <motion.div
@@ -140,11 +130,7 @@ export default function PricingOferta() {
                 className="flex flex-col h-full"
               >
                 <Card
-                  className={`bg-gray-900 border-gray-800 h-full relative flex flex-col ${
-                    isKonsultacjaPopping
-                      ? "animate-in ring-2 ring-[var(--brand-accent)]"
-                      : ""
-                  }`}
+                  className={`bg-gray-900 border-gray-800 h-full relative flex flex-col `}
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -166,9 +152,7 @@ export default function PricingOferta() {
                         </span>
                       )}
                       <span
-                        className={`text-2xl md:text-4xl font-bold text-[var(--brand-accent)] ${
-                          isKonsultacjaPopping && "animate-bounce"
-                        }`}
+                        className={`text-2xl md:text-4xl font-bold text-[var(--brand-accent)] `}
                       >
                         {plan.price}
                       </span>

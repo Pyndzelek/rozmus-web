@@ -18,9 +18,9 @@ export function MotivationSection() {
               potrzebuje to będę motywował Cię na każdym kroku, dopóki nie
               osiągniesz wymarzonego celu.
             </p>
-            <Link href="/oferta" className="inline-block">
+            <Link href="/oferta#oferta-cennik" className="inline-block">
               <Button className="bg-[var(--brand-accent-strong)] hover:bg-[var(--brand-accent-darker)] text-white px-8 py-3 text-lg hover:scale-105 transition-transform cursor-pointer">
-                Zaczynam przemianę <ChevronRight className="ml-2 w-5 h-5" />
+                Sprawdź moją ofertę <ChevronRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </div>
