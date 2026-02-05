@@ -10,6 +10,7 @@ import Link from "next/link";
 export default function PricingOferta() {
   const plans = [
     {
+      id: "indywidualny-plan",
       name: "Indywidualny plan treningowy",
       price: "150 zł",
       duration: "4-12 tygodni",
@@ -21,6 +22,7 @@ export default function PricingOferta() {
       popular: false,
     },
     {
+      id: "1-trening-personalny",
       name: "1 trening personalny",
       price: "150 zł",
       duration: "1 sesja",
@@ -29,6 +31,7 @@ export default function PricingOferta() {
       popular: false,
     },
     {
+      id: "6-treningow-personalnych",
       name: "6 treningów personalnych",
       higher_price: "900 zł",
       price: "600 zł",
@@ -38,6 +41,7 @@ export default function PricingOferta() {
       popular: false,
     },
     {
+      id: "12-treningow-duo",
       name: "12 treningów duo",
       price: "1800 zł",
       duration: "12 sesji (dla 2 osób)",
@@ -53,6 +57,7 @@ export default function PricingOferta() {
     },
 
     {
+      id: "12-treningow-plan",
       name: "12 treningów + plan",
       price: "1200 zł",
       higher_price: "1620 zł",
@@ -67,6 +72,7 @@ export default function PricingOferta() {
       popular: true,
     },
     {
+      id: "prowadzenie-online",
       name: "Prowadzenie online",
       price: "200 zł",
       duration: "1 miesiąc",
@@ -82,6 +88,63 @@ export default function PricingOferta() {
       popular: false,
     },
   ];
+  const parsePrice = (priceStr: string) => {
+    return priceStr.replace(/[^0-9]/g, "");
+  };
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        name: "Filip Rozmus Trener Personalny",
+        description:
+          "Profesjonalny trener personalny w Nowym Targu. Indywidualne plany treningowe, prowadzenie online i treningi w duecie.",
+        url: "https://filiprozmus.pl",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Nowy Targ",
+          addressRegion: "Małopolskie",
+          addressCountry: "PL",
+        },
+        priceRange: `${parsePrice(plans[0].price)} PLN - ${parsePrice(plans[3].price)} PLN`,
+        image: "https://filiprozmus.pl/rozmus_zaufanie.jpg",
+      },
+      {
+        "@type": "ItemList",
+        itemListElement: plans.map((plan, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "Product",
+            name: plan.name,
+            description: plan.description,
+            image: "https://filiprozmus.pl/logo_nlt_czarne.jpg",
+            offers: {
+              "@type": "Offer",
+              price: parsePrice(plan.price),
+              priceCurrency: "PLN",
+              availability: "https://schema.org/InStock",
+              url: `https://filiprozmus.pl/oferta#${plan.id}`,
+              priceValidUntil: "2026-12-31",
+            },
+            additionalProperty: [
+              {
+                "@type": "PropertyValue",
+                name: "Czas trwania",
+                value: plan.duration,
+              },
+              {
+                "@type": "PropertyValue",
+                name: "Cechy",
+                value: plan.features.join(", "),
+              },
+            ],
+          },
+        })),
+      },
+    ],
+  };
 
   const createPlanSlug = (name: string) => {
     return name
@@ -122,6 +185,7 @@ export default function PricingOferta() {
 
             return (
               <motion.div
+                id={plan.id}
                 key={index}
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
