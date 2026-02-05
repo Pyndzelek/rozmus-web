@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Star } from "lucide-react";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function PricingOferta() {
   const plans = [
@@ -160,6 +161,7 @@ export default function PricingOferta() {
   ];
   return (
     <section className="py-20" id="oferta-cennik">
+      <Script type="application/ld+json">{JSON.stringify(jsonLd)}</Script>
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           className="text-center mb-16"
