@@ -63,10 +63,13 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center justify-items-center min-h-[80vh]">
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-sm md:text-base font-semibold uppercase tracking-wider text-balance text-[var(--brand-accent)] mb-4">
+              Trener personalny Nowy Targ – Filip Rozmus
+            </h1>
+            <p className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Zrób <span className="text-[var(--brand-accent)]">sylwetkę</span>,
               której nikt nie przegapi
-            </h1>
+            </p>
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
               Jako Twój trener personalny w Nowym Targu, oferuję indywidualny
               plan treningowy, stały kontakt i realne efekty.
