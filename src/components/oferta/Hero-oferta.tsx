@@ -18,7 +18,7 @@ export default function HeroOferta() {
           </h1>
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
             Znajdziesz tutaj pakiety na treningi personalne, indywidualne online
-            lub w Nowym Targu oraz konsultacje. Sprawdź cennik i wybierz
+            lub w Nowym Targu oraz treningi duo. Sprawdź cennik i wybierz
             rozwiązanie, które pomoże Ci osiągnąć wymarzoną formę.
           </p>
         </motion.div>

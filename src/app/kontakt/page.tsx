@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/kontakt" },
   title: "Kontakt - Trener Personalny Filip Rozmus | Nowy Targ",
   description:
-    "Skontaktuj się, aby umówić bezpłatną konsultację. Znajdziesz tu telefon, e-mail, adres oraz formularz kontaktowy. Zacznijmy współpracę!",
+    "Skontaktuj się, aby umówić trening personalny w Nowym Targu lub prowadzenie online. Znajdziesz tu telefon, e-mail, adres oraz formularz kontaktowy.",
   openGraph: {
     title: "Skontaktuj się ze Mną | Filip Rozmus",
     description:

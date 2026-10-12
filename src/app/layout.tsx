@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://filiprozmus.pl"),
   title: "Filip Rozmus - Trener Personalny Nowy Targ",
   description:
-    "Szukasz trenera personalnego w Nowym Targu? Pomogę Ci osiągnąć cele! Oferuję indywidualne plany treningowe, dietę i wsparcie online. Zrób pierwszy krok i umów się na konsultację.",
+    "Szukasz trenera personalnego w Nowym Targu? Pomogę Ci osiągnąć cele! Oferuję treningi personalne i duo, indywidualne plany treningowe, wskazówki żywieniowe i prowadzenie online. Zrób pierwszy krok!",
   viewport:
     "width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes",
   // --- SEKCJA SOCIAL MEDIA ---
@@ -72,19 +72,21 @@ export default function RootLayout({
       latitude: 49.4763272,
       longitude: 20.0351173,
     },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ],
-      opens: "09:00",
-      closes: "22:00",
-    },
+    // Godziny muszą zgadzać się z KontaktInfo-kontakt.tsx
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "22:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "09:00",
+        closes: "15:00",
+      },
+    ],
     sameAs: [
       "https://www.facebook.com/filip.rozmus.5030",
       "https://www.instagram.com/rozmusik_",

@@ -265,10 +265,10 @@ export default function ContactForm() {
                 <div className="flex items-start gap-3">
                   <MessageCircle className="w-6 h-6 text-[var(--brand-accent)] mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-1">Darmowa konsultacja</h3>
+                    <h3 className="font-semibold mb-1">Dobór pakietu</h3>
                     <p className="text-gray-400">
-                      Pierwsza rozmowa jest zawsze darmowa - omówimy Twoje cele
-                      i możliwości
+                      Omówimy Twoje cele i możliwości, a ja pomogę Ci wybrać
+                      odpowiedni pakiet
                     </p>
                   </div>
                 </div>

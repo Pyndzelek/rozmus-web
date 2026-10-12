@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/oferta" },
   title: "Oferta i Cennik - Trening Personalny Nowy Targ | Filip Rozmus",
   description:
-    "Sprawdź ofertę treningów personalnych, indywidualnych planów online i konsultacji dietetycznych w Nowym Targu. Zobacz cennik i zacznij swoją przemianę!",
+    "Sprawdź ofertę treningów personalnych i duo w Nowym Targu oraz indywidualnych planów i prowadzenia online. Zobacz cennik i zacznij swoją przemianę!",
   openGraph: {
     title: "Oferta i Cennik | Filip Rozmus Trener Personalny",
     description:
