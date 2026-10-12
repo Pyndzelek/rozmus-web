@@ -158,6 +158,7 @@ export default function ContactForm() {
                         </Label>
                         <Input
                           id="name"
+                          autoComplete="name"
                           name="name"
                           type="text"
                           value={formData.name}
@@ -176,6 +177,7 @@ export default function ContactForm() {
                         </Label>
                         <Input
                           id="phone"
+                          autoComplete="tel"
                           name="phone"
                           type="tel"
                           value={formData.phone}
@@ -190,6 +192,7 @@ export default function ContactForm() {
                       </Label>
                       <Input
                         id="email"
+                        autoComplete="email"
                         name="email"
                         type="email"
                         value={formData.email}

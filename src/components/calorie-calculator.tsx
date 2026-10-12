@@ -368,6 +368,7 @@ export function CalorieCalculator() {
                               </div>
                             </div>
                             <Slider
+                              aria-label="Waga"
                               value={formData.weight}
                               onValueChange={(value) =>
                                 updateFormData("weight", value)
@@ -394,6 +395,7 @@ export function CalorieCalculator() {
                               </div>
                             </div>
                             <Slider
+                              aria-label="Wzrost"
                               value={formData.height}
                               onValueChange={(value) =>
                                 updateFormData("height", value)
@@ -420,6 +422,7 @@ export function CalorieCalculator() {
                               </div>
                             </div>
                             <Slider
+                              aria-label="Wiek"
                               value={formData.age}
                               onValueChange={(value) =>
                                 updateFormData("age", value)
@@ -437,7 +440,7 @@ export function CalorieCalculator() {
 
                           {/* Gender Select */}
                           <div className="space-y-4">
-                            <Label className="text-white text-base md:text-lg">
+                            <Label htmlFor="calc-gender" className="text-white text-base md:text-lg">
                               Płeć:
                             </Label>
                             <Select
@@ -446,7 +449,7 @@ export function CalorieCalculator() {
                                 updateFormData("gender", value)
                               }
                             >
-                              <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                              <SelectTrigger id="calc-gender" className="bg-gray-800 border-gray-700 text-white">
                                 <SelectValue placeholder="Wybierz płeć" />
                               </SelectTrigger>
                               <SelectContent className="bg-gray-800 border-gray-700 text-white">
@@ -467,10 +470,11 @@ export function CalorieCalculator() {
                         <>
                           <div className="space-y-6">
                             <div>
-                              <Label className="text-white text-base md:text-lg mb-4 block">
+                              <Label id="calc-goal-label" className="text-white text-base md:text-lg mb-4 block">
                                 Jaki jest Twój cel?
                               </Label>
                               <RadioGroup
+                                aria-labelledby="calc-goal-label"
                                 value={formData.goal}
                                 onValueChange={(value) =>
                                   updateFormData("goal", value)
@@ -571,10 +575,11 @@ export function CalorieCalculator() {
                             </div>
 
                             <div>
-                              <Label className="text-white text-base md:text-lg mb-4 block">
+                              <Label id="calc-activityLevel-label" className="text-white text-base md:text-lg mb-4 block">
                                 Poziom aktywności fizycznej
                               </Label>
                               <RadioGroup
+                                aria-labelledby="calc-activityLevel-label"
                                 value={formData.activityLevel}
                                 onValueChange={(value) =>
                                   updateFormData("activityLevel", value)
@@ -754,6 +759,7 @@ export function CalorieCalculator() {
                               </Label>
                               <Input
                                 id="name"
+                                autoComplete="name"
                                 name="name"
                                 value={formData.name}
                                 onChange={(e) =>
@@ -778,6 +784,7 @@ export function CalorieCalculator() {
                               </Label>
                               <Input
                                 id="email"
+                                autoComplete="email"
                                 type="email"
                                 name="email"
                                 value={formData.email}

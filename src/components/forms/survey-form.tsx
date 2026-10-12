@@ -230,6 +230,7 @@ export default function SurveyForm({
                           <Input
                             {...field}
                             id="email"
+                            autoComplete="email"
                             type="email"
                             className="bg-gray-800 border-gray-700 text-white mt-2"
                             placeholder="twoj@email.com"
@@ -253,6 +254,7 @@ export default function SurveyForm({
                           <Input
                             {...field}
                             id="name"
+                            autoComplete="name"
                             className="bg-gray-800 border-gray-700 text-white mt-2"
                             placeholder="Jan Kowalski"
                           />
@@ -347,14 +349,14 @@ export default function SurveyForm({
                       Cele treningowe
                     </h3>
                     <div>
-                      <Label className="text-white mb-4 block">
+                      <Label id="goals-label" className="text-white mb-4 block">
                         Cel treningowy (wielokrotny wybór) *
                       </Label>
                       <Controller
                         name="goals"
                         control={control}
                         render={({ field }) => (
-                          <div className="space-y-3">
+                          <div role="group" aria-labelledby="goals-label" className="space-y-3">
                             {[
                               "Budowa masy mięśniowej",
                               "Zwiększenie siły",
@@ -395,7 +397,7 @@ export default function SurveyForm({
                       )}
                     </div>
                     <div>
-                      <Label className="text-white mb-4 block">
+                      <Label id="trainingDays-label" className="text-white mb-4 block">
                         Ile dni w tygodniu jesteś w stanie poświęcić na trening?
                         *
                       </Label>
@@ -403,7 +405,7 @@ export default function SurveyForm({
                         name="trainingDays"
                         control={control}
                         render={({ field }) => (
-                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                          <div role="group" aria-labelledby="trainingDays-label" className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                             {[
                               "2 dni",
                               "3 dni",
@@ -444,14 +446,14 @@ export default function SurveyForm({
                       )}
                     </div>
                     <div>
-                      <Label className="text-white mb-4 block">
+                      <Label id="preferredDays-label" className="text-white mb-4 block">
                         W jakie dni jest ci najłatwiej trenować?
                       </Label>
                       <Controller
                         name="preferredDays"
                         control={control}
                         render={({ field }) => (
-                          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                          <div role="group" aria-labelledby="preferredDays-label" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                             {[
                               "Poniedziałek",
                               "Wtorek",
@@ -488,14 +490,14 @@ export default function SurveyForm({
                       />
                     </div>
                     <div>
-                      <Label className="text-white mb-4 block">
+                      <Label id="bodyPriorities-label" className="text-white mb-4 block">
                         Czy posiadasz priorytet na jakąś partię?
                       </Label>
                       <Controller
                         name="bodyPriorities"
                         control={control}
                         render={({ field }) => (
-                          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                          <div role="group" aria-labelledby="bodyPriorities-label" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                             {[
                               "Klatka piersiowa",
                               "Barki",
@@ -564,7 +566,7 @@ export default function SurveyForm({
                       )}
                     </div>
                     <div>
-                      <Label className="text-white mb-4 block">
+                      <Label id="sittingTime-label" className="text-white mb-4 block">
                         Ile czasu w ciągu dnia spędzasz w pozycji siedzącej? *
                       </Label>
                       <Controller
@@ -572,6 +574,7 @@ export default function SurveyForm({
                         control={control}
                         render={({ field }) => (
                           <RadioGroup
+                            aria-labelledby="sittingTime-label"
                             onValueChange={field.onChange}
                             value={field.value}
                             className="space-y-2"
@@ -616,7 +619,7 @@ export default function SurveyForm({
                     </h3>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <Label className="text-white mb-4 block">
+                        <Label htmlFor="sleepHours" className="text-white mb-4 block">
                           Ilość snu (godziny) *
                         </Label>
                         <Controller
@@ -627,7 +630,7 @@ export default function SurveyForm({
                               onValueChange={field.onChange}
                               value={field.value}
                             >
-                              <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                              <SelectTrigger id="sleepHours" className="bg-gray-800 border-gray-700 text-white">
                                 <SelectValue placeholder="Wybierz liczbę godzin" />
                               </SelectTrigger>
                               <SelectContent className="bg-gray-800 border-gray-700 text-white">
@@ -654,7 +657,7 @@ export default function SurveyForm({
                         )}
                       </div>
                       <div>
-                        <Label className="text-white mb-4 block">
+                        <Label htmlFor="sleepQuality" className="text-white mb-4 block">
                           Jakość snu *
                         </Label>
                         <Controller
@@ -665,7 +668,7 @@ export default function SurveyForm({
                               onValueChange={field.onChange}
                               value={field.value}
                             >
-                              <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                              <SelectTrigger id="sleepQuality" className="bg-gray-800 border-gray-700 text-white">
                                 <SelectValue placeholder="Oceń jakość snu" />
                               </SelectTrigger>
                               <SelectContent className="bg-gray-800 border-gray-700 text-white">
@@ -692,7 +695,7 @@ export default function SurveyForm({
                       </div>
                     </div>
                     <div>
-                      <Label className="text-white mb-4 block">
+                      <Label id="stressLevel-label" className="text-white mb-4 block">
                         Ilość stresu na co dzień? *
                       </Label>
                       <Controller
@@ -700,6 +703,7 @@ export default function SurveyForm({
                         control={control}
                         render={({ field }) => (
                           <RadioGroup
+                            aria-labelledby="stressLevel-label"
                             onValueChange={field.onChange}
                             value={field.value}
                             className="space-y-2"

@@ -10,10 +10,10 @@ export default function SurveyContentFormularz() {
   const selectedPlan = searchParams.get("plan");
 
   return (
-    <main className="bg-black md:py-20 py-10">
+    <div className="bg-black md:py-20 py-10">
       <div className="max-w-4xl mx-auto px-6">
         <SurveyForm selectedPlan={selectedPlan} />
       </div>
-    </main>
+    </div>
   );
 }

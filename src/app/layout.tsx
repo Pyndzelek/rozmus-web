@@ -128,7 +128,7 @@ export default function RootLayout({
         />
         <div className="h-auto min-h-screen overflow-hidden">
           <Header />
-          {children}
+          <main>{children}</main>
           <ModernFooter />
           <Analytics />
           <GoogleAnalytics />
