@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Send,
@@ -38,6 +38,17 @@ export default function ContactForm() {
     subject: "",
     message: "",
   });
+  // Pakiet wybrany na /oferta (?plan=...) - wstępnie wypełnia temat.
+  // window.location zamiast useSearchParams, żeby /kontakt został stroną statyczną.
+  useEffect(() => {
+    const plan = new URLSearchParams(window.location.search).get("plan");
+    if (plan) {
+      setFormData((prev) =>
+        prev.subject ? prev : { ...prev, subject: `Pakiet: ${plan.slice(0, 80)}` }
+      );
+    }
+  }, []);
+
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState<{

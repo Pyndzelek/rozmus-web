@@ -244,7 +244,10 @@ export default function PricingOferta() {
                           </Button>
                         </Link>
                       ) : (
-                        <Link href="/kontakt#kontakt-form" passHref>
+                        <Link
+                          href={`/kontakt?plan=${encodeURIComponent(plan.name)}#kontakt-form`}
+                          passHref
+                        >
                           <Button
                             className={`w-full py-3 cursor-pointer ${
                               plan.popular
@@ -252,9 +255,7 @@ export default function PricingOferta() {
                                 : "bg-gray-700 hover:bg-gray-600"
                             } transition-all duration-300 hover:scale-105`}
                           >
-                            {plan.name === "Darmowa konsultacja"
-                              ? "Umów się na konsultację"
-                              : "Umów się na trening"}
+                            Umów się na trening
                           </Button>
                         </Link>
                       )}
