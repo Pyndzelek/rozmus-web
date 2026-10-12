@@ -4,6 +4,7 @@ import KontaktInfoKontakt from "@/components/kontakt/KontaktInfo-kontakt";
 import HeroKontakt from "@/components/kontakt/Hero-kontakt";
 
 import type { Metadata } from "next";
+import MapaKontakt from "@/components/kontakt/Mapa-kontakt";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/kontakt" },
@@ -28,6 +29,9 @@ export default function ContactPage() {
 
       {/* Contact Form Section */}
       <NewContactForm />
+
+      {/* Mapa dojazdu */}
+      <MapaKontakt />
     </div>
   );
 }
