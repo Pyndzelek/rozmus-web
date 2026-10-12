@@ -7,21 +7,28 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+const TRANSFORMATIONS = 107;
+const SATISFACTION = 100;
+
 export function HeroSection() {
-  const [count, setCount] = useState(0);
-  const [percentCount, setPercentCount] = useState(0);
+  // Wartości końcowe w HTML z serwera (widoczne dla Google), animacja od 0 dopiero w przeglądarce
+  const [count, setCount] = useState(TRANSFORMATIONS);
+  const [percentCount, setPercentCount] = useState(SATISFACTION);
 
   useEffect(() => {
+    setCount(0);
+    setPercentCount(0);
+
     const timer = setTimeout(() => {
       // Animate 107+ counter
       const duration = 2000;
-      const increment = 107 / (duration / 16);
+      const increment = TRANSFORMATIONS / (duration / 16);
       let current = 0;
 
       const counter = setInterval(() => {
         current += increment;
-        if (current >= 107) {
-          setCount(107);
+        if (current >= TRANSFORMATIONS) {
+          setCount(TRANSFORMATIONS);
           clearInterval(counter);
         } else {
           setCount(Math.floor(current));
@@ -29,13 +36,13 @@ export function HeroSection() {
       }, 16);
 
       // Animate 100% counter
-      const percentIncrement = 100 / (duration / 16);
+      const percentIncrement = SATISFACTION / (duration / 16);
       let percentCurrent = 0;
 
       const percentCounter = setInterval(() => {
         percentCurrent += percentIncrement;
-        if (percentCurrent >= 100) {
-          setPercentCount(100);
+        if (percentCurrent >= SATISFACTION) {
+          setPercentCount(SATISFACTION);
           clearInterval(percentCounter);
         } else {
           setPercentCount(Math.floor(percentCurrent));

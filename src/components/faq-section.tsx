@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 export function FAQSection() {
@@ -66,6 +66,8 @@ export function FAQSection() {
               <button
                 className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-900 transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
               >
                 <span className="font-semibold text-base md:text-lg">
                   {faq.question}
@@ -78,21 +80,22 @@ export function FAQSection() {
                 </motion.div>
               </button>
 
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 pb-4 text-gray-300 leading-relaxed">
-                      {faq.answer}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {/* Odpowiedź zawsze w DOM (zwinięta), żeby była w HTML dla wyszukiwarek */}
+              <motion.div
+                id={`faq-answer-${index}`}
+                initial={false}
+                animate={
+                  openIndex === index
+                    ? { height: "auto", opacity: 1 }
+                    : { height: 0, opacity: 0 }
+                }
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden"
+              >
+                <div className="px-6 pb-4 text-gray-300 leading-relaxed">
+                  {faq.answer}
+                </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
