@@ -3,6 +3,7 @@ import HeroOpinie from "@/components/opinie/Hero-opinie";
 import ReviewsSectionOpinie from "@/components/opinie/ReviewsSection-opinie";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/opinie" },
   title: "Opinie i Metamorfozy Klientów - Trener Filip Rozmus | Nowy Targ",
   description:
     "Zobacz efekty mojej pracy! Przeczytaj prawdziwe opinie i zobacz spektakularne metamorfozy moich podopiecznych z Nowego Targu i okolic.",

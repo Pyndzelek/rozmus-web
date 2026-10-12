@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Marketing website for Filip Rozmus, a personal trainer in Nowy Targ (https://www.filiprozmus.pl). All user-facing content, form validation messages, and many code comments are in **Polish** — keep new copy in Polish.
+Marketing website for Filip Rozmus, a personal trainer in Nowy Targ (https://filiprozmus.pl). All user-facing content, form validation messages, and many code comments are in **Polish** — keep new copy in Polish.
 
 ## Commands
 

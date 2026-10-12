@@ -3,6 +3,7 @@ import HeroOmnie from "@/components/o-mnie/Hero-omnie";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/o-mnie" },
   title:
     "O Mnie - Filip Rozmus, Certyfikowany Trener Personalny z Nowego Targu",
   description:

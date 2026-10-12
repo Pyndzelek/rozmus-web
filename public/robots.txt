@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.filiprozmus.pl
+Host: https://filiprozmus.pl
 
 # Sitemaps
-Sitemap: https://www.filiprozmus.pl/sitemap.xml
+Sitemap: https://filiprozmus.pl/sitemap.xml

@@ -10,6 +10,8 @@ import { ModernFooter } from "@/components/modern-footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  // Domena główna (www przekierowuje 301 na wersję bez www) - podstawa dla canonical i OG
+  metadataBase: new URL("https://filiprozmus.pl"),
   title: "Filip Rozmus - Trener Personalny Nowy Targ",
   description:
     "Szukasz trenera personalnego w Nowym Targu? Pomogę Ci osiągnąć cele! Oferuję indywidualne plany treningowe, dietę i wsparcie online. Zrób pierwszy krok i umów się na konsultację.",
@@ -20,12 +22,12 @@ export const metadata: Metadata = {
     title: "Filip Rozmus - Trener Personalny w Nowym Targu",
     description:
       "Gotowy na zmianę? Osiągnij swoje cele treningowe z profesjonalnym wsparciem.",
-    url: "https://www.filiprozmus.pl",
+    url: "https://filiprozmus.pl",
     siteName: "Filip Rozmus Trener Personalny",
 
     images: [
       {
-        url: "https://www.filiprozmus.pl/og-image.jpg",
+        url: "https://filiprozmus.pl/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Filip Rozmus - Trener Personalny Nowy Targ",
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
     title: "Filip Rozmus - Trener Personalny w Nowym Targu",
     description:
       "Gotowy na zmianę? Osiągnij swoje cele treningowe z profesjonalnym wsparciem.",
-    images: ["https://www.filiprozmus.pl/og-image.jpg"],
+    images: ["https://filiprozmus.pl/og-image.jpg"],
   },
 };
 
@@ -53,9 +55,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Filip Rozmus - Trener Personalny Nowy Targ",
-    image: "https://www.filiprozmus.pl/og-image.jpg",
-    "@id": "https://www.filiprozmus.pl",
-    url: "https://www.filiprozmus.pl",
+    image: "https://filiprozmus.pl/og-image.jpg",
+    "@id": "https://filiprozmus.pl",
+    url: "https://filiprozmus.pl",
     telephone: "+48 513 978 894",
     priceRange: "$",
     address: {

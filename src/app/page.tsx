@@ -5,6 +5,11 @@ import { MotivationSection } from "@/components/motivation-section";
 import { WhyTrustSection } from "@/components/why-trust-section";
 import { TransformationsSection } from "@/components/transformations-section";
 import { FAQSection } from "@/components/faq-section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

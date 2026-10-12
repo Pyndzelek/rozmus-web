@@ -4,6 +4,7 @@ import PricingOferta from "@/components/oferta/Pricing-oferta";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/oferta" },
   title: "Oferta i Cennik - Trening Personalny Nowy Targ | Filip Rozmus",
   description:
     "Sprawdź ofertę treningów personalnych, indywidualnych planów online i konsultacji dietetycznych w Nowym Targu. Zobacz cennik i zacznij swoją przemianę!",

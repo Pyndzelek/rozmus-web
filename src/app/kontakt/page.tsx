@@ -6,6 +6,7 @@ import HeroKontakt from "@/components/kontakt/Hero-kontakt";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/kontakt" },
   title: "Kontakt - Trener Personalny Filip Rozmus | Nowy Targ",
   description:
     "Skontaktuj się, aby umówić bezpłatną konsultację. Znajdziesz tu telefon, e-mail, adres oraz formularz kontaktowy. Zacznijmy współpracę!",
