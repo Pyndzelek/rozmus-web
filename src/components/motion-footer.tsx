@@ -99,7 +99,7 @@ export function MotionFooter() {
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-[var(--brand-accent)]" />
                 <span className="text-gray-300">
-                  Studio Gorce, Aleje Tysiąclecia 74, 34-400 Nowy Targ
+                  Studio Gorce, Aleja Tysiąclecia 74, 34-400 Nowy Targ
                 </span>
               </div>
             </div>

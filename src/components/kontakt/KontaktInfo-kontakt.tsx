@@ -21,7 +21,7 @@ export default function KontaktInfoKontakt() {
     {
       icon: <MapPin className="w-6 h-6 text-[var(--brand-accent)]" />,
       title: "Lokalizacja",
-      content: "Studio Gorce, Aleje Tysiąclecia 74, 34-400 Nowy Targ",
+      content: "Studio Gorce, Aleja Tysiąclecia 74, 34-400 Nowy Targ",
       description: "Treningi online i stacjonarne",
     },
     {

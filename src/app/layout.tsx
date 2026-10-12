@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@/components/GoogleAnaltics";
 import { Header } from "@/components/header";
 import { ModernFooter } from "@/components/modern-footer";
+import { GOOGLE_MAPS_URL } from "@/lib/google-business";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -82,7 +83,7 @@ export default function RootLayout({
         priceRange: "150 zł - 2000 zł",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Aleje Tysiąclecia 74",
+          streetAddress: "Aleja Tysiąclecia 74",
           addressLocality: "Nowy Targ",
           addressRegion: "małopolskie",
           postalCode: "34-400",
@@ -109,8 +110,10 @@ export default function RootLayout({
             closes: "15:00",
           },
         ],
+        hasMap: GOOGLE_MAPS_URL,
         founder: { "@id": "https://filiprozmus.pl/#filip" },
         sameAs: [
+          GOOGLE_MAPS_URL,
           "https://www.facebook.com/filip.rozmus.5030",
           "https://www.instagram.com/rozmusik_",
         ],
