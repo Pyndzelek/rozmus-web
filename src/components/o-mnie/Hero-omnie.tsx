@@ -1,19 +1,12 @@
-"use client";
-
 import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
 
 export default function HeroOmnie() {
   return (
     <section className="md:pt-20 pt-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <h1 className="text-3xl md:text-5xl font-bold mb-6">
               Cześć, jestem{" "}
               <span className="text-[var(--brand-accent)]">
@@ -48,14 +41,9 @@ export default function HeroOmnie() {
                 trójboju siłowego
               </p>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="flex justify-center lg:justify-end"
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <div className="flex justify-center lg:justify-end">
             <Image
               src="/rozmus_nlt.png"
               alt="Filip Rozmus - Trener Personalny"
@@ -63,7 +51,7 @@ export default function HeroOmnie() {
               height={600}
               className="rounded-lg"
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
