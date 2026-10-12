@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { baseOpenGraph } from "@/lib/seo";
 import HeroOpinie from "@/components/opinie/Hero-opinie";
 import ReviewsSectionOpinie from "@/components/opinie/ReviewsSection-opinie";
 import { GoogleReviewCta } from "@/components/google-review-cta";
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
   description:
     "Zobacz efekty mojej pracy! Przeczytaj prawdziwe opinie i zobacz spektakularne metamorfozy moich podopiecznych z Nowego Targu i okolic.",
   openGraph: {
+    ...baseOpenGraph,
+    url: "/opinie",
     title: "Historie Sukcesu Moich Klientów | Filip Rozmus",
     description:
       "Zobacz, jakie efekty osiągnęli moi podopieczni. Ty też możesz!",

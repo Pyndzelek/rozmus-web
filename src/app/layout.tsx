@@ -8,6 +8,7 @@ import { Header } from "@/components/header";
 import { ModernFooter } from "@/components/modern-footer";
 import { GOOGLE_MAPS_URL } from "@/lib/google-business";
 import { PRICE_RANGE } from "@/lib/plans";
+import { baseOpenGraph } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,33 +25,15 @@ export const metadata: Metadata = {
   title: "Filip Rozmus - Trener Personalny Nowy Targ",
   description:
     "Szukasz trenera personalnego w Nowym Targu? Pomogę Ci osiągnąć cele! Oferuję treningi personalne i duo, indywidualne plany treningowe, wskazówki żywieniowe i prowadzenie online. Zrób pierwszy krok!",
-  // --- SEKCJA SOCIAL MEDIA ---
   openGraph: {
+    ...baseOpenGraph,
+    url: "/",
     title: "Filip Rozmus - Trener Personalny w Nowym Targu",
     description:
       "Gotowy na zmianę? Osiągnij swoje cele treningowe z profesjonalnym wsparciem.",
-    url: "https://filiprozmus.pl",
-    siteName: "Filip Rozmus Trener Personalny",
-
-    images: [
-      {
-        url: "https://filiprozmus.pl/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Filip Rozmus - Trener Personalny Nowy Targ",
-      },
-    ],
-    locale: "pl_PL",
-    type: "website",
   },
-
-  twitter: {
-    card: "summary_large_image", // Typ karty Twittera
-    title: "Filip Rozmus - Trener Personalny w Nowym Targu",
-    description:
-      "Gotowy na zmianę? Osiągnij swoje cele treningowe z profesjonalnym wsparciem.",
-    images: ["https://filiprozmus.pl/og-image.jpg"],
-  },
+  // Tylko typ karty - Next uzupełnia tytuł, opis i obraz z openGraph danej strony
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({

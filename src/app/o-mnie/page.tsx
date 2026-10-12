@@ -1,6 +1,7 @@
 import AchievementsOmnie from "@/components/o-mnie/Achievements-omnie";
 import HeroOmnie from "@/components/o-mnie/Hero-omnie";
 import { Metadata } from "next";
+import { baseOpenGraph } from "@/lib/seo";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/o-mnie" },
@@ -9,6 +10,8 @@ export const metadata: Metadata = {
   description:
     "Poznaj mnie bliżej. Dowiedz się więcej o moim doświadczeniu, pasji do sportu i filozofii treningowej. Zaufaj certyfikowanemu trenerowi z Nowego Targu.",
   openGraph: {
+    ...baseOpenGraph,
+    url: "/o-mnie",
     title: "Poznaj Swojego Trenera - Filip Rozmus",
     description:
       "Dowiedz się, dlaczego warto mi zaufać i rozpocząć współpracę.",

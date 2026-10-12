@@ -4,6 +4,7 @@ import KontaktInfoKontakt from "@/components/kontakt/KontaktInfo-kontakt";
 import HeroKontakt from "@/components/kontakt/Hero-kontakt";
 
 import type { Metadata } from "next";
+import { baseOpenGraph } from "@/lib/seo";
 import MapaKontakt from "@/components/kontakt/Mapa-kontakt";
 
 export const metadata: Metadata = {
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
   description:
     "Skontaktuj się, aby umówić trening personalny w Nowym Targu lub prowadzenie online. Znajdziesz tu telefon, e-mail, adres oraz formularz kontaktowy.",
   openGraph: {
+    ...baseOpenGraph,
+    url: "/kontakt",
     title: "Skontaktuj się ze Mną | Filip Rozmus",
     description:
       "Zrób pierwszy krok do lepszej formy. Czekam na Twoją wiadomość.",
