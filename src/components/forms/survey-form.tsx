@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { surveyFormSchema, SurveyFormData } from "@/lib/schemas";
 import { submitSurvey } from "@/lib/formularz-actions";
+import { getPlan } from "@/lib/plans";
 
 // Import UI components
 import { Button } from "@/components/ui/button";
@@ -49,25 +50,11 @@ export default function SurveyForm({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
 
-  const planDetails: { [key: string]: { title: string; description: string } } =
-    {
-      "indywidualny-plan-treningowy": {
-        title: "Indywidualny plan treningowy",
-        description:
-          "Wypełnij formularz, aby otrzymać plan treningowy idealnie dopasowany do Twoich potrzeb i celów.",
-      },
-      "prowadzenie-online": {
-        title: "Prowadzenie online",
-        description:
-          "Zaczynamy naszą współpracę! Wypełnij formularz, abym mógł przygotować dla Ciebie najlepszy możliwy start.",
-      },
-      "12-treningw--plan": {
-        title: "12 treningów + plan",
-        description:
-          "Świetny wybór! Proszę, wypełnij ankietę, która pomoże nam maksymalnie wykorzystać nasze sesje. Na jej podstawie przygotuję dla Ciebie spersonalizowany plan treningowy.",
-      },
-    };
-  const currentPlan = selectedPlan ? planDetails[selectedPlan] : null;
+  // Ankieta dla planu z /oferta (/formularz?plan=<id>), opisy w src/lib/plans.ts
+  const plan = getPlan(selectedPlan);
+  const currentPlan = plan?.surveyDescription
+    ? { title: plan.name, description: plan.surveyDescription }
+    : null;
   const defaultTitle = "Formularz konsultacyjny";
   const defaultDescription =
     "Wypełnij formularz, aby otrzymać spersonalizowany plan treningowy dopasowany do Twoich potrzeb i celów.";

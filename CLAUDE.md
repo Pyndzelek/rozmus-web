@@ -27,7 +27,8 @@ Next.js 14 App Router (React 18), TypeScript, Tailwind CSS v4 (CSS-first config 
   - `formularz-actions.ts` — client survey; sends admin notification + user confirmation. reCAPTCHA verification is intentionally commented out.
   - `calculator-actions.ts` — calorie calculator; defines its own zod schema inline and emails both user and admin.
   - Shared zod schemas/types for contact and survey forms are in `src/lib/schemas.ts`.
-- **Offer → survey flow**: `Pricing-oferta.tsx` links selected plans to `/formularz?plan=<slug>`, where the slug is derived from the plan name by `createPlanSlug`. `survey-form.tsx` looks the slug up in a hard-coded `planDetails` map. When renaming or adding a plan in the pricing list (`plansWithRedirect` too), update the matching slug key in `planDetails`, or the survey will show no plan.
+- **Price list** (`src/lib/plans.ts`): single source for `/oferta` cards and its Service JSON-LD, the `priceRange` in the root layout, and prices quoted in `faq-section.tsx` (looked up by plan `id`, so keep ids stable).
+- **Offer → survey flow**: plans with a `surveyDescription` link to `/formularz?plan=<id>`, and `survey-form.tsx` shows that plan's name and description via `getPlan`. The other plans link to `/kontakt?plan=<name>`, which prefills the contact form subject.
 
 ## Environment
 

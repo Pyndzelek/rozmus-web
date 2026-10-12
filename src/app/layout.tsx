@@ -7,6 +7,7 @@ import { GoogleAnalytics } from "@/components/GoogleAnaltics";
 import { Header } from "@/components/header";
 import { ModernFooter } from "@/components/modern-footer";
 import { GOOGLE_MAPS_URL } from "@/lib/google-business";
+import { PRICE_RANGE } from "@/lib/plans";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -79,8 +80,7 @@ export default function RootLayout({
         image: "https://filiprozmus.pl/og-image.jpg",
         logo: "https://filiprozmus.pl/logo_nlt.png",
         telephone: "+48513978894",
-        // Zakres cen z Pricing-oferta.tsx - aktualizować przy zmianie cennika
-        priceRange: "150 zł - 2000 zł",
+        priceRange: PRICE_RANGE,
         address: {
           "@type": "PostalAddress",
           streetAddress: "Aleja Tysiąclecia 74",

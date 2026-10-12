@@ -6,108 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Star } from "lucide-react";
 import Link from "next/link";
+import { plans, parsePrice } from "@/lib/plans";
 
 export default function PricingOferta() {
-  const plans = [
-    {
-      id: "indywidualny-plan",
-      name: "Indywidualny plan treningowy",
-      price: "150 zł",
-      duration: "4-12 tygodni",
-      description: "Plan treningowy dopasowany do Twoich potrzeb",
-      features: [
-        "Indywidualny plan treningowy",
-        "Instrukcje wideo do każdego ćwiczenia",
-      ],
-      popular: false,
-    },
-    {
-      id: "1-trening-personalny",
-      name: "1 trening personalny",
-      price: "150 zł",
-      duration: "1 sesja",
-      description: "Indywidualny trening personalny",
-      features: ["Trening dostosowany do Twoich potrzeb"],
-      popular: false,
-    },
-    {
-      id: "6-treningow-personalnych",
-      name: "6 treningów personalnych",
-      higher_price: "900 zł",
-      price: "700 zł",
-      duration: "6 sesji",
-      description: "6 indywidualnych treningów personalnych",
-      features: ["Stały kontakt i wsparcie", "Analiza techniki"],
-      popular: false,
-    },
-    {
-      id: "12-treningow-duo",
-      name: "12 treningów duo",
-      price: "1800 zł",
-      duration: "12 sesji (dla 2 osób)",
-      description: "12 treningów personalnych w duecie",
-      features: [
-        "Treningi z partnerem lub znajomym",
-
-        "Stały kontakt i wsparcie",
-        "Analiza techniki każdego uczestnika",
-        "W grupie raźniej :)",
-      ],
-      popular: false,
-    },
-
-    {
-      id: "12-treningow-plan",
-      name: "12 treningów + plan",
-      price: "1300 zł",
-      higher_price: "1620 zł",
-      duration: "12 sesji",
-      description: "12 treningów personalnych + plan treningowy",
-      features: [
-        "Indywidualny plan treningowy",
-        "Instrukcje wideo do każdego ćwiczenia",
-        "Stały kontakt i wsparcie",
-        "Analiza techniki",
-      ],
-      popular: true,
-    },
-    {
-      id: "20-treningow-personalnych",
-      name: "20 treningów personalnych",
-      higher_price: "3000 zł",
-      price: "2000 zł",
-      duration: "20 sesji",
-      description: "20 indywidualnych treningów personalnych",
-      features: [
-        "Stały kontakt i wsparcie",
-        "Indywidualne podejście",
-        "Treningi dostosowany do Twoich potrzeb",
-        "Analiza techniki",
-        "Wskazówki dietetyczne",
-      ],
-      popular: false,
-    },
-    {
-      id: "prowadzenie-online",
-      name: "Prowadzenie online",
-      price: "200 zł",
-      duration: "1 miesiąc",
-      description: "Współpraca online",
-      features: [
-        "Indywidualny plan treningowy",
-        "Instrukcje wideo do każdego ćwiczenia",
-        "Stały kontakt i wsparcie",
-        "Cotygodniowe raporty",
-        "Analiza techniki",
-        "Wskazówki dietetyczne",
-      ],
-      popular: false,
-    },
-  ];
-  const parsePrice = (priceStr: string) => {
-    return priceStr.replace(/[^0-9]/g, "");
-  };
-
   // Usługa powiązana z firmą z layout.tsx (@id), bez drugiej encji firmy
   const jsonLd = {
     "@context": "https://schema.org",
@@ -134,18 +35,6 @@ export default function PricingOferta() {
     },
   };
 
-  const createPlanSlug = (name: string) => {
-    return name
-      .toLowerCase()
-      .replace(/\s+/g, "-") // Replace spaces with -
-      .replace(/[^\w\-]+/g, ""); // Remove all non-word chars
-  };
-
-  const plansWithRedirect = [
-    "Indywidualny plan treningowy",
-    "Prowadzenie online",
-    "12 treningów + plan",
-  ];
   return (
     <section className="py-20" id="oferta-cennik">
       <script
@@ -170,10 +59,8 @@ export default function PricingOferta() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {plans.map((plan, index) => {
-            const isRedirectPlan = plansWithRedirect.includes(plan.name);
-            const href = isRedirectPlan
-              ? `/formularz?plan=${createPlanSlug(plan.name)}`
-              : "#"; // Fallback href for other plans, you can change this
+            const isRedirectPlan = Boolean(plan.surveyDescription);
+            const href = `/formularz?plan=${plan.id}`;
 
             return (
               <motion.div

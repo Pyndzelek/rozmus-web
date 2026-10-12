@@ -3,11 +3,21 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { planPrice } from "@/lib/plans";
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
+    {
+      question: "Ile kosztuje trening personalny w Nowym Targu?",
+      answer: `Pojedynczy trening personalny kosztuje ${planPrice("1-trening-personalny")}. W pakietach wychodzi taniej: 6 treningów kosztuje ${planPrice("6-treningow-personalnych")}, a 20 treningów ${planPrice("20-treningow-personalnych")}. Indywidualny plan treningowy to ${planPrice("indywidualny-plan")}, a prowadzenie online ${planPrice("prowadzenie-online")} miesięcznie. Pełny cennik znajdziesz w zakładce Oferta.`,
+    },
+    {
+      question: "Gdzie odbywają się treningi?",
+      answer:
+        "Treningi stacjonarne prowadzę w Studio Gorce przy Alei Tysiąclecia 74 w Nowym Targu. Jeśli nie możesz trenować na miejscu, możemy współpracować online – przygotuję plan na siłownię albo do domu.",
+    },
     {
       question: "Jak długo trwa plan treningowy?",
       answer:
