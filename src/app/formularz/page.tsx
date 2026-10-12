@@ -1,30 +1,22 @@
-"use client";
-
 import { Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import type { Metadata } from "next";
 
-import SurveyForm from "@/components/forms/survey-form";
+import SurveyContentFormularz from "@/components/formularz/SurveyContent-formularz";
 
-// We create a new component to safely use the hook
-function FormularzContent() {
-  const searchParams = useSearchParams();
-  const selectedPlan = searchParams.get("plan");
-
-  return (
-    <main className="bg-black md:py-20 py-10">
-      <div className="max-w-4xl mx-auto px-6">
-        <SurveyForm selectedPlan={selectedPlan} />
-      </div>
-    </main>
-  );
-}
+export const metadata: Metadata = {
+  title: "Formularz zgłoszeniowy - Filip Rozmus Trener Personalny",
+  description:
+    "Wypełnij krótką ankietę, abym mógł przygotować współpracę dopasowaną do Twoich celów.",
+  alternates: { canonical: "/formularz" },
+  // Krok konwersji z /oferta, nie strona docelowa z wyszukiwarki
+  robots: { index: false, follow: true },
+};
 
 export default function SurveyPage() {
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Wrap the component in Suspense */}
       <Suspense fallback={<div>Ładowanie...</div>}>
-        <FormularzContent />
+        <SurveyContentFormularz />
       </Suspense>
     </div>
   );
