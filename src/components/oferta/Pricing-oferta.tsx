@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Star } from "lucide-react";
 import Link from "next/link";
-import Script from "next/script";
 
 export default function PricingOferta() {
   const plans = [
@@ -109,58 +108,30 @@ export default function PricingOferta() {
     return priceStr.replace(/[^0-9]/g, "");
   };
 
+  // Usługa powiązana z firmą z layout.tsx (@id), bez drugiej encji firmy
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ProfessionalService",
-        name: "Filip Rozmus Trener Personalny",
-        description:
-          "Profesjonalny trener personalny w Nowym Targu. Indywidualne plany treningowe, prowadzenie online i treningi w duecie.",
-        url: "https://filiprozmus.pl",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Nowy Targ",
-          addressRegion: "Małopolskie",
-          addressCountry: "PL",
-        },
-        priceRange: `${parsePrice(plans[0].price)} PLN - ${parsePrice(plans[3].price)} PLN`,
-        image: "https://filiprozmus.pl/rozmus_zaufanie.jpg",
-      },
-      {
-        "@type": "ItemList",
-        itemListElement: plans.map((plan, index) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          item: {
-            "@type": "Product",
-            name: plan.name,
-            description: plan.description,
-            image: "https://filiprozmus.pl/logo_nlt_czarne.jpg",
-            offers: {
-              "@type": "Offer",
-              price: parsePrice(plan.price),
-              priceCurrency: "PLN",
-              availability: "https://schema.org/InStock",
-              url: `https://filiprozmus.pl/oferta#${plan.id}`,
-              priceValidUntil: "2026-12-31",
-            },
-            additionalProperty: [
-              {
-                "@type": "PropertyValue",
-                name: "Czas trwania",
-                value: plan.duration,
-              },
-              {
-                "@type": "PropertyValue",
-                name: "Cechy",
-                value: plan.features.join(", "),
-              },
-            ],
-          },
-        })),
-      },
-    ],
+    "@type": "Service",
+    "@id": "https://filiprozmus.pl/oferta#service",
+    serviceType: "Trening personalny",
+    name: "Treningi personalne i prowadzenie online",
+    description:
+      "Treningi personalne i treningi duo w Nowym Targu, indywidualne plany treningowe i prowadzenie online.",
+    url: "https://filiprozmus.pl/oferta",
+    provider: { "@id": "https://filiprozmus.pl/#business" },
+    areaServed: { "@type": "City", name: "Nowy Targ" },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Cennik",
+      itemListElement: plans.map((plan) => ({
+        "@type": "Offer",
+        name: plan.name,
+        description: plan.description,
+        price: parsePrice(plan.price),
+        priceCurrency: "PLN",
+        url: `https://filiprozmus.pl/oferta#${plan.id}`,
+      })),
+    },
   };
 
   const createPlanSlug = (name: string) => {
@@ -177,7 +148,10 @@ export default function PricingOferta() {
   ];
   return (
     <section className="py-20" id="oferta-cennik">
-      <Script type="application/ld+json">{JSON.stringify(jsonLd)}</Script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           className="text-center mb-16"
