@@ -21,6 +21,7 @@ function Stars({ rating }: { rating: number }) {
 }
 
 // Opinie pobierane z Profilu Firmy w Google (renderowane na serwerze, więc są w HTML).
+// Zasady Places API: autor (zdjęcie, nazwa, link do profilu) i link do opinii w Google Maps przy każdej opinii.
 // Bez znaczników Review/AggregateRating - Google traktuje je na własnej stronie jako "self-serving".
 export default async function GoogleReviewsOpinie() {
   const data = await getGoogleReviews();
@@ -87,11 +88,26 @@ export default async function GoogleReviewsOpinie() {
               <p className="text-gray-300 leading-relaxed mt-3 whitespace-pre-line">
                 {review.text}
               </p>
+              {review.googleMapsUri && (
+                <a
+                  href={review.googleMapsUri}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 text-sm hover:underline mt-auto pt-4"
+                >
+                  Zobacz opinię
+                </a>
+              )}
             </article>
           ))}
         </div>
 
-        <p className="text-gray-500 text-sm text-center mt-6">Opinie z Google</p>
+        {/* Atrybucja wymagana przez zasady Places API: tekst "Google Maps" bez tłumaczenia, waga 400, biały na ciemnym tle */}
+        <p className="text-center mt-6">
+          <span translate="no" className="text-white text-base font-normal tracking-normal">
+            Google Maps
+          </span>
+        </p>
       </div>
     </section>
   );

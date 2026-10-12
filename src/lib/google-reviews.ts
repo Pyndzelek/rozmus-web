@@ -7,6 +7,7 @@ export type GoogleReview = {
   rating: number;
   text: string;
   relativeTime: string;
+  googleMapsUri?: string;
 };
 
 export type GoogleReviewsData = {
@@ -18,6 +19,7 @@ export type GoogleReviewsData = {
 type PlacesReview = {
   rating?: number;
   relativePublishTimeDescription?: string;
+  googleMapsUri?: string;
   text?: { text?: string };
   originalText?: { text?: string };
   authorAttribution?: { displayName?: string; uri?: string; photoUri?: string };
@@ -66,6 +68,7 @@ export async function getGoogleReviews(): Promise<GoogleReviewsData | null> {
           rating: r.rating ?? 0,
           text: r.originalText?.text ?? r.text?.text ?? "",
           relativeTime: r.relativePublishTimeDescription ?? "",
+          googleMapsUri: r.googleMapsUri,
         }))
         .filter((r) => r.text.length > 0),
     };
