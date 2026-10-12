@@ -9,4 +9,12 @@ module.exports = {
     "/manifest.json",
     "/favicon.ico",
   ],
+  // Google ignoruje changefreq i priority, a lastmod z datą builda byłby nieprawdziwy
+  autoLastmod: false,
+  transform: async (config, path) => ({ loc: path }),
+  robotsTxtOptions: {
+    // Dyrektywę Host rozumie tylko Yandex
+    transformRobotsTxt: async (config, robotsTxt) =>
+      robotsTxt.replace(/# Host\nHost: .*\n\n?/, ""),
+  },
 };
