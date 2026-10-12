@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import HeroOpinie from "@/components/opinie/Hero-opinie";
 import ReviewsSectionOpinie from "@/components/opinie/ReviewsSection-opinie";
 import { GoogleReviewCta } from "@/components/google-review-cta";
+import GoogleReviewsOpinie from "@/components/opinie/GoogleReviews-opinie";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/opinie" },
@@ -20,6 +21,9 @@ export default function ReviewsPage() {
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <HeroOpinie />
+
+      {/* Opinie z Google (wymaga GOOGLE_PLACES_API_KEY) */}
+      <GoogleReviewsOpinie />
 
       {/* Reviews Section */}
       <ReviewsSectionOpinie />

@@ -31,4 +31,4 @@ Next.js 14 App Router (React 18), TypeScript, Tailwind CSS v4 (CSS-first config 
 
 ## Environment
 
-`.env.local` needs `RESEND_API_KEY`, `ADMIN_EMAIL` (recipient of notifications), and `NEXT_PUBLIC_GA_TRACKING_ID` (Google Analytics, see `src/components/GoogleAnaltics.tsx`).
+`.env.local` needs `RESEND_API_KEY`, `ADMIN_EMAIL` (recipient of notifications), `NEXT_PUBLIC_GA_TRACKING_ID` (Google Analytics, see `src/components/GoogleAnaltics.tsx`), and optionally `GOOGLE_PLACES_API_KEY` (Places API (New); without it the Google reviews section on `/opinie` is not rendered — see `src/lib/google-reviews.ts`). Google Business Profile IDs/links live in `src/lib/google-business.ts`.
