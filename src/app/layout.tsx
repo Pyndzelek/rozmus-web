@@ -1,5 +1,5 @@
 import type React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
@@ -9,14 +9,19 @@ import { ModernFooter } from "@/components/modern-footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+};
+
 export const metadata: Metadata = {
   // Domena główna (www przekierowuje 301 na wersję bez www) - podstawa dla canonical i OG
   metadataBase: new URL("https://filiprozmus.pl"),
   title: "Filip Rozmus - Trener Personalny Nowy Targ",
   description:
     "Szukasz trenera personalnego w Nowym Targu? Pomogę Ci osiągnąć cele! Oferuję treningi personalne i duo, indywidualne plany treningowe, wskazówki żywieniowe i prowadzenie online. Zrób pierwszy krok!",
-  viewport:
-    "width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes",
   // --- SEKCJA SOCIAL MEDIA ---
   openGraph: {
     title: "Filip Rozmus - Trener Personalny w Nowym Targu",
