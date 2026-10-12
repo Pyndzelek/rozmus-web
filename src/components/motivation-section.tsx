@@ -28,7 +28,7 @@ export function MotivationSection() {
           <div className="relative lg:col-start-1 lg:row-start-1 mt-0 lg:mt-0">
             <Image
               src="/rozmus_motywacja.jpeg"
-              alt="Motywacja"
+              alt="Zawodnicy z medalami na podium zawodów siłowych"
               width={1280}
               height={905}
               className="mx-auto rounded-2xl"

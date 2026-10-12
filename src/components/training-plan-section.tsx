@@ -14,7 +14,7 @@ export function TrainingPlanSection() {
           <div className="relative">
             <Image
               src="/rozmus_plan.png"
-              alt="Training app on phone"
+              alt="Umięśnione plecy – efekt treningu według planu"
               width={500}
               height={600}
               className="mx-auto rounded-2xl"

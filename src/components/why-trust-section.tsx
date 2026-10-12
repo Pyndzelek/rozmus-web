@@ -34,7 +34,7 @@ export function WhyTrustSection() {
           >
             <Image
               src="/rozmus_zaufanie.jpg"
-              alt="Personal trainer"
+              alt="Filip Rozmus z certyfikatami trenera personalnego i instruktora siłowni"
               width={3024}
               height={4032}
               className="rounded-lg w-full max-w-[450px]"

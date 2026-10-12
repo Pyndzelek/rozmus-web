@@ -53,7 +53,7 @@ export function TransformationsSection() {
                   <div className="rounded-lg overflow-hidden aspect-[9/8]">
                     <Image
                       src={`/przemiany/${src}`}
-                      alt={`Przemiana podopiecznego ${index + 1}`}
+                      alt={`Metamorfoza – zdjęcia przed i po współpracy z trenerem (${index + 1})`}
                       width={1080}
                       height={960}
                       className="w-full h-full object-cover"
