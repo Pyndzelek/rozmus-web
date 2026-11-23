@@ -40,7 +40,7 @@ export const plans: Plan[] = [
     id: "6-treningow-personalnych",
     name: "6 treningów personalnych",
     higher_price: "900 zł",
-    price: "700 zł",
+    price: "750 zł",
     duration: "6 sesji",
     description: "6 indywidualnych treningów personalnych",
     features: ["Stały kontakt i wsparcie", "Analiza techniki"],
@@ -65,7 +65,7 @@ export const plans: Plan[] = [
   {
     id: "12-treningow-plan",
     name: "12 treningów + plan",
-    price: "1300 zł",
+    price: "1400 zł",
     higher_price: "1620 zł",
     duration: "12 sesji",
     description: "12 treningów personalnych + plan treningowy",
@@ -115,9 +115,11 @@ export const plans: Plan[] = [
   },
 ];
 
-export const parsePrice = (price: string) => Number(price.replace(/[^0-9]/g, ""));
+export const parsePrice = (price: string) =>
+  Number(price.replace(/[^0-9]/g, ""));
 
-export const getPlan = (id: string | null) => plans.find((plan) => plan.id === id);
+export const getPlan = (id: string | null) =>
+  plans.find((plan) => plan.id === id);
 
 // Cena planu do tekstów (FAQ); pusty tekst, jeśli plan usunięto z cennika
 export const planPrice = (id: string) => getPlan(id)?.price ?? "";
