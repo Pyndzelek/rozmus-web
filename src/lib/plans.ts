@@ -64,7 +64,7 @@ export const plans: Plan[] = [
 
   {
     id: "12-treningow-plan",
-    name: "12 treningów + plan",
+    name: "12 treningów + indywidualny plan treningowy",
     price: "1400 zł",
     higher_price: "1620 zł",
     duration: "12 sesji",
@@ -81,7 +81,7 @@ export const plans: Plan[] = [
   },
   {
     id: "20-treningow-personalnych",
-    name: "20 treningów personalnych",
+    name: "20 treningów personalnych + indywidualny plan treningowy",
     higher_price: "3000 zł",
     price: "2000 zł",
     duration: "20 sesji",
@@ -92,6 +92,7 @@ export const plans: Plan[] = [
       "Treningi dostosowany do Twoich potrzeb",
       "Analiza techniki",
       "Wskazówki dietetyczne",
+      "indywidualny plan treningowy",
     ],
     popular: false,
   },
